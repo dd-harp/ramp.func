@@ -1,7 +1,7 @@
 #' @title Make a Function
-#' @description Build a function of time for trace functions
-#' exogenous forcing by weather, vector control, or mass
-#' health interventions
+#'
+#' @description Build a trace function
+#'
 #' @param opts a named list
 #' @return a function
 #' @export

@@ -13,7 +13,5 @@ make_function(opts)
 a function
 }
 \description{
-Build a function of time for trace functions
-exogenous forcing by weather, vector control, or mass
-health interventions
+Build a trace function
 }
