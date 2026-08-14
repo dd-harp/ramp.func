@@ -1,7 +1,7 @@
-url: https://dd-harp.github.io/ramp.qa/
 template:
   bootstrap: 5
   math-rendering: mathjax
+url: https://dd-harp.github.io/ramp.qa/
 navbar:
   left:
   - text: Articles
@@ -10,6 +10,8 @@ navbar:
       href: articles/TraceFunctions.html
     - text: Cohorts
       href: articles/Cohorts.html
+  - text: Reference
+    href: reference/index.html
 home:
   sidebar:
     structure:
