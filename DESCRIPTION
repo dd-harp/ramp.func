@@ -1,6 +1,6 @@
-Package: ramp.func
+Package: ramp.trace
 Type: Package
-Title: Function Library
+Title: RAMP Trace Function Library
 Version: 0.1.0
 Authors@R: c(
     person(
@@ -14,8 +14,8 @@ License: What license is it under?
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.3.3
-URL: https://dd-harp.github.io/ramp.func/
-BugReports: https://github.com/dd-harp/ramp.func/issues
+URL: https://dd-harp.github.io/ramp.trace/
+BugReports: https://github.com/dd-harp/ramp.trace/issues
 Roxygen: list(markdown = TRUE)
 Imports: 
   Rdpack,
