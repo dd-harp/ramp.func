@@ -41,9 +41,9 @@ make_function.sin = function(opts){
 makepar_F_sin = function(phase=0, bottom=0, pw=1, norm=365, N=1){
   pars <- list()
   class(pars) <- "sin"
-  pars$phase = checkIt(phase, N)
-  pars$bottom = abs(checkIt(bottom, N))
-  pars$pw = abs(checkIt(pw, N))
+  pars$phase = check_length(phase, N)
+  pars$bottom = abs(check_length(bottom, N))
+  pars$pw = abs(check_length(pw, N))
   pars$norm = norm
   pars$N = N
   return(pars)

@@ -34,8 +34,8 @@ make_function.sigmoid = function(opts){
 makepar_F_sigmoid = function(k=1/7, D=100, Tl=0, N=1){
   pars <- list()
   class(pars) <- "sigmoid"
-  pars$k = checkIt(k, N)
-  pars$D = checkIt(D, N)
+  pars$k = check_length(k, N)
+  pars$D = check_length(D, N)
   pars$Tl=Tl
   pars$N=N
   return(pars)

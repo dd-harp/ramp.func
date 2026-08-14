@@ -41,12 +41,12 @@ make_function.sharkfin = function(opts){
 makepar_F_sharkfin = function(D=100, L=180, uk = 1/7, dk=1/40, pw=1, mx=1, N=1){
   pars <- list()
   class(pars) <- "sharkfin"
-  pars$D = checkIt(D, N)
-  pars$L = checkIt(L, N)
-  pars$uk = checkIt(uk, N)
-  pars$dk = checkIt(dk, N)
-  pars$pw = checkIt(pw, N)
-  pars$mx = checkIt(mx, N)
+  pars$D = check_length(D, N)
+  pars$L = check_length(L, N)
+  pars$uk = check_length(uk, N)
+  pars$dk = check_length(dk, N)
+  pars$pw = check_length(pw, N)
+  pars$mx = check_length(mx, N)
   pars$N = N
   return(pars)
 }
@@ -94,12 +94,12 @@ make_function.sharkbite = function(opts){
 makepar_F_sharkbite = function(D=100, L=180, uk = 1/7, dk=1/40, pw=1, mx=1, N=1){
   pars <- list()
   class(pars) <- "sharkbite"
-  pars$D = checkIt(D, N)
-  pars$L = checkIt(L, N)
-  pars$uk = checkIt(uk, N)
-  pars$dk = checkIt(dk, N)
-  pars$pw = checkIt(pw, N)
-  pars$mx = checkIt(mx, N)
+  pars$D = check_length(D, N)
+  pars$L = check_length(L, N)
+  pars$uk = check_length(uk, N)
+  pars$dk = check_length(dk, N)
+  pars$pw = check_length(pw, N)
+  pars$mx = check_length(mx, N)
   pars$N = N
   return(pars)
 }

@@ -35,7 +35,7 @@ make_ts_function = function(options=list(),
                             trend_par = list(),
                             shock_par = list()){
   with(options,{
-    scale = checkIt(scale, N)
+    scale = check_length(scale, N)
     if(length(season_par) == 0)
       season_par = makepar_F_sin(N=N) 
     if(length(trend_par) == 0)
