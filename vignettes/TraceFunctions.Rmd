@@ -7,8 +7,17 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
+Mathematical models describing mosquito-borne pathogen transmission dynamics and control are complex, but they are also naturally modular. 
+
+The term **trace function** herein describes a function that sets the value of some quantity in a mathematical model. In models of malaria epidemiology, transmission dynamics, and control, it is often useful to isolate one of the dynamical components to study it in isolation, rather than study it as part of a dynamical system that is coupled to some other complex process. The functions defined herein are used by other `ramp` packages that are part of **SimBA**: 
+
++ These functions are used by `ramp.xds` and `ramp.forcing` to configure forcing in the trivial modules. 
+
++ These functions are used by `ramp.falciparum` to configure exposure. 
+
+
 ```{r}
-library(ramp.xds)
+library(ramp.trace)
 library(viridisLite)
 ```
 

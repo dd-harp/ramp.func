@@ -1,0 +1,69 @@
+# **`ramp.trace`** - The RAMP Trace Function Library
+
+## Install **`ramp.trace`**
+
+To install the latest version from GitHub, run the following lines of
+code in an R session.
+
+    library(devtools)
+    devtools::install_github("dd-harp/ramp.trace")
+
+## Trace Functions
+
+The term **trace function** herein describes a function that sets the
+value of some quantity in a mathematical model. In models of malaria
+epidemiology, transmission dynamics, and control, it is often useful to
+isolate one of the dynamical components to study it in isolation, rather
+than study it as part of a dynamical system that is coupled to some
+other complex process. The functions defined herein are used by other
+`ramp` packages that are part of **SimBA**:
+
+- These functions are used by `ramp.xds` and its satellite package
+  `ramp.forcing` to configure forcing in the trivial modules.
+
+- These functions are used by `ramp.falciparum` to configure exposure.
+
+# Package index
+
+## Make a Function
+
+- [`make_function()`](https://dd-harp.github.io/ramp.qa/reference/make_function.md)
+  : Make a Function
+- [`make_ts_function()`](https://dd-harp.github.io/ramp.qa/reference/make_ts_function.md)
+  : Make a Time Series Function
+
+### Make a Function Object
+
+- [`makepar_F_c()`](https://dd-harp.github.io/ramp.qa/reference/makepar_F_c.md)
+  : Make parameters for \\F(t)=c\\
+- [`makepar_F_sin()`](https://dd-harp.github.io/ramp.qa/reference/makepar_F_sin.md)
+  : parameters for make_function
+- [`makepar_F_spline()`](https://dd-harp.github.io/ramp.qa/reference/makepar_F_spline.md)
+  : Make Parameters for a Spline
+- [`makepar_F_type2()`](https://dd-harp.github.io/ramp.qa/reference/makepar_F_type2.md)
+  : parameters for make_function
+- [`makepar_F_sigmoid()`](https://dd-harp.github.io/ramp.qa/reference/makepar_F_sigmoid.md)
+  : Make Parameters for a Sigmoidal Function
+- [`makepar_F_sharkfin()`](https://dd-harp.github.io/ramp.qa/reference/makepar_F_sharkfin.md)
+  : Make Parameters for a Sharkfin Function
+- [`makepar_F_sharkbite()`](https://dd-harp.github.io/ramp.qa/reference/makepar_F_sharkbite.md)
+  : Make Parameters for a sharkbite Function
+
+### Make a Composed Function Object
+
+- [`makepar_F_sum()`](https://dd-harp.github.io/ramp.qa/reference/makepar_F_sum.md)
+  : parameters for make_function
+- [`makepar_F_product()`](https://dd-harp.github.io/ramp.qa/reference/makepar_F_product.md)
+  : parameters for make_function
+- [`makepar_F_nproduct()`](https://dd-harp.github.io/ramp.qa/reference/makepar_F_nproduct.md)
+  : parameters for make_function
+
+# Articles
+
+### All vignettes
+
+- [Cohort
+  Dynamics](https://dd-harp.github.io/ramp.qa/articles/Cohorts.md):
+- [Trace
+  Functions](https://dd-harp.github.io/ramp.qa/articles/TraceFunctions.md):
+- [ramp.xds](https://dd-harp.github.io/ramp.qa/articles/xds.md):

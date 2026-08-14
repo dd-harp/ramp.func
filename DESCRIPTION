@@ -17,12 +17,8 @@ RoxygenNote: 7.3.3
 URL: https://dd-harp.github.io/ramp.trace/
 BugReports: https://github.com/dd-harp/ramp.trace/issues
 Roxygen: list(markdown = TRUE)
-Imports: 
-  Rdpack,
-  mathjaxr
 Suggests:
   DescTools,
-  ggplot2,
   viridisLite,
   data.table,
   knitr,

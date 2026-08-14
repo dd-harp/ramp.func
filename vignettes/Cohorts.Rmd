@@ -10,6 +10,7 @@ vignette: >
 
 ```{r}
 library(ramp.xds)
+library(ramp.trace)
 ```
 
 ```{r, echo=F}
@@ -42,7 +43,7 @@ lines(tt, F_t(tt), type ="l")
 ```
 
 ```{r fig.width=6, fig.height=4}
-opts = list(Z=2000/365, season_par = Sp, trend_par = Tp)
+opts = list(Z=2000/365, F_season = F_s, F_trend = F_t)
 mod_human <- xds_setup_human(HPop=1000, XHoptions = opts)
 mod_human <- xds_solve(mod_human, Tmax=5*365, dt=10)
 xds_plot_PR(mod_human)
@@ -51,7 +52,7 @@ xds_plot_PR(mod_human)
 With this value of $Z$  and a population size of $H=1000$, the scaling function gives us an annual EIR of 2.  
 
 ```{r fig.width=6, fig.height=4}
-mod_eir <- xds_setup_eir(eir=2/365, season_par = Sp, trend_par = Tp)
+mod_eir <- xds_setup_eir(eir=2/365, F_season=F_s, F_trend=F_t)
 mod_eir <- xds_solve(mod_eir, Tmax=365*5, dt=10)
 xds_plot_PR(mod_eir)
 ```
