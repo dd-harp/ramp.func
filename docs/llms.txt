@@ -1,4 +1,6 @@
-# **`ramp.trace`** - The RAMP Trace Function Library
+# **`ramp.trace`**
+
+## The RAMP Trace Function Library
 
 ## Install **`ramp.trace`**
 
