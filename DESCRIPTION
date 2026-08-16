@@ -15,8 +15,6 @@ URL: https://dd-harp.github.io/ramp.trace/
 BugReports: https://github.com/dd-harp/ramp.trace/issues
 Roxygen: list(markdown = TRUE)
 Suggests:
-  ramp.xds,
-  ramp.falciparum,
   DescTools,
   viridisLite,
   data.table,

@@ -16,13 +16,6 @@ library(ramp.trace)
 #devtools::load_all()
 ```
 
-In **`ramp.xds`,** there are three different ways of simulating malaria epidemiology in isolation. These are set up using different setup functions:
-
-+ `xds_setup_human` sets up a full **X** component model,  including a time spent matrix. The `trivial` **MYZ** module is calibrates the model `F_fqZ,` and the model computes the dEIR as an output. 
-
-+ `xds_setup_eir` sets up an **X** component for a single human population stratum. The user configures a function `F_eir.` Solutions to these models uses `xds_solve.eir` 
-
-+ `xds_setup_cohort` sets up an **X** component for a single human population birth cohort as it ages. The user configures a function `F_eir` that computes the average EIR in the population with respect to time. The model for exposure translates population EIR into the specific pattern of exposure experienced by the cohort born on day $\tau$ using the identity $t = a + \tau,$ and adding an age-specific frailty $\omega(a).$ Solutions use `xds_solve_cohort,` which accepts the cohort's birthday as an optional argument. If $\omega(a) = 1$, and $\tau=0,$ then `xds_solve.eir` and `xds_solve_cohort` would give the same answers.  
 
 # Example
 
