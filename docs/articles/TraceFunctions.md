@@ -48,10 +48,9 @@ A trace function can be configured in two ways:
 The trivial modules each returns different values:
 
 - The trivial **L**-component module is set up by `create_Lpar_trivial.`
-  The function
-  [`F_emerge()`](https://dd-harp.github.io/ramp.xds/reference/F_emerge.html)
-  returns `Lambda*F_season(t)*F_trend(t).` To override the defaults,
-  `Lopts` must be a named list that sets the values of the elements:
+  The function `F_emerge()` returns `Lambda*F_season(t)*F_trend(t).` To
+  override the defaults, `Lopts` must be a named list that sets the
+  values of the elements:
 
   - `Lambda = c(...)` is the
 
@@ -70,10 +69,9 @@ The trivial modules each returns different values:
 
     - `F_trend = function(t){...}`
 
-  - the function
-    [`F_fqZ()`](https://dd-harp.github.io/ramp.xds/reference/F_fqZ.html)
-    returns `f*q*Z*F_season(t)*F_trend(t)`. To configure, `MYZopts`
-    should be a named list that sets the values of the elements:
+  - the function `F_fqZ()` returns `f*q*Z*F_season(t)*F_trend(t)`. To
+    configure, `MYZopts` should be a named list that sets the values of
+    the elements:
 
     - `f = c(...)`
 
@@ -81,10 +79,9 @@ The trivial modules each returns different values:
 
     - `Z = c(...)`
 
-  - the function
-    [`F_eggs()`](https://dd-harp.github.io/ramp.xds/reference/F_eggs.html)
-    returns `eggs*F_season(t)*F_trend(t)`; to override the defaults,
-    `MYZopts` must be a named list that sets the values of the elements:
+  - the function `F_eggs()` returns `eggs*F_season(t)*F_trend(t)`; to
+    override the defaults, `MYZopts` must be a named list that sets the
+    values of the elements:
 
     - `eggs = c(...)`
 
