@@ -2,8 +2,12 @@
 
 ## Make a Function
 
+- [`make_F_t()`](https://dd-harp.github.io/ramp.qa/reference/make_F_t.md)
+  : Make a Function, \\F(t)\\
+- [`make_F_a()`](https://dd-harp.github.io/ramp.qa/reference/make_F_a.md)
+  : Make a Function, \\F(a\|d)\\
 - [`make_function()`](https://dd-harp.github.io/ramp.qa/reference/make_function.md)
-  : Make a Function
+  : Make a Function, \\F(t,V)\\
 - [`make_ts_function()`](https://dd-harp.github.io/ramp.qa/reference/make_ts_function.md)
   : Make a Time Series Function
 

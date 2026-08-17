@@ -1,11 +1,11 @@
-# Make a Function, \\F(t,V)\\
+# Make a Function, \\F(t)\\
 
-Build a general trace function
+Build a trace function
 
 ## Usage
 
 ``` r
-make_function(opts)
+make_F_t(opts)
 ```
 
 ## Arguments
