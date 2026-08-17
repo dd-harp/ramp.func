@@ -9,9 +9,25 @@
 make_function.sum = function(opts){
   F1 = make_function(opts$opts1)
   F2 = make_function(opts$opts2)
+  F3 = function(t,V=list()){F1(t,V)+F2(t,V)}
+  return(F3)
+}
+
+
+#' @title Make a Function that is the sum of Two other Functions
+#' @description Build a function that is the sum of two
+#' other functions.
+#' @inheritParams make_F_t
+#' @return a function that is the sum of two other functions
+#' @keywords internal
+#' @export
+make_F_t.sum = function(opts){
+  F1 = make_function(opts$opts1)
+  F2 = make_function(opts$opts2)
   F3 = function(t){F1(t)+F2(t)}
   return(F3)
 }
+
 
 #' @title parameters for make_function
 #' @description Return an object to configure
