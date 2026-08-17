@@ -47,5 +47,5 @@ make_ts_function = function(options=list(),
     F_trend = make_function(trend_par)   
     F_shock = make_function(shock_par)   
 
-    return(function(t, V=list()){scale*F_season(t)*F_trend(t)*F_shock(t)})
+    return(function(t, V=list()){scale*F_season(t,V)*F_trend(t,V)*F_shock(t,V)})
   })}

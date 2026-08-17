@@ -3,6 +3,7 @@
 #' @description Return an [make_function] object to set up
 #' the constant function \eqn{F(t)=c}
 #' @param c the constant
+#' 
 #' @return a [make_function] object
 #'
 #' @export
@@ -20,6 +21,6 @@ makepar_F_c = function(c){
 #' @keywords internal
 #' @export
 make_function.c = function(opts){
-  F_c = function(t){0*t+opts$c}
+  F_c = function(t, V=list()){0*t+opts$c}
   return(F_c)
 }

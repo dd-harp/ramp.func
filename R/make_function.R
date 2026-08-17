@@ -17,5 +17,5 @@ make_function = function(opts){
 #' @return a function
 #' @export
 make_function.list = function(opts){
-  return(function(t){0*t+1})
+  return(function(t, V=list()){0*t+1})
 }

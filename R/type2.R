@@ -1,5 +1,4 @@
 
-
 #' @title Make a type2 function for age
 #' @description Return an age pattern \eqn{\omega(a)}, a function of the form
 #' \deqn{\omega(a) = \frac{A(a+\tau)}{B+a+\tau}}
@@ -13,7 +12,7 @@
 #' @keywords internal
 #' @export
 make_function.type2 = function(opts){with(opts,{
-  F = function(a){
+  F = function(a, V=list()){
     A*(a + shift)/(B*365+a+shift)
   }
   return(F)

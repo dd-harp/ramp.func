@@ -18,12 +18,12 @@
 make_function.sin = function(opts){
   opts$normit = with(opts, rep(norm, N))
   for(i in 1:opts$N){
-    F1 = with(opts,function(t){(1+abs(bottom[i])+sin(2*pi*(t)/365))^pw[i]})
+    F1 = with(opts,function(t, V=list()){(1+abs(bottom[i])+sin(2*pi*(t)/365))^pw[i]})
     over_year <- integrate(F1, 0, 365)$val
     opts$normit[i] <- opts$normit[i]/over_year
   }
-  F2 = with(opts,function(t){(1+abs(bottom) + sin(2*pi*(t-phase+91)/365))^pw*normit})
-  F3 = function(t){if(length(t) == 1) return(F2(t)) else return(sapply(t, F2))}
+  F2 = with(opts,function(t, V=list()){(1+abs(bottom) + sin(2*pi*(t-phase+91)/365))^pw*normit})
+  F3 = function(t, V=list()){if(length(t) == 1) return(F2(t,V)) else return(sapply(t, F2, V=V))}
   return(F3)
 }
 

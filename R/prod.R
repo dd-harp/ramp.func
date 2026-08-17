@@ -9,7 +9,7 @@
 make_function.product = function(opts){
   F1 = make_function(opts$opts1)
   F2 = make_function(opts$opts2)
-  F3 = function(t){F1(t)*F2(t)}
+  F3 = function(t, V=list()){F1(t, V)*F2(t, V)}
   return(F3)
 }
 

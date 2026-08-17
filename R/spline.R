@@ -7,7 +7,7 @@
 #' @keywords internal
 #' @export
 make_function.splinef = function(opts){
-  ff <- function(t){
+  ff <- function(t,V=list()){
     stats::spline(opts$tt, opts$yy, xout = t)$y
   }
   return(ff)
@@ -21,7 +21,7 @@ make_function.splinef = function(opts){
 #' @keywords internal
 #' @export
 make_function.splineX = function(opts){
-  ff <- function(t){
+  ff <- function(t,V=list()){
     exp(stats::spline(opts$tt, opts$yy, xout = t)$y)
   }
   return(ff)

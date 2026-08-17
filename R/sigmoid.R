@@ -17,8 +17,8 @@ make_function.sigmoid = function(opts){
     over_T = ifelse(T>0, integrate(F1, 0, T)$val, 1)
     opts$normit[i] <- opts$normit[i]/over_T
   }
-  F2 = with(opts,function(t){1e-15+exp(k*(t-D))/(1+exp(k*(t-D)))})
-  F3 = function(t){if(length(t) == 1) return(F2(t)) else return(sapply(t, F2))}
+  F2 = with(opts,function(t, V=list()){1e-15+exp(k*(t-D))/(1+exp(k*(t-D)))})
+  F3 = function(t, V=list()){if(length(t) == 1) return(F2(t,V)) else return(sapply(t, F2,V=V))}
   return(F3)
 }
 

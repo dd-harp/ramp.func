@@ -16,13 +16,13 @@ make_function.sharkfin = function(opts){
     x = pmax(pmin(k*(t-D),80),-80); exp(-x)/(1+exp(-x))}
   opts$normit = opts$mx
   for(i in 1:opts$N){
-    F1 = with(opts,function(t){((1-siggy(t, uk[i], D[i]))*siggy(t,dk[i],D[i]+L[i]))^pw[i]})
+    F1 = with(opts,function(t, V=list()){((1-siggy(t, uk[i], D[i]))*siggy(t,dk[i],D[i]+L[i]))^pw[i]})
     tt <- with(opts, c(D[i]:(D[i]+L[i])))
     mx <- max(F1(tt))
     opts$normit[i] <- opts$normit[i]/mx
   }
-  F2 = with(opts,function(t){normit*((1-siggy(t, uk, D))*siggy(t, dk, D+L))^pw})
-  F3 = function(t){if(length(t) == 1) return(F2(t)) else return(sapply(t, F2))}
+  F2 = with(opts,function(t, V=list()){normit*((1-siggy(t, uk, D))*siggy(t, dk, D+L))^pw})
+  F3 = function(t, V=list()){if(length(t) == 1) return(F2(t, V)) else return(sapply(t, F2, V=V))}
   return(F3)
 }
 
@@ -68,14 +68,14 @@ make_function.sharkbite = function(opts){
     x = pmax(pmin(k*(t-D),80),-80); exp(-x)/(1+exp(-x))}
   opts$normit = opts$mx
   for(i in 1:opts$N){
-    F1 = with(opts,function(t){((1-siggy(t, uk[i], D[i]))*siggy(t,dk[i],D[i]+L[i]))^pw[i]})
+    F1 = with(opts,function(t, V=list()){((1-siggy(t, uk[i], D[i]))*siggy(t,dk[i],D[i]+L[i]))^pw[i]})
     tt <- with(opts, c(D[i]:(D[i]+L[i])))
-    mx <- max(F1(tt))
+    mx <- max(F1(tt, V=list()))
     opts$normit[i] <- opts$normit[i]/mx
   }
-  #  F2 = with(opts,function(t){normit*((1-siggy(t, uk, D))*siggy(t, dk, D+L))^pw})
-  F2 = with(opts,function(t){1-normit*((1-siggy(t, uk, D))*siggy(t, dk, D+L))^pw})
-  F3 = function(t){if(length(t) == 1) return(F2(t)) else return(sapply(t, F2))}
+  #  F2 = with(opts,function(t, V=list()){normit*((1-siggy(t, uk, D))*siggy(t, dk, D+L))^pw})
+  F2 = with(opts,function(t,V=list()){1-normit*((1-siggy(t, uk, D))*siggy(t, dk, D+L))^pw})
+  F3 = function(t,V=list()){if(length(t)== 1) return(F2(t, V)) else return(sapply(t, F2, V=V))}
   return(F3)
 }
 
