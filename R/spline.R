@@ -20,12 +20,41 @@ make_function.splinef = function(opts){
 #' @return a function
 #' @keywords internal
 #' @export
+make_F_t.splinef = function(opts){
+  ff <- function(t){
+    stats::spline(opts$tt, opts$yy, xout = t)$y
+  }
+  return(ff)
+}
+
+#' @title Make a spline function
+#' @description A spline function passes time points `tt` and
+#' associated values `yy` and returns a spline function
+#' @inheritParams make_function
+#' @return a function
+#' @keywords internal
+#' @export
 make_function.splineX = function(opts){
   ff <- function(t,V=list()){
     exp(stats::spline(opts$tt, opts$yy, xout = t)$y)
   }
   return(ff)
 }
+
+#' @title Make a spline function
+#' @description A spline function passes time points `tt` and
+#' associated values `yy` and returns a spline function
+#' @inheritParams make_function
+#' @return a function
+#' @keywords internal
+#' @export
+make_F_t.splineX = function(opts){
+  ff <- function(t){
+    exp(stats::spline(opts$tt, opts$yy, xout = t)$y)
+  }
+  return(ff)
+}
+
 
 #' @title Make a spline function
 #' @description A spline function passes time points `tt` and
@@ -51,7 +80,7 @@ make_function.spline2 = function(opts){
 #' @export
 makepar_F_spline = function(tt, yy, X=FALSE){
   pars <- list()
-  class(pars) = "splinef"
+  class(pars) = c("splinef", "list")
   if(X==TRUE) class(pars) = "splineX"
   if(X==2) class(pars) = "spline2"
   pars$tt = tt

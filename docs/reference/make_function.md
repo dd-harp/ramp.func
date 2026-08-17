@@ -1,6 +1,6 @@
-# Make a Function
+# Make a Function, \\F(t,V)\\
 
-Build a trace function
+Build a general trace function
 
 ## Usage
 
