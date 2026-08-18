@@ -2,9 +2,9 @@
 % Please edit documentation in R/constant.R
 \name{makepar_F_c}
 \alias{makepar_F_c}
-\title{Make parameters for \eqn{F(t)=c}}
+\title{Make \link{F_obj} for \eqn{F(t)=c}}
 \usage{
-makepar_F_c(c)
+makepar_F_c(c = 1)
 }
 \arguments{
 \item{c}{the constant}

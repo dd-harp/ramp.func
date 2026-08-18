@@ -2,7 +2,7 @@
 % Please edit documentation in R/spline.R
 \name{makepar_F_spline}
 \alias{makepar_F_spline}
-\title{Make Parameters for a Spline}
+\title{Make a spline \link{F_obj}}
 \usage{
 makepar_F_spline(tt, yy, X = FALSE)
 }
@@ -11,11 +11,18 @@ makepar_F_spline(tt, yy, X = FALSE)
 
 \item{yy}{the y values}
 
-\item{X}{a switch to configure for splinef or splineX}
+\item{X}{setup switch: FALSE=\link{splinef} | TRUE=\link{splineX} | 2=\link{spline2}}
 }
 \value{
 parameters to configure the \code{splinef} or \code{splineX} case of \code{make_function}
 }
 \description{
-Return an object for \link{make_function.splinef} or \link{make_function.splineX}
+Return a function obj
+A spline function \eqn{T(t)} for \link{trends} is specified by a set of  \eqn{n} interpolating points:
+\itemize{
+\item time
+values \deqn{t_1, t_2, \ldots, t_n,}
+\item and corresponding
+\eqn{y} values \deqn{y_1, y_2, \ldots, y_n.}
+}
 }

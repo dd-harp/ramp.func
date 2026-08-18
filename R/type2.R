@@ -11,8 +11,27 @@
 #' @return a function for seasonality
 #' @keywords internal
 #' @export
-make_function.type2 = function(opts){with(opts,{
+make_function.type2 = function(F_obj){with(F_obj,{
   F = function(a, V=list()){
+    A*(a + shift)/(B*365+a+shift)
+  }
+  return(F)
+})}
+
+#' @title Make a type2 function for age
+#' @description Return an age pattern \eqn{\omega(a)}, a function of the form
+#' \deqn{\omega(a) = \frac{A(a+\tau)}{B+a+\tau}}
+#' where \eqn{\tau} is a shift so that \eqn{\omega(0) > 0}
+#' and \eqn{A} and \eqn{B} are shape parameters
+#'
+#' @inheritParams make_function
+#' @importFrom stats integrate
+#' @seealso [makepar_F_type2]
+#' @return a function for seasonality
+#' @keywords internal
+#' @export
+make_F_t.type2 = function(F_obj){with(F_obj,{
+  F = function(a){
     A*(a + shift)/(B*365+a+shift)
   }
   return(F)

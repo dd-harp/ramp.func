@@ -4,10 +4,10 @@
 \alias{make_function.sin}
 \title{Make a Sine-based Seasonality Function}
 \usage{
-\method{make_function}{sin}(opts)
+\method{make_function}{sin}(F_obj)
 }
 \arguments{
-\item{opts}{a named list}
+\item{F_obj}{a function object, \link{F_obj}}
 }
 \value{
 a function for seasonality

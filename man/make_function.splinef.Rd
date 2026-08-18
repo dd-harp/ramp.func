@@ -4,10 +4,10 @@
 \alias{make_function.splinef}
 \title{Make a spline function}
 \usage{
-\method{make_function}{splinef}(opts)
+\method{make_function}{splinef}(F_obj)
 }
 \arguments{
-\item{opts}{a named list}
+\item{F_obj}{a function object, \link{F_obj}}
 }
 \value{
 a function

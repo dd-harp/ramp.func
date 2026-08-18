@@ -1,3 +1,12 @@
+#' @title sin
+#'
+#' @description
+#' Return a pattern \eqn{S(t)} to model [seasonality] with the form
+#' \deqn{S(t) = c \left(1+\epsilon + \sin\left(\frac{2 \pi (t-\tau)}{365}\right)\right)^p}
+#'
+#' @name sin
+NULL
+
 
 #' @title Make a Sine-based Seasonality Function
 #' @description Return a seasonal pattern \eqn{S(t)}, a function of the form
@@ -15,14 +24,14 @@
 #' @return a function for seasonality
 #' @keywords internal
 #' @export
-make_F_t.sin = function(opts){
-  opts$normit = with(opts, rep(norm, N))
-  for(i in 1:opts$N){
-    F1 = with(opts,function(t){(1+abs(bottom[i])+sin(2*pi*(t)/365))^pw[i]})
+make_F_t.sin = function(F_obj){
+  F_obj$normit = with(F_obj, rep(norm, N))
+  for(i in 1:F_obj$N){
+    F1 = with(F_obj,function(t){(1+abs(bottom[i])+sin(2*pi*(t)/365))^pw[i]})
     over_year <- integrate(F1, 0, 365)$val
-    opts$normit[i] <- opts$normit[i]/over_year
+    F_obj$normit[i] <- F_obj$normit[i]/over_year
   }
-  F2 = with(opts,function(t){(1+abs(bottom) + sin(2*pi*(t-phase+91)/365))^pw*normit})
+  F2 = with(F_obj,function(t){(1+abs(bottom) + sin(2*pi*(t-phase+91)/365))^pw*normit})
   F3 = function(t){if(length(t) == 1) return(F2(t)) else return(sapply(t, F2))}
   return(F3)
 }
@@ -44,14 +53,14 @@ make_F_t.sin = function(opts){
 #' @return a function for seasonality
 #' @keywords internal
 #' @export
-make_function.sin = function(opts){
-  opts$normit = with(opts, rep(norm, N))
-  for(i in 1:opts$N){
-    F1 = with(opts,function(t, V=list()){(1+abs(bottom[i])+sin(2*pi*(t)/365))^pw[i]})
+make_function.sin = function(F_obj){
+  F_obj$normit = with(F_obj, rep(norm, N))
+  for(i in 1:F_obj$N){
+    F1 = with(F_obj,function(t, V=list()){(1+abs(bottom[i])+sin(2*pi*(t)/365))^pw[i]})
     over_year <- integrate(F1, 0, 365)$val
-    opts$normit[i] <- opts$normit[i]/over_year
+    F_obj$normit[i] <- F_obj$normit[i]/over_year
   }
-  F2 = with(opts,function(t, V=list()){(1+abs(bottom) + sin(2*pi*(t-phase+91)/365))^pw*normit})
+  F2 = with(F_obj,function(t, V=list()){(1+abs(bottom) + sin(2*pi*(t-phase+91)/365))^pw*normit})
   F3 = function(t, V=list()){if(length(t) == 1) return(F2(t,V)) else return(sapply(t, F2, V=V))}
   return(F3)
 }

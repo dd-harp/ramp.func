@@ -2,27 +2,45 @@
 % Please edit documentation in R/make_function.R
 \name{make_F_a}
 \alias{make_F_a}
-\title{Make a Function, \eqn{F(a|d)}}
+\title{Make a Function, \eqn{F(a,d)}}
 \usage{
-make_F_a(x, age_par, season_par, trend_par, shock_par)
+make_F_a(
+  avg,
+  age_par = makepar_F_c(1),
+  season_par = makepar_F_c(1),
+  trend_par = makepar_F_c(1),
+  shock_par = makepar_F_c(1)
+)
 }
 \arguments{
-\item{opts}{a named list}
+\item{avg}{the function average}
+
+\item{age_par}{an \link{F_obj} for relative biting rate by age}
+
+\item{season_par}{an \link{F_obj} for the seasonal pattern (see \link{seasonality})}
+
+\item{trend_par}{an \link{F_obj} for the trend (see \link{trends})}
+
+\item{shock_par}{an \link{F_obj} for a perturbation (see \link{shocks})}
 }
 \value{
 a function
 }
 \description{
-Build a trace function to simulate
-exposure by age. The function substitutes age for
+Construct a trace function to simulate
+exposure by age using \link{make_F_t}.
+
+The function substitutes age for
 time: given a birthday, \eqn{d}, age is \eqn{a=t-d}. The
 function is a product of:
 \itemize{
-\item \eqn{x} --- the mean
+\item \eqn{\bar X} --- or \code{avg} the approximate mean value
 \item \eqn{\omega(a)} --- a function describing the relative biting rate by age
 \item \eqn{S(t)} --- a seasonal pattern function
 \item \eqn{T(t)} --- a trend pattern function
 \item \eqn{K(t)} --- a shock function
-\deqn{F(a | d) = x \times \omega(a) \times S(t-d) \times T(t-d) \times K(t-d)}
+\deqn{F(a, d) = x \times \omega(a) \times S(t-d) \times T(t-d) \times K(t-d)}
 }
+
+For convenience, \eqn{d} is an optional argument with a default value \eqn{d=0}
 }

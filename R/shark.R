@@ -1,3 +1,36 @@
+#' @title Sharkfin
+#' @description
+#'
+#' The `sharkfin` family of functions was designed to model perturbations to a system.
+#'
+#' The function is built in steps:
+#' 1. take the product of two sigmoidal functions
+#'      - the first one rises around day \eqn{D} with rate parameter \eqn{uk}
+#'      - the second one decays around day \eqn{D+L} with rate \eqn{-dk}
+#' 2. the product is raised a power \eqn{pw}
+#' 3. the result is scaled so that the maximum is \eqn{mx}
+#' For the default values, the function looks like a shark fin.
+#'
+#' @name sharkfin
+NULL
+
+#' @title Sharkbite
+#' @description
+#'
+#' The `sharkbite` family of functions was designed to model *shocks* in a
+#' **composed time series** function. The shock is designed to model effect sizes
+#' of a perturbation.
+#'
+#' The function is built in steps:
+#' 1. take the product of two sigmoidal functions
+#'      - the first one falls from 1 around day \eqn{D} with rate parameter \eqn{uk}
+#'      - the second one rises around day \eqn{D+L} with rate \eqn{-dk}
+#' 2. the product of is raised a power \eqn{pw}
+#' 3. the result is scaled so that the maximum effect is \eqn{mx}
+#' For the default values, the function looks like a shark bite.
+#'
+#' @name sharkbite
+NULL
 
 #' @title Make a Sharkfin Function
 #' @description A sharkfin function is built in steps:
@@ -11,17 +44,17 @@
 #' @return a function
 #' @keywords internal
 #' @export
-make_F_t.sharkfin = function(opts){
+make_F_t.sharkfin = function(F_obj){
   siggy <- function(t, k=1, D=1){
     x = pmax(pmin(k*(t-D),80),-80); exp(-x)/(1+exp(-x))}
-  opts$normit = opts$mx
-  for(i in 1:opts$N){
-    F1 = with(opts,function(t){((1-siggy(t, uk[i], D[i]))*siggy(t,dk[i],D[i]+L[i]))^pw[i]})
-    tt <- with(opts, c(D[i]:(D[i]+L[i])))
+  F_obj$normit = F_obj$mx
+  for(i in 1:F_obj$N){
+    F1 = with(F_obj,function(t){((1-siggy(t, uk[i], D[i]))*siggy(t,dk[i],D[i]+L[i]))^pw[i]})
+    tt <- with(F_obj, c(D[i]:(D[i]+L[i])))
     mx <- max(F1(tt))
-    opts$normit[i] <- opts$normit[i]/mx
+    F_obj$normit[i] <- F_obj$normit[i]/mx
   }
-  F2 = with(opts,function(t){normit*((1-siggy(t, uk, D))*siggy(t, dk, D+L))^pw})
+  F2 = with(F_obj,function(t){normit*((1-siggy(t, uk, D))*siggy(t, dk, D+L))^pw})
   F3 = function(t){if(length(t) == 1) return(F2(t)) else return(sapply(t, F2))}
   return(F3)
 }
@@ -39,17 +72,17 @@ make_F_t.sharkfin = function(opts){
 #' @return a function
 #' @keywords internal
 #' @export
-make_function.sharkfin = function(opts){
+make_function.sharkfin = function(F_obj){
   siggy <- function(t, k=1, D=1){
     x = pmax(pmin(k*(t-D),80),-80); exp(-x)/(1+exp(-x))}
-  opts$normit = opts$mx
-  for(i in 1:opts$N){
-    F1 = with(opts,function(t, V=list()){((1-siggy(t, uk[i], D[i]))*siggy(t,dk[i],D[i]+L[i]))^pw[i]})
-    tt <- with(opts, c(D[i]:(D[i]+L[i])))
+  F_obj$normit = F_obj$mx
+  for(i in 1:F_obj$N){
+    F1 = with(F_obj,function(t, V=list()){((1-siggy(t, uk[i], D[i]))*siggy(t,dk[i],D[i]+L[i]))^pw[i]})
+    tt <- with(F_obj, c(D[i]:(D[i]+L[i])))
     mx <- max(F1(tt))
-    opts$normit[i] <- opts$normit[i]/mx
+    F_obj$normit[i] <- F_obj$normit[i]/mx
   }
-  F2 = with(opts,function(t, V=list()){normit*((1-siggy(t, uk, D))*siggy(t, dk, D+L))^pw})
+  F2 = with(F_obj,function(t, V=list()){normit*((1-siggy(t, uk, D))*siggy(t, dk, D+L))^pw})
   F3 = function(t, V=list()){if(length(t) == 1) return(F2(t, V)) else return(sapply(t, F2, V=V))}
   return(F3)
 }
@@ -91,18 +124,18 @@ makepar_F_sharkfin = function(D=100, L=180, uk = 1/7, dk=1/40, pw=1, mx=1, N=1){
 #' @return a function
 #' @keywords internal
 #' @export
-make_function.sharkbite = function(opts){
+make_function.sharkbite = function(F_obj){
   siggy <- function(t, k=1, D=1){
     x = pmax(pmin(k*(t-D),80),-80); exp(-x)/(1+exp(-x))}
-  opts$normit = opts$mx
-  for(i in 1:opts$N){
-    F1 = with(opts,function(t, V=list()){((1-siggy(t, uk[i], D[i]))*siggy(t,dk[i],D[i]+L[i]))^pw[i]})
-    tt <- with(opts, c(D[i]:(D[i]+L[i])))
+  F_obj$normit = F_obj$mx
+  for(i in 1:F_obj$N){
+    F1 = with(F_obj,function(t, V=list()){((1-siggy(t, uk[i], D[i]))*siggy(t,dk[i],D[i]+L[i]))^pw[i]})
+    tt <- with(F_obj, c(D[i]:(D[i]+L[i])))
     mx <- max(F1(tt, V=list()))
-    opts$normit[i] <- opts$normit[i]/mx
+    F_obj$normit[i] <- F_obj$normit[i]/mx
   }
-  #  F2 = with(opts,function(t, V=list()){normit*((1-siggy(t, uk, D))*siggy(t, dk, D+L))^pw})
-  F2 = with(opts,function(t,V=list()){1-normit*((1-siggy(t, uk, D))*siggy(t, dk, D+L))^pw})
+  #  F2 = with(F_obj,function(t, V=list()){normit*((1-siggy(t, uk, D))*siggy(t, dk, D+L))^pw})
+  F2 = with(F_obj,function(t,V=list()){1-normit*((1-siggy(t, uk, D))*siggy(t, dk, D+L))^pw})
   F3 = function(t,V=list()){if(length(t)== 1) return(F2(t, V)) else return(sapply(t, F2, V=V))}
   return(F3)
 }
@@ -120,18 +153,18 @@ make_function.sharkbite = function(opts){
 #' @return a function
 #' @keywords internal
 #' @export
-make_F_t.sharkbite = function(opts){
+make_F_t.sharkbite = function(F_obj){
   siggy <- function(t, k=1, D=1){
     x = pmax(pmin(k*(t-D),80),-80); exp(-x)/(1+exp(-x))}
-  opts$normit = opts$mx
-  for(i in 1:opts$N){
-    F1 = with(opts,function(t, V=list()){((1-siggy(t, uk[i], D[i]))*siggy(t,dk[i],D[i]+L[i]))^pw[i]})
-    tt <- with(opts, c(D[i]:(D[i]+L[i])))
+  F_obj$normit = F_obj$mx
+  for(i in 1:F_obj$N){
+    F1 = with(F_obj,function(t, V=list()){((1-siggy(t, uk[i], D[i]))*siggy(t,dk[i],D[i]+L[i]))^pw[i]})
+    tt <- with(F_obj, c(D[i]:(D[i]+L[i])))
     mx <- max(F1(tt))
-    opts$normit[i] <- opts$normit[i]/mx
+    F_obj$normit[i] <- F_obj$normit[i]/mx
   }
-  #  F2 = with(opts,function(t, V=list()){normit*((1-siggy(t, uk, D))*siggy(t, dk, D+L))^pw})
-  F2 = with(opts,function(t){1-normit*((1-siggy(t, uk, D))*siggy(t, dk, D+L))^pw})
+  #  F2 = with(F_obj,function(t, V=list()){normit*((1-siggy(t, uk, D))*siggy(t, dk, D+L))^pw})
+  F2 = with(F_obj,function(t){1-normit*((1-siggy(t, uk, D))*siggy(t, dk, D+L))^pw})
   F3 = function(t){if(length(t)== 1) return(F2(t)) else return(sapply(t, F2))}
   return(F3)
 }

@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Cohort Dynamics • ramp.trace</title>
+<title>Cohorts • ramp.trace</title>
 <!-- mathjax math --><script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script><script>
   window.MathJax = {
     chtml: {
@@ -16,7 +16,7 @@
 <link href="../deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
 <script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
 <link href="../deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
-<script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Cohort Dynamics">
+<script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Cohorts">
 </head>
 <body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
@@ -39,7 +39,17 @@
   <button class="nav-link dropdown-toggle" type="button" id="dropdown-articles" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Articles</button>
   <ul class="dropdown-menu" aria-labelledby="dropdown-articles">
 <li><a class="dropdown-item" href="../articles/TraceFunctions.html">Trace Functions</a></li>
+    <li><a class="dropdown-item" href="../articles/TimeSeries.html">Composed Time Serries</a></li>
     <li><a class="dropdown-item" href="../articles/Cohorts.html">Cohorts</a></li>
+  </ul>
+</li>
+<li class="nav-item dropdown">
+  <button class="nav-link dropdown-toggle" type="button" id="dropdown-function-families" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Function Families</button>
+  <ul class="dropdown-menu" aria-labelledby="dropdown-function-families">
+<li><a class="dropdown-item" href="../articles/Basic.html">Basic Functions</a></li>
+    <li><a class="dropdown-item" href="../articles/Sin.html">Sin</a></li>
+    <li><a class="dropdown-item" href="../articles/Splines.html">Splines</a></li>
+    <li><a class="dropdown-item" href="../articles/Shark.html">Shark Functions</a></li>
   </ul>
 </li>
 <li class="nav-item"><a class="nav-link" href="../reference/index.html">Reference</a></li>
@@ -62,7 +72,9 @@
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
 
-      <h1>Cohort Dynamics</h1>
+      <h1>Cohorts</h1>
+            <h3 data-toc-skip class="subtitle">Trace Functions for
+Exposure for Different Cohorts in a Population</h3>
             
       
       <small class="dont-index">Source: <a href="https://github.com/dd-harp/ramp.trace/blob/HEAD/vignettes/Cohorts.Rmd" class="external-link"><code>vignettes/Cohorts.Rmd</code></a></small>
@@ -71,25 +83,69 @@
 
     
     
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dd-harp.github.io/ramp.trace/" class="external-link">ramp.trace</a></span><span class="op">)</span></span></code></pre></div>
+<p>To construct a trace function to models exposure in different cohorts
+in the same population as they age:</p>
+<pre><code><span><span class="op">?</span><span class="va">make_F_a</span></span></code></pre>
+<hr>
+<p>To understand or compare models for malaria epidemiology, we will
+often find it useful to construct trace functions describing exposure —
+either the daily entomological inoculation rate (EIR) or the force of
+infection (FoI) — in cohorts as they age.</p>
+<p>Average exposure in the population is specified by a <a href="https://dd-harp.github.io/ramp.trace/articles/TimeSeries.html" class="external-link"><strong>composed
+time series</strong> function</a>. <span class="math display">\[E(t) =
+\bar X \times S(t) \times T(t) \times K(t)\]</span></p>
+<p>If we want to compare cohorts in the same population, then we must
+acknowledge that exposure differs by age. To model exposure, we
+construct a function to model relative biting rates by age: <span class="math display">\[\omega(a)\]</span> To model exposure for a cohort
+born on day <span class="math inline">\(d,\)</span> we note that time
+and age are related by <span class="math inline">\(a = t-d.\)</span>
+Exposure with respect to age for that cohort is thus: <span class="math display">\[E(a) = \bar X \times \omega (a) \times S(t-d)
+\times T(t-d) \times K(t-d).\]</span></p>
+<hr>
 <div class="section level2">
 <h2 id="example">Example<a class="anchor" aria-label="anchor" href="#example"></a>
 </h2>
-<p>To illustrate, we set up the same model using three different setup
-functions.</p>
+<div class="section level3">
+<h3 id="exposure-in-a-population">Exposure in a Population<a class="anchor" aria-label="anchor" href="#exposure-in-a-population"></a>
+</h3>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">Sp</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/makepar_F_sin.html">makepar_F_sin</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="va">F_s</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/make_function.html">make_function</a></span><span class="op">(</span><span class="va">Sp</span><span class="op">)</span></span>
-<span><span class="va">Tp</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/makepar_F_spline.html">makepar_F_spline</a></span><span class="op">(</span>tt<span class="op">=</span><span class="fl">365</span><span class="op">*</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span><span class="op">:</span><span class="fl">5</span><span class="op">)</span>, yy<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">1</span>,<span class="fl">1.6</span>,<span class="fl">.3</span>,<span class="fl">.7</span>,<span class="fl">1</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="va">F_t</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/make_function.html">make_function</a></span><span class="op">(</span><span class="va">Tp</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dd-harp.github.io/ramp.trace/" class="external-link">ramp.trace</a></span><span class="op">)</span></span></code></pre></div>
+<p>To illustrate, we specify a seasonal pattern, a trend, and a
+shock:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">tt</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">5</span><span class="op">*</span><span class="fl">365</span>, by <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">tt</span>, <span class="fu">F_s</span><span class="op">(</span><span class="va">tt</span><span class="op">)</span>, type <span class="op">=</span><span class="st">"l"</span>, ylab <span class="op">=</span> <span class="st">"Seasonality, Trend"</span>, xlab <span class="op">=</span> <span class="st">"Time (in Days)"</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/lines.html" class="external-link">lines</a></span><span class="op">(</span><span class="va">tt</span>, <span class="fu">F_t</span><span class="op">(</span><span class="va">tt</span><span class="op">)</span>, type <span class="op">=</span><span class="st">"l"</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">Sp</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/makepar_F_sin.html">makepar_F_sin</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="va">Tp</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/makepar_F_spline.html">makepar_F_spline</a></span><span class="op">(</span>tt<span class="op">=</span><span class="fl">365</span><span class="op">*</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span><span class="op">:</span><span class="fl">5</span><span class="op">)</span>, yy<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">1</span>,<span class="fl">1.6</span>,<span class="fl">.3</span>,<span class="fl">.7</span>,<span class="fl">1</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">Kp</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/makepar_F_sharkbite.html">makepar_F_sharkbite</a></span><span class="op">(</span>D<span class="op">=</span><span class="fl">260</span>, L<span class="op">=</span><span class="fl">300</span><span class="op">)</span></span></code></pre></div>
+<p><img src="Cohorts_files/figure-html/unnamed-chunk-3-1.png" class="r-plt" alt="" width="576"></p>
+<p>Over time, exposure in the population looks like this:</p>
 <p><img src="Cohorts_files/figure-html/unnamed-chunk-4-1.png" class="r-plt" alt="" width="576"></p>
+<p>Suppose that relative biting rate by age looks like this:</p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">Sa</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/makepar_F_type2.html">makepar_F_type2</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="va">F_a</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/make_F_t.html">make_F_t</a></span><span class="op">(</span><span class="va">Sa</span><span class="op">)</span></span>
+<span><span class="va">aa</span> <span class="op">&lt;-</span> <span class="fl">1</span><span class="op">:</span><span class="fl">3650</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">aa</span><span class="op">/</span><span class="fl">365</span>, <span class="fu">F_a</span><span class="op">(</span><span class="va">aa</span><span class="op">)</span>, type <span class="op">=</span> <span class="st">"l"</span>, xlab <span class="op">=</span> <span class="st">"a - Age (in Years)"</span>, ylab <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/expression.html" class="external-link">expression</a></span><span class="op">(</span><span class="fu">omega</span><span class="op">(</span><span class="va">a</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<p><img src="Cohorts_files/figure-html/unnamed-chunk-5-1.png" class="r-plt" alt="" width="576"></p>
+<p>Over the first three years of life, the patterns of exposure are
+quite different. In particular, exposure for the cohort born a year
+after the start of the study (dark red, dashed line) peaks in the first
+year of life.</p>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/par.html" class="external-link">par</a></span><span class="op">(</span>mfrow <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">2</span>,<span class="fl">1</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">Fa</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/make_F_a.html">make_F_a</a></span><span class="op">(</span>avg <span class="op">=</span> <span class="fl">3</span><span class="op">/</span><span class="fl">365</span>, age_par<span class="op">=</span><span class="va">Sa</span>, season_par<span class="op">=</span><span class="va">Sp</span>, trend_par<span class="op">=</span><span class="va">Tp</span>, shock_par<span class="op">=</span><span class="va">Kp</span><span class="op">)</span></span>
+<span><span class="va">aa</span> <span class="op">&lt;-</span> <span class="fl">1</span><span class="op">:</span><span class="fl">1095</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">aa</span><span class="op">/</span><span class="fl">365</span>, <span class="fu">Fa</span><span class="op">(</span><span class="va">aa</span><span class="op">)</span>, col <span class="op">=</span> <span class="st">"darkblue"</span>, type <span class="op">=</span><span class="st">"l"</span>, ylab <span class="op">=</span> <span class="st">"Exposure"</span>, xlab <span class="op">=</span> <span class="st">"Age (in Years)"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/lines.html" class="external-link">lines</a></span><span class="op">(</span><span class="va">aa</span><span class="op">/</span><span class="fl">365</span>, <span class="fu">Fa</span><span class="op">(</span><span class="va">aa</span>, d<span class="op">=</span><span class="fl">365</span><span class="op">)</span>, col <span class="op">=</span> <span class="st">"darkred"</span>, lty<span class="op">=</span><span class="fl">2</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/lines.html" class="external-link">lines</a></span><span class="op">(</span><span class="va">aa</span><span class="op">/</span><span class="fl">365</span>, <span class="fu">Fa</span><span class="op">(</span><span class="va">aa</span>, d<span class="op">=</span><span class="fl">730</span><span class="op">)</span>, col <span class="op">=</span> <span class="st">"green3"</span>, lty <span class="op">=</span><span class="fl">3</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">aa</span><span class="op">/</span><span class="fl">365</span>, <span class="fu"><a href="https://rdrr.io/r/base/cumsum.html" class="external-link">cumsum</a></span><span class="op">(</span><span class="fu">Fa</span><span class="op">(</span><span class="va">aa</span><span class="op">)</span><span class="op">)</span>, col <span class="op">=</span> <span class="st">"darkblue"</span>, type <span class="op">=</span><span class="st">"l"</span>, ylab <span class="op">=</span> <span class="st">"Cumulative Exposure"</span>, xlab <span class="op">=</span> <span class="st">"Age (in Years)"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/lines.html" class="external-link">lines</a></span><span class="op">(</span><span class="va">aa</span><span class="op">/</span><span class="fl">365</span>, <span class="fu"><a href="https://rdrr.io/r/base/cumsum.html" class="external-link">cumsum</a></span><span class="op">(</span><span class="fu">Fa</span><span class="op">(</span><span class="va">aa</span>, d<span class="op">=</span><span class="fl">365</span><span class="op">)</span><span class="op">)</span>, col <span class="op">=</span> <span class="st">"darkred"</span>, lty<span class="op">=</span><span class="fl">2</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/lines.html" class="external-link">lines</a></span><span class="op">(</span><span class="va">aa</span><span class="op">/</span><span class="fl">365</span>, <span class="fu"><a href="https://rdrr.io/r/base/cumsum.html" class="external-link">cumsum</a></span><span class="op">(</span><span class="fu">Fa</span><span class="op">(</span><span class="va">aa</span>, d<span class="op">=</span><span class="fl">730</span><span class="op">)</span><span class="op">)</span>, col <span class="op">=</span> <span class="st">"green3"</span>, lty <span class="op">=</span><span class="fl">3</span><span class="op">)</span></span></code></pre></div>
+<p><img src="Cohorts_files/figure-html/unnamed-chunk-6-1.png" class="r-plt" alt="" width="576"></p>
 </div>
-  </main>
+</div>
+  </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
+    </nav></aside>
 </div>
 
 

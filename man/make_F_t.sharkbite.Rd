@@ -4,10 +4,10 @@
 \alias{make_F_t.sharkbite}
 \title{Make a sharkbite Function}
 \usage{
-\method{make_F_t}{sharkbite}(opts)
+\method{make_F_t}{sharkbite}(F_obj)
 }
 \arguments{
-\item{opts}{a named list}
+\item{F_obj}{a function object, \link{F_obj}}
 }
 \value{
 a function

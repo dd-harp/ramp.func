@@ -8,8 +8,20 @@ navbar:
     menu:
     - text: Trace Functions
       href: articles/TraceFunctions.html
+    - text: Composed Time Serries
+      href: articles/TimeSeries.html
     - text: Cohorts
       href: articles/Cohorts.html
+  - text: Function Families
+    menu:
+      - text: Basic Functions
+        href: articles/Basic.html
+      - text: Sin
+        href: articles/Sin.html
+      - text: Splines
+        href: articles/Splines.html
+      - text: Shark Functions
+        href: articles/Shark.html
   - text: Reference
     href: reference/index.html
 home:
@@ -24,20 +36,39 @@ home:
 reference:
 - title: Make a Function
   contents:
+  - F_obj
   - make_F_t
-  - make_F_a
   - make_function
   - make_ts_function
-- subtitle: Make a Function Object
+  - make_F_a
+- title: Function Families
+- subtitle: Basic
   contents:
   - makepar_F_c
-  - makepar_F_sin
-  - makepar_F_spline
-  - makepar_F_type2
   - makepar_F_sigmoid
+- subtitle: Seasonality
+  contents:
+  - seasonality
+  - sin
+  - makepar_F_sin
+- subtitle: Trends
+  contents:
+  - trends
+  - splinef
+  - splineX
+  - spline2
+  - makepar_F_spline
+- subtitle: Shocks
+  contents:
+  - shocks
+  - sharkbite
+  - sharkfin
   - makepar_F_sharkfin
   - makepar_F_sharkbite
-- subtitle: Make a Composed Function Object
+- subtitle: age
+  contents:
+  - makepar_F_type2
+- subtitle: Composing Functions
   contents:
   - makepar_F_sum
   - makepar_F_product

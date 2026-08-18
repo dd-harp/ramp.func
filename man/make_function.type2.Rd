@@ -4,10 +4,10 @@
 \alias{make_function.type2}
 \title{Make a type2 function for age}
 \usage{
-\method{make_function}{type2}(opts)
+\method{make_function}{type2}(F_obj)
 }
 \arguments{
-\item{opts}{a named list}
+\item{F_obj}{a function object, \link{F_obj}}
 }
 \value{
 a function for seasonality
