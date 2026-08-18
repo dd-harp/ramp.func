@@ -24,7 +24,15 @@
       <ul class="navbar-nav me-auto"><li class="nav-item dropdown">
   <button class="nav-link dropdown-toggle" type="button" id="dropdown-articles" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Articles</button>
   <ul class="dropdown-menu" aria-labelledby="dropdown-articles"><li><a class="dropdown-item" href="../articles/TraceFunctions.html">Trace Functions</a></li>
+    <li><a class="dropdown-item" href="../articles/TimeSeries.html">Composed Time Serries</a></li>
     <li><a class="dropdown-item" href="../articles/Cohorts.html">Cohorts</a></li>
+  </ul></li>
+<li class="nav-item dropdown">
+  <button class="nav-link dropdown-toggle" type="button" id="dropdown-function-families" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Function Families</button>
+  <ul class="dropdown-menu" aria-labelledby="dropdown-function-families"><li><a class="dropdown-item" href="../articles/Basic.html">Basic Functions</a></li>
+    <li><a class="dropdown-item" href="../articles/Sin.html">Sin</a></li>
+    <li><a class="dropdown-item" href="../articles/Splines.html">Splines</a></li>
+    <li><a class="dropdown-item" href="../articles/Shark.html">Shark Functions</a></li>
   </ul></li>
 <li class="active nav-item"><a class="nav-link" href="../reference/index.html">Reference</a></li>
       </ul><ul class="navbar-nav"><li class="nav-item"><form class="form-inline" role="search">
@@ -53,17 +61,17 @@
 
       <dl><dt>
 
+          <code><a href="F_obj.html">F_obj</a></code>
+
+        </dt>
+        <dd>F_obj</dd>
+
+        <dt>
+
           <code><a href="make_F_t.html">make_F_t()</a></code>
 
         </dt>
         <dd>Make a Function, \(F(t)\)</dd>
-
-        <dt>
-
-          <code><a href="make_F_a.html">make_F_a()</a></code>
-
-        </dt>
-        <dd>Make a Function, \(F(a|d)\)</dd>
 
         <dt>
 
@@ -78,9 +86,21 @@
 
         </dt>
         <dd>Make a Time Series Function</dd>
-      </dl></div><div class="section level2">
 
-      <h3 id="make-a-function-object">Make a Function Object<a class="anchor" aria-label="anchor" href="#make-a-function-object"></a></h3>
+        <dt>
+
+          <code><a href="make_F_a.html">make_F_a()</a></code>
+
+        </dt>
+        <dd>Make a Function, \(F(a,d)\)</dd>
+      </dl></div><div class="section level2">
+      <h2 id="function-families">Function Families<a class="anchor" aria-label="anchor" href="#function-families"></a></h2>
+
+
+
+      <dl></dl></div><div class="section level2">
+
+      <h3 id="basic">Basic<a class="anchor" aria-label="anchor" href="#basic"></a></h3>
 
 
       <dl></dl></div><div class="section level2">
@@ -93,28 +113,7 @@
           <code><a href="makepar_F_c.html">makepar_F_c()</a></code>
 
         </dt>
-        <dd>Make parameters for \(F(t)=c\)</dd>
-
-        <dt>
-
-          <code><a href="makepar_F_sin.html">makepar_F_sin()</a></code>
-
-        </dt>
-        <dd>parameters for make_function</dd>
-
-        <dt>
-
-          <code><a href="makepar_F_spline.html">makepar_F_spline()</a></code>
-
-        </dt>
-        <dd>Make Parameters for a Spline</dd>
-
-        <dt>
-
-          <code><a href="makepar_F_type2.html">makepar_F_type2()</a></code>
-
-        </dt>
-        <dd>parameters for make_function</dd>
+        <dd>Make F_obj for \(F(t)=c\)</dd>
 
         <dt>
 
@@ -122,6 +121,110 @@
 
         </dt>
         <dd>Make Parameters for a Sigmoidal Function</dd>
+      </dl></div><div class="section level2">
+
+      <h3 id="seasonality">Seasonality<a class="anchor" aria-label="anchor" href="#seasonality"></a></h3>
+
+
+      <dl></dl></div><div class="section level2">
+
+
+
+
+      <dl><dt>
+
+          <code><a href="seasonality.html">seasonality</a></code>
+
+        </dt>
+        <dd>seasonality</dd>
+
+        <dt>
+
+          <code><a href="sin.html">sin</a></code>
+
+        </dt>
+        <dd>sin</dd>
+
+        <dt>
+
+          <code><a href="makepar_F_sin.html">makepar_F_sin()</a></code>
+
+        </dt>
+        <dd>parameters for make_function</dd>
+      </dl></div><div class="section level2">
+
+      <h3 id="trends">Trends<a class="anchor" aria-label="anchor" href="#trends"></a></h3>
+
+
+      <dl></dl></div><div class="section level2">
+
+
+
+
+      <dl><dt>
+
+          <code><a href="trends.html">trends</a></code>
+
+        </dt>
+        <dd>trends</dd>
+
+        <dt>
+
+          <code><a href="splinef.html">splinef</a></code>
+
+        </dt>
+        <dd>splinef</dd>
+
+        <dt>
+
+          <code><a href="splineX.html">splineX</a></code>
+
+        </dt>
+        <dd>splineX</dd>
+
+        <dt>
+
+          <code><a href="spline2.html">spline2</a></code>
+
+        </dt>
+        <dd>spline2</dd>
+
+        <dt>
+
+          <code><a href="makepar_F_spline.html">makepar_F_spline()</a></code>
+
+        </dt>
+        <dd>Make a spline F_obj</dd>
+      </dl></div><div class="section level2">
+
+      <h3 id="shocks">Shocks<a class="anchor" aria-label="anchor" href="#shocks"></a></h3>
+
+
+      <dl></dl></div><div class="section level2">
+
+
+
+
+      <dl><dt>
+
+          <code><a href="shocks.html">shocks</a></code>
+
+        </dt>
+        <dd>shocks</dd>
+
+        <dt>
+
+          <code><a href="sharkbite.html">sharkbite</a></code>
+
+        </dt>
+        <dd>Sharkbite</dd>
+
+        <dt>
+
+          <code><a href="sharkfin.html">sharkfin</a></code>
+
+        </dt>
+        <dd>Sharkfin</dd>
 
         <dt>
 
@@ -138,7 +241,23 @@
         <dd>Make Parameters for a sharkbite Function</dd>
       </dl></div><div class="section level2">
 
-      <h3 id="make-a-composed-function-object">Make a Composed Function Object<a class="anchor" aria-label="anchor" href="#make-a-composed-function-object"></a></h3>
+      <h3 id="age">age<a class="anchor" aria-label="anchor" href="#age"></a></h3>
+
+
+      <dl></dl></div><div class="section level2">
+
+
+
+
+      <dl><dt>
+
+          <code><a href="makepar_F_type2.html">makepar_F_type2()</a></code>
+
+        </dt>
+        <dd>parameters for make_function</dd>
+      </dl></div><div class="section level2">
+
+      <h3 id="composing-functions">Composing Functions<a class="anchor" aria-label="anchor" href="#composing-functions"></a></h3>
 
 
       <dl></dl></div><div class="section level2">

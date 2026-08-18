@@ -1,20 +1,21 @@
 # Make a Function
 
-Build a function that returns a constant
+Build a function Build a function \\F(t)=c\\
 
 ## Usage
 
 ``` r
 # S3 method for class 'c'
-make_F_t(opts)
+make_F_t(F_obj)
 ```
 
 ## Arguments
 
-- opts:
+- F_obj:
 
-  a named list
+  a function object,
+  [F_obj](https://dd-harp.github.io/ramp.qa/reference/F_obj.md)
 
 ## Value
 
-a function that is the sum of two other functions
+a function

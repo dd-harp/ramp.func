@@ -17,14 +17,15 @@ A sharkfin function is built in steps:
 
 ``` r
 # S3 method for class 'sharkfin'
-make_function(opts)
+make_function(F_obj)
 ```
 
 ## Arguments
 
-- opts:
+- F_obj:
 
-  a named list
+  a function object,
+  [F_obj](https://dd-harp.github.io/ramp.qa/reference/F_obj.md)
 
 ## Value
 

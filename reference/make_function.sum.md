@@ -6,14 +6,15 @@ Build a function that is the sum of two other functions.
 
 ``` r
 # S3 method for class 'sum'
-make_function(opts)
+make_function(F_obj)
 ```
 
 ## Arguments
 
-- opts:
+- F_obj:
 
-  a named list
+  a function object,
+  [F_obj](https://dd-harp.github.io/ramp.qa/reference/F_obj.md)
 
 ## Value
 

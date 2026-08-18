@@ -8,14 +8,15 @@ The function is normalized to have an annual value set by `norm`
 
 ``` r
 # S3 method for class 'sigmoid'
-make_F_t(opts)
+make_F_t(F_obj)
 ```
 
 ## Arguments
 
-- opts:
+- F_obj:
 
-  a named list
+  a function object,
+  [F_obj](https://dd-harp.github.io/ramp.qa/reference/F_obj.md)
 
 ## Value
 

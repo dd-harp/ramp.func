@@ -2,11 +2,17 @@
 <url><loc>https://dd-harp.github.io/ramp.qa/404.html</loc></url>
 <url><loc>https://dd-harp.github.io/ramp.qa/LICENSE-text.html</loc></url>
 <url><loc>https://dd-harp.github.io/ramp.qa/LICENSE.html</loc></url>
+<url><loc>https://dd-harp.github.io/ramp.qa/articles/Basic.html</loc></url>
 <url><loc>https://dd-harp.github.io/ramp.qa/articles/Cohorts.html</loc></url>
+<url><loc>https://dd-harp.github.io/ramp.qa/articles/Shark.html</loc></url>
+<url><loc>https://dd-harp.github.io/ramp.qa/articles/Sin.html</loc></url>
+<url><loc>https://dd-harp.github.io/ramp.qa/articles/Splines.html</loc></url>
+<url><loc>https://dd-harp.github.io/ramp.qa/articles/TimeSeries.html</loc></url>
 <url><loc>https://dd-harp.github.io/ramp.qa/articles/TraceFunctions.html</loc></url>
 <url><loc>https://dd-harp.github.io/ramp.qa/articles/index.html</loc></url>
 <url><loc>https://dd-harp.github.io/ramp.qa/authors.html</loc></url>
 <url><loc>https://dd-harp.github.io/ramp.qa/index.html</loc></url>
+<url><loc>https://dd-harp.github.io/ramp.qa/reference/F_obj.html</loc></url>
 <url><loc>https://dd-harp.github.io/ramp.qa/reference/check_length.html</loc></url>
 <url><loc>https://dd-harp.github.io/ramp.qa/reference/index.html</loc></url>
 <url><loc>https://dd-harp.github.io/ramp.qa/reference/make_F_a.html</loc></url>
@@ -20,6 +26,7 @@
 <url><loc>https://dd-harp.github.io/ramp.qa/reference/make_F_t.splineX.html</loc></url>
 <url><loc>https://dd-harp.github.io/ramp.qa/reference/make_F_t.splinef.html</loc></url>
 <url><loc>https://dd-harp.github.io/ramp.qa/reference/make_F_t.sum.html</loc></url>
+<url><loc>https://dd-harp.github.io/ramp.qa/reference/make_F_t.type2.html</loc></url>
 <url><loc>https://dd-harp.github.io/ramp.qa/reference/make_function.c.html</loc></url>
 <url><loc>https://dd-harp.github.io/ramp.qa/reference/make_function.html</loc></url>
 <url><loc>https://dd-harp.github.io/ramp.qa/reference/make_function.list.html</loc></url>
@@ -45,5 +52,14 @@
 <url><loc>https://dd-harp.github.io/ramp.qa/reference/makepar_F_spline.html</loc></url>
 <url><loc>https://dd-harp.github.io/ramp.qa/reference/makepar_F_sum.html</loc></url>
 <url><loc>https://dd-harp.github.io/ramp.qa/reference/makepar_F_type2.html</loc></url>
+<url><loc>https://dd-harp.github.io/ramp.qa/reference/seasonality.html</loc></url>
+<url><loc>https://dd-harp.github.io/ramp.qa/reference/sharkbite.html</loc></url>
+<url><loc>https://dd-harp.github.io/ramp.qa/reference/sharkfin.html</loc></url>
+<url><loc>https://dd-harp.github.io/ramp.qa/reference/shocks.html</loc></url>
+<url><loc>https://dd-harp.github.io/ramp.qa/reference/sin.html</loc></url>
+<url><loc>https://dd-harp.github.io/ramp.qa/reference/spline2.html</loc></url>
+<url><loc>https://dd-harp.github.io/ramp.qa/reference/splineX.html</loc></url>
+<url><loc>https://dd-harp.github.io/ramp.qa/reference/splinef.html</loc></url>
+<url><loc>https://dd-harp.github.io/ramp.qa/reference/trends.html</loc></url>
 </urlset>
 

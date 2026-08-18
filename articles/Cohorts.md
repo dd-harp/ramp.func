@@ -1,28 +1,85 @@
-# Cohort Dynamics
+# Cohorts
+
+To construct a trace function to models exposure in different cohorts in
+the same population as they age:
+
+    ?make_F_a
+
+------------------------------------------------------------------------
+
+To understand or compare models for malaria epidemiology, we will often
+find it useful to construct trace functions describing exposure — either
+the daily entomological inoculation rate (EIR) or the force of infection
+(FoI) — in cohorts as they age.
+
+Average exposure in the population is specified by a [**composed time
+series**
+function](https://dd-harp.github.io/ramp.trace/articles/TimeSeries.html).
+\\E(t) = \bar X \times S(t) \times T(t) \times K(t)\\
+
+If we want to compare cohorts in the same population, then we must
+acknowledge that exposure differs by age. To model exposure, we
+construct a function to model relative biting rates by age:
+\\\omega(a)\\ To model exposure for a cohort born on day \\d,\\ we note
+that time and age are related by \\a = t-d.\\ Exposure with respect to
+age for that cohort is thus: \\E(a) = \bar X \times \omega (a) \times
+S(t-d) \times T(t-d) \times K(t-d).\\
+
+------------------------------------------------------------------------
+
+## Example
+
+### Exposure in a Population
 
 ``` r
 
 library(ramp.trace)
 ```
 
-## Example
-
-To illustrate, we set up the same model using three different setup
-functions.
+To illustrate, we specify a seasonal pattern, a trend, and a shock:
 
 ``` r
 
 Sp <- makepar_F_sin()
-F_s <- make_function(Sp)
 Tp <- makepar_F_spline(tt=365*c(0:5), yy=c(1,1,1.6,.3,.7,1))
-F_t <- make_function(Tp)
+Kp <- makepar_F_sharkbite(D=260, L=300)
 ```
+
+![](Cohorts_files/figure-html/unnamed-chunk-3-1.png)
+
+Over time, exposure in the population looks like this:
+
+![](Cohorts_files/figure-html/unnamed-chunk-4-1.png)
+
+Suppose that relative biting rate by age looks like this:
 
 ``` r
 
-tt = seq(0, 5*365, by = 10)
-plot(tt, F_s(tt), type ="l", ylab = "Seasonality, Trend", xlab = "Time (in Days)")
-lines(tt, F_t(tt), type ="l")
+Sa <- makepar_F_type2()
+F_a <- make_F_t(Sa)
+aa <- 1:3650
+plot(aa/365, F_a(aa), type = "l", xlab = "a - Age (in Years)", ylab = expression(omega(a)))
 ```
 
-![](Cohorts_files/figure-html/unnamed-chunk-4-1.png)
+![](Cohorts_files/figure-html/unnamed-chunk-5-1.png)
+
+Over the first three years of life, the patterns of exposure are quite
+different. In particular, exposure for the cohort born a year after the
+start of the study (dark red, dashed line) peaks in the first year of
+life.
+
+``` r
+
+par(mfrow = c(2,1))
+Fa <- make_F_a(avg = 3/365, age_par=Sa, season_par=Sp, trend_par=Tp, shock_par=Kp)
+aa <- 1:1095
+plot(aa/365, Fa(aa), col = "darkblue", type ="l", ylab = "Exposure", xlab = "Age (in Years)")
+lines(aa/365, Fa(aa, d=365), col = "darkred", lty=2)
+lines(aa/365, Fa(aa, d=730), col = "green3", lty =3)
+
+plot(aa/365, cumsum(Fa(aa)), col = "darkblue", type ="l", ylab = "Cumulative Exposure", xlab = "Age (in Years)")
+lines(aa/365, cumsum(Fa(aa, d=365)), col = "darkred", lty=2)
+lines(aa/365, cumsum(Fa(aa, d=730)), col = "green3", lty =3)
+```
+
+![](Cohorts_files/figure-html/unnamed-chunk-6-1.png)

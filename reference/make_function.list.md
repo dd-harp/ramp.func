@@ -6,14 +6,15 @@ For lists that are not assigned a class, return the default: \\F(t)=1\\.
 
 ``` r
 # S3 method for class 'list'
-make_function(opts)
+make_function(F_obj)
 ```
 
 ## Arguments
 
-- opts:
+- F_obj:
 
-  a named list
+  a function object,
+  [F_obj](https://dd-harp.github.io/ramp.qa/reference/F_obj.md)
 
 ## Value
 
