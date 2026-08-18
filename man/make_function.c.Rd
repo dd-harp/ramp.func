@@ -4,15 +4,15 @@
 \alias{make_function.c}
 \title{Make a Function}
 \usage{
-\method{make_function}{c}(opts)
+\method{make_function}{c}(F_obj)
 }
 \arguments{
-\item{opts}{a named list}
+\item{F_obj}{a function object, \link{F_obj}}
 }
 \value{
-a function that is the sum of two other functions
+a function
 }
 \description{
-Build a function that returns a constant
+Build a function \eqn{F(t, V)=c}
 }
 \keyword{internal}

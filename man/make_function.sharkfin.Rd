@@ -4,10 +4,10 @@
 \alias{make_function.sharkfin}
 \title{Make a Sharkfin Function}
 \usage{
-\method{make_function}{sharkfin}(opts)
+\method{make_function}{sharkfin}(F_obj)
 }
 \arguments{
-\item{opts}{a named list}
+\item{F_obj}{a function object, \link{F_obj}}
 }
 \value{
 a function

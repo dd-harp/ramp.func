@@ -6,9 +6,9 @@
 #' @return a function that is the product of two other functions
 #' @keywords internal
 #' @export
-make_function.product = function(opts){ d
-  F1 = make_function(opts$opts1)
-  F2 = make_function(opts$opts2)
+make_function.product = function(F_obj){
+  F1 = make_function(F_obj$opts1)
+  F2 = make_function(F_obj$opts2)
   F3 = function(t, V=list()){F1(t, V)*F2(t, V)}
   return(F3)
 }
@@ -21,9 +21,9 @@ make_function.product = function(opts){ d
 #' @return a function that is the product of two other functions
 #' @keywords internal
 #' @export
-make_F_t.product = function(opts){
-  F1 = make_function(opts$opts1)
-  F2 = make_function(opts$opts2)
+make_F_t.product = function(F_obj){
+  F1 = make_function(F_obj$opts1)
+  F2 = make_function(F_obj$opts2)
   F3 = function(t){F1(t)*F2(t)}
   return(F3)
 }
@@ -51,9 +51,9 @@ makepar_F_product = function(opts1, opts2){
 #' @return a function that is the product of two other functions
 #' @keywords internal
 #' @export
-make_function.nproduct = function(opts){
-  F1 = make_function(opts$opts1)
-  F2 = make_function(opts$opts2)
+make_function.nproduct = function(F_obj){
+  F1 = make_function(F_obj$opts1)
+  F2 = make_function(F_obj$opts2)
   F3 = function(t){1-(1-F1(t))*(1-F2(t))}
   return(F3)
 }

@@ -1,0 +1,29 @@
+---
+title: "Basic Functions"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Basic Functions}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r}
+library(ramp.trace)
+```
+
+
+# Constant 
+
+# Sigmoidal Functions
+
+
+
+```{r}
+ps1 <- makepar_F_sigmoid()
+Fs1 <- make_function(ps1)
+```
+
+```{r, fig.height=3.5, fig.width=5}
+tt <- seq(0, 365, by=5)
+plot(tt, Fs1(tt), type ="l", xlab = "Time (in Days)", ylab = expression(Fs1(t)))
+```

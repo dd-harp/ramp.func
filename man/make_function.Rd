@@ -4,14 +4,15 @@
 \alias{make_function}
 \title{Make a Function, \eqn{F(t,V)}}
 \usage{
-make_function(opts)
+make_function(F_obj)
 }
 \arguments{
-\item{opts}{a named list}
+\item{F_obj}{a function object, \link{F_obj}}
 }
 \value{
 a function
 }
 \description{
-Build a general trace function
+Build a general trace function of time \eqn{t}
+and variables (optional) \eqn{V}.
 }

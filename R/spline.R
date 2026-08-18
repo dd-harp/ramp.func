@@ -1,4 +1,50 @@
 
+#' @title splinef
+#'
+#' @description
+#' A [spline] function \eqn{T(t)} for [trends] is specified by a set of \eqn{n} interpolating points:
+#' + time
+#' values \deqn{t_1, t_2, \ldots, t_n,}
+#' + and corresponding
+#' \eqn{y} values \deqn{y_1, y_2, \ldots, y_n.}
+#'
+#' @seealso [stats::spline], [makepar_F_spline]
+#' @name splinef
+NULL
+
+#' @title splineX
+#'
+#' @description
+#' A spline function \eqn{F(t)} for [trends] is specified by a set of  \eqn{n} interpolating points:
+#' + time
+#' values \deqn{t_1, t_2, \ldots, t_n,}
+#' + and corresponding
+#' \eqn{y} values \deqn{y_1, y_2, \ldots, y_n.}
+#'
+#'
+#' The return value is \deqn{T(t) = e^{F(t)}}
+#'
+#' @seealso [stats::spline], [makepar_F_spline]
+#' @name splineX
+NULL
+
+
+#' @title spline2
+#'
+#' @description
+#' A spline function \eqn{F(t)} for [trends] is specified by a set of  \eqn{n} interpolating points:
+#' + time
+#' values \deqn{t_1, t_2, \ldots, t_n,}
+#' + and corresponding
+#' \eqn{y} values \deqn{y_1, y_2, \ldots, y_n.}
+#'
+#' The function return value is \deqn{T(t)=F(t)^2}
+#'
+#' @seealso [stats::spline], [makepar_F_spline]
+#' @name spline2
+NULL
+
+
 #' @title Make a spline function
 #' @description A spline function passes time points `tt` and
 #' associated values `yy` and returns a spline function
@@ -6,9 +52,9 @@
 #' @return a function
 #' @keywords internal
 #' @export
-make_function.splinef = function(opts){
+make_function.splinef = function(F_obj){
   ff <- function(t,V=list()){
-    stats::spline(opts$tt, opts$yy, xout = t)$y
+    stats::spline(F_obj$tt, F_obj$yy, xout = t)$y
   }
   return(ff)
 }
@@ -20,9 +66,9 @@ make_function.splinef = function(opts){
 #' @return a function
 #' @keywords internal
 #' @export
-make_F_t.splinef = function(opts){
+make_F_t.splinef = function(F_obj){
   ff <- function(t){
-    stats::spline(opts$tt, opts$yy, xout = t)$y
+    stats::spline(F_obj$tt, F_obj$yy, xout = t)$y
   }
   return(ff)
 }
@@ -34,9 +80,9 @@ make_F_t.splinef = function(opts){
 #' @return a function
 #' @keywords internal
 #' @export
-make_function.splineX = function(opts){
+make_function.splineX = function(F_obj){
   ff <- function(t,V=list()){
-    exp(stats::spline(opts$tt, opts$yy, xout = t)$y)
+    exp(stats::spline(F_obj$tt, F_obj$yy, xout = t)$y)
   }
   return(ff)
 }
@@ -48,9 +94,9 @@ make_function.splineX = function(opts){
 #' @return a function
 #' @keywords internal
 #' @export
-make_F_t.splineX = function(opts){
+make_F_t.splineX = function(F_obj){
   ff <- function(t){
-    exp(stats::spline(opts$tt, opts$yy, xout = t)$y)
+    exp(stats::spline(F_obj$tt, F_obj$yy, xout = t)$y)
   }
   return(ff)
 }
@@ -63,19 +109,25 @@ make_F_t.splineX = function(opts){
 #' @return a function
 #' @keywords internal
 #' @export
-make_function.spline2 = function(opts){
+make_function.spline2 = function(F_obj){
   ff <- function(t){
-    (stats::spline(opts$tt, opts$yy, xout = t)$y)^2
+    (stats::spline(F_obj$tt, F_obj$yy, xout = t)$y)^2
   }
   return(ff)
 }
 
 
-#' @title Make Parameters for a Spline
-#' @description Return an object for [make_function.splinef] or [make_function.splineX]
+#' @title Make a spline [F_obj]
+#' @description
+#' Return a function obj
+#' A spline function \eqn{T(t)} for [trends] is specified by a set of  \eqn{n} interpolating points:
+#' + time
+#' values \deqn{t_1, t_2, \ldots, t_n,}
+#' + and corresponding
+#' \eqn{y} values \deqn{y_1, y_2, \ldots, y_n.}
 #' @param tt the nodes
 #' @param yy the y values
-#' @param X a switch to configure for splinef or splineX
+#' @param X setup switch: FALSE=[splinef] | TRUE=[splineX] | 2=[spline2]
 #' @return parameters to configure the `splinef` or `splineX` case of `make_function`
 #' @export
 makepar_F_spline = function(tt, yy, X=FALSE){

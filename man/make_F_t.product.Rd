@@ -4,10 +4,10 @@
 \alias{make_F_t.product}
 \title{Make a Sinusoidal Function}
 \usage{
-\method{make_F_t}{product}(opts)
+\method{make_F_t}{product}(F_obj)
 }
 \arguments{
-\item{opts}{a named list}
+\item{F_obj}{a function object, \link{F_obj}}
 }
 \value{
 a function that is the product of two other functions

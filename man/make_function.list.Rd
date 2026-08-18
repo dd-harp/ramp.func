@@ -4,10 +4,10 @@
 \alias{make_function.list}
 \title{Make function default}
 \usage{
-\method{make_function}{list}(opts)
+\method{make_function}{list}(F_obj)
 }
 \arguments{
-\item{opts}{a named list}
+\item{F_obj}{a function object, \link{F_obj}}
 }
 \value{
 a function

@@ -1,0 +1,32 @@
+---
+title: "Composed Time Series"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Composed Time Series}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+In studies, we will often find it useful to construct functions that output the value of some variable over time. 
+This package --- **`ramp.trace`** --- has utilities to construct ***composed time series*** functions that are 
+easy to manipulate. Each function is the product of four components: 
+
+$$
+x(t) = \bar x \times S(t) \times T(t) \times K(t)
+$$
+
+where
+
++ $\bar x$ is a scaling parameter to set the mean value over an interval $(t_0, t_1)$
+
++ $S(t)>0$ is a **seasonal** pattern function, normalized over the interval such that  $$\int_{t_0}^{t_1} S(t) \;dt = t_1 - t_0$$  
+
++ $T(t)>0$ is a **trend** pattern function, normalized over the interval such that $$\int_{t_0}^{t_1} T(t) \; dt = t_1 - t_0$$  
+
++ $K(t)>0$ is a **shock** function
+
+The intent is to construct a function such that if $K(t)=1$, 
+$$\int_{t_0}^{t_1} x(t) \; dt \approx \bar x.$$ 
+Because of correlations between $S(t)$ and $T(t)$ there is no guarantee that the function will be equal to one.
+
+

@@ -6,9 +6,9 @@
 #' @return a function that is the sum of two other functions
 #' @keywords internal
 #' @export
-make_function.sum = function(opts){
-  F1 = make_function(opts$opts1)
-  F2 = make_function(opts$opts2)
+make_function.sum = function(F_obj){
+  F1 = make_function(F_obj$opts1)
+  F2 = make_function(F_obj$opts2)
   F3 = function(t,V=list()){F1(t,V)+F2(t,V)}
   return(F3)
 }
@@ -21,9 +21,9 @@ make_function.sum = function(opts){
 #' @return a function that is the sum of two other functions
 #' @keywords internal
 #' @export
-make_F_t.sum = function(opts){
-  F1 = make_function(opts$opts1)
-  F2 = make_function(opts$opts2)
+make_F_t.sum = function(F_obj){
+  F1 = make_function(F_obj$opts1)
+  F2 = make_function(F_obj$opts2)
   F3 = function(t){F1(t)+F2(t)}
   return(F3)
 }

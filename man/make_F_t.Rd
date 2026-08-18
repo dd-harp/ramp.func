@@ -4,14 +4,14 @@
 \alias{make_F_t}
 \title{Make a Function, \eqn{F(t)}}
 \usage{
-make_F_t(opts)
+make_F_t(F_obj)
 }
 \arguments{
-\item{opts}{a named list}
+\item{F_obj}{a function object, \link{F_obj}}
 }
 \value{
 a function
 }
 \description{
-Build a trace function
+Construct a trace function of the form \eqn{F(t)} from \link{F_obj}
 }

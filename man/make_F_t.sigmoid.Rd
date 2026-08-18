@@ -4,10 +4,10 @@
 \alias{make_F_t.sigmoid}
 \title{Make a Sigmoidal Function}
 \usage{
-\method{make_F_t}{sigmoid}(opts)
+\method{make_F_t}{sigmoid}(F_obj)
 }
 \arguments{
-\item{opts}{a named list}
+\item{F_obj}{a function object, \link{F_obj}}
 }
 \value{
 a function

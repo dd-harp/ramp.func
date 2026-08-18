@@ -4,10 +4,10 @@
 \alias{make_F_t.splineX}
 \title{Make a spline function}
 \usage{
-\method{make_F_t}{splineX}(opts)
+\method{make_F_t}{splineX}(F_obj)
 }
 \arguments{
-\item{opts}{a named list}
+\item{F_obj}{a function object, \link{F_obj}}
 }
 \value{
 a function
