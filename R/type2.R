@@ -1,3 +1,11 @@
+#' @title type2
+#'
+#' @description
+#' A function to model relative biting rates by age of the form \deqn{\omega(a) = \frac{A(a+\tau)}{B+a+\tau}}
+#'
+#' @seealso [makepar_F_type2]
+#' @name type2
+NULL
 
 #' @title Make a type2 function for age
 #' @description Return an age pattern \eqn{\omega(a)}, a function of the form
