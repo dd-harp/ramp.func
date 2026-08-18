@@ -85,6 +85,9 @@ other complex process. The functions defined herein are used by other
 
 ### age
 
+- [`age`](https://dd-harp.github.io/ramp.qa/reference/age.md) : age
+- [`type2`](https://dd-harp.github.io/ramp.qa/reference/type2.md) :
+  type2
 - [`makepar_F_type2()`](https://dd-harp.github.io/ramp.qa/reference/makepar_F_type2.md)
   : parameters for make_function
 
