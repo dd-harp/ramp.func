@@ -67,6 +67,8 @@ reference:
   - makepar_F_sharkbite
 - subtitle: age
   contents:
+  - age
+  - type2
   - makepar_F_type2
 - subtitle: Composing Functions
   contents:

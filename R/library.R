@@ -34,3 +34,15 @@ NULL
 #'
 #' @name trends
 NULL
+
+
+#' @title age
+#'
+#' @description
+#'
+#' Relative biting rates by age, \eqn{\omega(a)}:
+#'
+#' + [type2] --- A function of the form \deqn{\omega(a) = \frac{A(a+\tau)}{B+a+\tau}}
+#'
+#' @name age
+NULL

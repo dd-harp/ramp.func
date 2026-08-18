@@ -101,11 +101,19 @@ these models, it is often useful to isolate some part of the system, and
 <code>F_obj</code></p>
 </div>
 <div class="section level2">
-<h2 id="used-by">Used By<a class="anchor" aria-label="anchor" href="#used-by"></a>
+<h2 id="related-software">Related Software<a class="anchor" aria-label="anchor" href="#related-software"></a>
 </h2>
+<p>The name — <strong><code>ramp.trace</code></strong> — arises because
+it was originally part of the <code>ramp</code> family of software
+packages. A set of functions to model forcing was originally devised for
+<strong><code>ramp.falciparum</code></strong>, which takes a deep dive
+into facliparum malaria epidemiology. Later, the same functionality was
+built into <strong><code>ramp.xds</code></strong>.
+<strong><code>ramp.trace</code></strong> was built to avoid maintaining
+duplicate software libraries.</p>
 <div class="section level3">
-<h3 id="ramp-xds-and-simba">
-<strong><code>ramp.xds</code></strong> and SimBA<a class="anchor" aria-label="anchor" href="#ramp-xds-and-simba"></a>
+<h3 id="ramp-xds">
+<strong><code>ramp.xds</code></strong><a class="anchor" aria-label="anchor" href="#ramp-xds"></a>
 </h3>
 <p>In <strong>SimBA,</strong> we can use the <strong>trace
 function</strong> library to build functions that set the value of one
@@ -122,6 +130,21 @@ entomological inoculation rate (EIR)</p></li>
 <li><p><span class="math inline">\(\kappa(t)\)</span> — the net
 infectiousness (NI)</p></li>
 </ul>
+</div>
+<div class="section level3">
+<h3 id="ramp-forcing">
+<strong><code>ramp.forcing</code></strong><a class="anchor" aria-label="anchor" href="#ramp-forcing"></a>
+</h3>
+<p>In <strong><code>ramp.forcing</code></strong>, these functions can be
+used to construct non-autonomous dynamical systems, where parameters can
+vary with respect to time, including models for exogenous variables,
+intervention coverage, parameter values, or functional responses to
+weather.</p>
+</div>
+<div class="section level3">
+<h3 id="ramp-work">
+<strong><code>ramp.work</code></strong><a class="anchor" aria-label="anchor" href="#ramp-work"></a>
+</h3>
 </div>
 <div class="section level3">
 <h3 id="ramp-falciparum">
