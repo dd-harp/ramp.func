@@ -14,7 +14,7 @@ the daily entomological inoculation rate (EIR) or the force of infection
 
 Average exposure in the population is specified by a [**composed time
 series**
-function](https://dd-harp.github.io/ramp.trace/articles/TimeSeries.html).
+function](https://dd-harp.github.io/ramp.func/articles/TimeSeries.html).
 \\E(t) = \bar X \times S(t) \times T(t) \times K(t)\\
 
 If we want to compare cohorts in the same population, then we must
@@ -33,7 +33,7 @@ S(t-d) \times T(t-d) \times K(t-d).\\
 
 ``` r
 
-library(ramp.trace)
+library(ramp.func)
 ```
 
 To illustrate, we specify a seasonal pattern, a trend, and a shock:

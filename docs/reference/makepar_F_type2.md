@@ -1,7 +1,7 @@
 # parameters for make_function
 
 Return an object to configure a function
-[make_function.type2](https://dd-harp.github.io/ramp.qa/reference/make_function.type2.md)
+[make_function.type2](https://dd-harp.github.io/ramp.func/reference/make_function.type2.md)
 
 ## Usage
 
@@ -33,4 +33,4 @@ a type 2 functional response
 
 ## See also
 
-[make_function.type2](https://dd-harp.github.io/ramp.qa/reference/make_function.type2.md)
+[make_function.type2](https://dd-harp.github.io/ramp.func/reference/make_function.type2.md)

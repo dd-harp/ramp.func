@@ -1,7 +1,7 @@
-# Make [F_obj](https://dd-harp.github.io/ramp.qa/reference/F_obj.md) for \\F(t)=c\\
+# Make [F_obj](https://dd-harp.github.io/ramp.func/reference/F_obj.md) for \\F(t)=c\\
 
 Return an
-[make_function](https://dd-harp.github.io/ramp.qa/reference/make_function.md)
+[make_function](https://dd-harp.github.io/ramp.func/reference/make_function.md)
 object to set up the constant function \\F(t)=c\\
 
 ## Usage
@@ -19,5 +19,5 @@ makepar_F_c(c = 1)
 ## Value
 
 a
-[make_function](https://dd-harp.github.io/ramp.qa/reference/make_function.md)
+[make_function](https://dd-harp.github.io/ramp.func/reference/make_function.md)
 object

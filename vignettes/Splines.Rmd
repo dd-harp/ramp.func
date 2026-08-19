@@ -9,7 +9,7 @@ vignette: >
 
 
 ```{r}
-library(ramp.trace)
+library(ramp.func)
 ```
 
 

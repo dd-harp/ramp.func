@@ -19,11 +19,11 @@ Both functions construct a function using an object called `F_obj`
 
 ## Related Software
 
-The name — **`ramp.trace`** — arises because it was originally part of
+The name — **`ramp.func`** — arises because it was originally part of
 the `ramp` family of software packages. A set of functions to model
 forcing was originally devised for **`ramp.falciparum`**, which takes a
 deep dive into facliparum malaria epidemiology. Later, the same
-functionality was built into **`ramp.xds`**. **`ramp.trace`** was built
+functionality was built into **`ramp.xds`**. **`ramp.func`** was built
 to avoid maintaining duplicate software libraries.
 
 ### **`ramp.xds`**
@@ -54,4 +54,4 @@ coverage, parameter values, or functional responses to weather.
 Alternatively, in **`ramp.falciparum`**, where we take a deep dive into
 malaria epidemiology, we often find it useful to construct functions to
 model exposure in cohorts as a function of age (see
-[Cohorts](https://dd-harp.github.io/ramp.qa/articles/Cohorts.md)).
+[Cohorts](https://dd-harp.github.io/ramp.func/articles/Cohorts.md)).

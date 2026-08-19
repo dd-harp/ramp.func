@@ -1,7 +1,7 @@
 template:
   bootstrap: 5
   math-rendering: mathjax
-url: https://dd-harp.github.io/ramp.qa/
+url: https://dd-harp.github.io/ramp.func/
 navbar:
   left:
   - text: Articles

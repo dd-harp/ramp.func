@@ -26,7 +26,7 @@ make_function(F_obj)
 - F_obj:
 
   a function object,
-  [F_obj](https://dd-harp.github.io/ramp.qa/reference/F_obj.md)
+  [F_obj](https://dd-harp.github.io/ramp.func/reference/F_obj.md)
 
 ## Value
 
@@ -34,4 +34,4 @@ a function for seasonality
 
 ## See also
 
-[makepar_F_sin](https://dd-harp.github.io/ramp.qa/reference/makepar_F_sin.md)
+[makepar_F_sin](https://dd-harp.github.io/ramp.func/reference/makepar_F_sin.md)

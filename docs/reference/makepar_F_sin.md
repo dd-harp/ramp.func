@@ -1,7 +1,7 @@
 # parameters for make_function
 
 Return an object to configure a function
-[make_function.sin](https://dd-harp.github.io/ramp.qa/reference/make_function.sin.md)
+[make_function.sin](https://dd-harp.github.io/ramp.func/reference/make_function.sin.md)
 
 ## Usage
 
@@ -37,4 +37,4 @@ a function for seasonality
 
 ## See also
 
-[make_function.sin](https://dd-harp.github.io/ramp.qa/reference/make_function.sin.md)
+[make_function.sin](https://dd-harp.github.io/ramp.func/reference/make_function.sin.md)
