@@ -1,7 +1,7 @@
 # Make a Function, \\F(a,d)\\
 
 Construct a trace function to simulate exposure by age using
-[make_F_t](https://dd-harp.github.io/ramp.qa/reference/make_F_t.md).
+[make_F_t](https://dd-harp.github.io/ramp.func/reference/make_F_t.md).
 
 The function substitutes age for time: given a birthday, \\d\\, age is
 \\a=t-d\\. The function is a product of:
@@ -40,26 +40,26 @@ make_F_a(
 
 - age_par:
 
-  an [F_obj](https://dd-harp.github.io/ramp.qa/reference/F_obj.md) for
+  an [F_obj](https://dd-harp.github.io/ramp.func/reference/F_obj.md) for
   relative biting rate by age
 
 - season_par:
 
-  an [F_obj](https://dd-harp.github.io/ramp.qa/reference/F_obj.md) for
+  an [F_obj](https://dd-harp.github.io/ramp.func/reference/F_obj.md) for
   the seasonal pattern (see
-  [seasonality](https://dd-harp.github.io/ramp.qa/reference/seasonality.md))
+  [seasonality](https://dd-harp.github.io/ramp.func/reference/seasonality.md))
 
 - trend_par:
 
-  an [F_obj](https://dd-harp.github.io/ramp.qa/reference/F_obj.md) for
+  an [F_obj](https://dd-harp.github.io/ramp.func/reference/F_obj.md) for
   the trend (see
-  [trends](https://dd-harp.github.io/ramp.qa/reference/trends.md))
+  [trends](https://dd-harp.github.io/ramp.func/reference/trends.md))
 
 - shock_par:
 
-  an [F_obj](https://dd-harp.github.io/ramp.qa/reference/F_obj.md) for a
-  perturbation (see
-  [shocks](https://dd-harp.github.io/ramp.qa/reference/shocks.md))
+  an [F_obj](https://dd-harp.github.io/ramp.func/reference/F_obj.md) for
+  a perturbation (see
+  [shocks](https://dd-harp.github.io/ramp.func/reference/shocks.md))
 
 ## Value
 

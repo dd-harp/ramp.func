@@ -1,7 +1,7 @@
 # Make Parameters for a Sigmoidal Function
 
 Return an object to configure a function
-[make_function.sigmoid](https://dd-harp.github.io/ramp.qa/reference/make_function.sigmoid.md)
+[make_function.sigmoid](https://dd-harp.github.io/ramp.func/reference/make_function.sigmoid.md)
 
 ## Usage
 

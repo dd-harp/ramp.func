@@ -1,7 +1,7 @@
 # Make Parameters for a sharkbite Function
 
 Return an object for
-[make_function.sharkbite](https://dd-harp.github.io/ramp.qa/reference/make_function.sharkbite.md)
+[make_function.sharkbite](https://dd-harp.github.io/ramp.func/reference/make_function.sharkbite.md)
 
 ## Usage
 

@@ -15,16 +15,16 @@ elements:
 \$\$x(t) = \bar x \times S(t) \times T(t) \times K(t)\$\$
 
 The component functions are specified by passing parameters for
-[make_function](https://dd-harp.github.io/ramp.qa/reference/make_function.md):
+[make_function](https://dd-harp.github.io/ramp.func/reference/make_function.md):
 
 - `season_par` creates \\S(t)\\ or `F_season` (*eg,* using
-  [makepar_F_sin](https://dd-harp.github.io/ramp.qa/reference/makepar_F_sin.md))
+  [makepar_F_sin](https://dd-harp.github.io/ramp.func/reference/makepar_F_sin.md))
 
 - `trend_par` creates \\T(t)\\ or `F_trend` (*eg,* using
-  [makepar_F_spline](https://dd-harp.github.io/ramp.qa/reference/makepar_F_spline.md))
+  [makepar_F_spline](https://dd-harp.github.io/ramp.func/reference/makepar_F_spline.md))
 
 - `shock_par` creates \\K(t)\\ or `F_shock` (*eg,* using
-  [makepar_F_sharkbite](https://dd-harp.github.io/ramp.qa/reference/makepar_F_sharkbite.md))
+  [makepar_F_sharkbite](https://dd-harp.github.io/ramp.func/reference/makepar_F_sharkbite.md))
 
 ## Usage
 

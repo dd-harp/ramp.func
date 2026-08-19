@@ -2,7 +2,7 @@
 
 ``` r
 
-library(ramp.trace)
+library(ramp.func)
 ```
 
 ## Constant

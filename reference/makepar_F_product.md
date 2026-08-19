@@ -1,7 +1,7 @@
 # parameters for make_function
 
 Return an object to configure a function
-[make_function.product](https://dd-harp.github.io/ramp.qa/reference/make_function.product.md)
+[make_function.product](https://dd-harp.github.io/ramp.func/reference/make_function.product.md)
 
 ## Usage
 

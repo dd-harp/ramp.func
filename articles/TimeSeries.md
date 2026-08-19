@@ -2,7 +2,7 @@
 
 In studies, we will often find it useful to construct functions that
 output the value of some variable over time. This package —
-**`ramp.trace`** — has utilities to construct ***composed time series***
+**`ramp.func`** — has utilities to construct ***composed time series***
 functions that are easy to manipulate. Each function is the product of
 four components:
 

@@ -1,7 +1,7 @@
 # splineX
 
 A spline function \\F(t)\\ for
-[trends](https://dd-harp.github.io/ramp.qa/reference/trends.md) is
+[trends](https://dd-harp.github.io/ramp.func/reference/trends.md) is
 specified by a set of \\n\\ interpolating points:
 
 - time values \$\$t_1, t_2, \ldots, t_n,\$\$
@@ -13,4 +13,4 @@ The return value is \$\$T(t) = e^{F(t)}\$\$
 ## See also
 
 [stats::spline](https://rdrr.io/r/stats/splinefun.html),
-[makepar_F_spline](https://dd-harp.github.io/ramp.qa/reference/makepar_F_spline.md)
+[makepar_F_spline](https://dd-harp.github.io/ramp.func/reference/makepar_F_spline.md)
