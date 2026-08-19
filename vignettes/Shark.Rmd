@@ -13,6 +13,8 @@ vignette: >
 library(ramp.trace)
 ```
 
+$$\left(\frac{e^{-uk(t-D)}}{1+e^{-uk(t-D)}}\right)
+\left(\frac{1-e^{-dk(t-L-D)}}{1+e^{-dk(t-L-D)}}\right)^{pw}$$
 
 ```{r}
 c1 <- makepar_F_sharkfin()
