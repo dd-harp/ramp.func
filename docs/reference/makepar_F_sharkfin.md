@@ -1,7 +1,7 @@
 # Make Parameters for a Sharkfin Function
 
 Return an object for
-[make_function.sharkfin](https://dd-harp.github.io/ramp.qa/reference/make_function.sharkfin.md)
+[make_function.sharkfin](https://dd-harp.github.io/ramp.func/reference/make_function.sharkfin.md)
 
 ## Usage
 

@@ -10,7 +10,7 @@ vignette: >
 
 
 ```{r}
-library(ramp.trace)
+library(ramp.func)
 ```
 
 $$\left(\frac{e^{-uk(t-D)}}{1+e^{-uk(t-D)}}\right)

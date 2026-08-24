@@ -5,17 +5,17 @@ header-includes:
 - \usepackage{mathscr}
 --- 
 
-# **`ramp.trace`** 
+# **`ramp.func`** 
 
 ## The RAMP Trace Function Library
 
-## Install **`ramp.trace`** 
+## Install **`ramp.func`** 
 
 To install the latest version from GitHub, run the following lines of code in an R session.
 
 ```
 library(devtools)
-devtools::install_github("dd-harp/ramp.trace")
+devtools::install_github("dd-harp/ramp.func")
 ```
 
 ## Trace Functions

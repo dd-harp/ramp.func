@@ -4,7 +4,7 @@
 \alias{splinef}
 \title{splinef}
 \description{
-A \link{spline} function \eqn{T(t)} for \link{trends} is specified by a set of \eqn{n} interpolating points:
+A \link{spline} function \eqn{F_T(t)} for \link{trends} is specified by a set of \eqn{n} interpolating points:
 \itemize{
 \item time
 values \deqn{t_1, t_2, \ldots, t_n,}

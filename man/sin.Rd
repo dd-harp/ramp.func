@@ -4,6 +4,6 @@
 \alias{sin}
 \title{sin}
 \description{
-Return a pattern \eqn{S(t)} to model \link{seasonality} with the form
+Return a pattern \eqn{F_S(t)} to model \link{seasonality} with the form
 \deqn{S(t) = c \left(1+\epsilon + \sin\left(\frac{2 \pi (t-\tau)}{365}\right)\right)^p}
 }

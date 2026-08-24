@@ -4,8 +4,8 @@
 \alias{age}
 \title{age}
 \description{
-Relative biting rates by age, \eqn{\omega(a)}:
+Relative biting rates by age, \eqn{F_\omega(a)}:
 \itemize{
-\item \link{type2} --- A function of the form \deqn{\omega(a) = \frac{A(a+\tau)}{B+a+\tau}}
+\item \link{type2} --- A function of the form \deqn{F_\omega(a) = \frac{A(a+\tau)}{B+a+\tau}}
 }
 }

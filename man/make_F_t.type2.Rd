@@ -13,8 +13,8 @@
 a function for seasonality
 }
 \description{
-Return an age pattern \eqn{\omega(a)}, a function of the form
-\deqn{\omega(a) = \frac{A(a+\tau)}{B+a+\tau}}
+Return an age pattern \eqn{F_\omega(a)}, a function of the form
+\deqn{F_\omega(a) = \frac{A(a+\tau)}{B+a+\tau}}
 where \eqn{\tau} is a shift so that \eqn{\omega(0) > 0}
 and \eqn{A} and \eqn{B} are shape parameters
 }

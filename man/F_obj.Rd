@@ -4,7 +4,7 @@
 \alias{F_obj}
 \title{F_obj}
 \description{
-In \code{ramp.trace}, \strong{\code{F_obj}} describes an object used by \link{make_F_t} and \link{make_function} to construct
+In \code{ramp.func}, \strong{\code{F_obj}} describes an object used by \link{make_F_t} and \link{make_function} to construct
 functions:
 \itemize{
 \item An \strong{\code{F_obj}} is returned by a function \code{makepar_F_method}

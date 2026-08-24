@@ -4,7 +4,7 @@
 \alias{splineX}
 \title{splineX}
 \description{
-A spline function \eqn{F(t)} for \link{trends} is specified by a set of  \eqn{n} interpolating points:
+A spline function \eqn{F_T(t)} for \link{trends} is specified by a set of  \eqn{n} interpolating points:
 \itemize{
 \item time
 values \deqn{t_1, t_2, \ldots, t_n,}
@@ -12,7 +12,7 @@ values \deqn{t_1, t_2, \ldots, t_n,}
 \eqn{y} values \deqn{y_1, y_2, \ldots, y_n.}
 }
 
-The return value is \deqn{T(t) = e^{F(t)}}
+For \code{splineX}, the return value is \deqn{e^{F_T(t)}}
 }
 \seealso{
 \link[stats:splinefun]{stats::spline}, \link{makepar_F_spline}

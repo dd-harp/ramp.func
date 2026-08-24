@@ -2,7 +2,7 @@
 #' @title splinef
 #'
 #' @description
-#' A [spline] function \eqn{T(t)} for [trends] is specified by a set of \eqn{n} interpolating points:
+#' A [spline] function \eqn{F_T(t)} for [trends] is specified by a set of \eqn{n} interpolating points:
 #' + time
 #' values \deqn{t_1, t_2, \ldots, t_n,}
 #' + and corresponding
@@ -15,14 +15,14 @@ NULL
 #' @title splineX
 #'
 #' @description
-#' A spline function \eqn{F(t)} for [trends] is specified by a set of  \eqn{n} interpolating points:
+#' A spline function \eqn{F_T(t)} for [trends] is specified by a set of  \eqn{n} interpolating points:
 #' + time
 #' values \deqn{t_1, t_2, \ldots, t_n,}
 #' + and corresponding
 #' \eqn{y} values \deqn{y_1, y_2, \ldots, y_n.}
 #'
 #'
-#' The return value is \deqn{T(t) = e^{F(t)}}
+#' For `splineX`, the return value is \deqn{e^{F_T(t)}}
 #'
 #' @seealso [stats::spline], [makepar_F_spline]
 #' @name splineX
@@ -32,13 +32,13 @@ NULL
 #' @title spline2
 #'
 #' @description
-#' A spline function \eqn{F(t)} for [trends] is specified by a set of  \eqn{n} interpolating points:
+#' A spline function \eqn{F_T(t)} for [trends] is specified by a set of  \eqn{n} interpolating points:
 #' + time
 #' values \deqn{t_1, t_2, \ldots, t_n,}
 #' + and corresponding
 #' \eqn{y} values \deqn{y_1, y_2, \ldots, y_n.}
 #'
-#' The function return value is \deqn{T(t)=F(t)^2}
+#' For `spline2` the function return value is \deqn{F_T(t)^2}
 #'
 #' @seealso [stats::spline], [makepar_F_spline]
 #' @name spline2
@@ -120,7 +120,7 @@ make_function.spline2 = function(F_obj){
 #' @title Make a spline [F_obj]
 #' @description
 #' Return a function obj
-#' A spline function \eqn{T(t)} for [trends] is specified by a set of  \eqn{n} interpolating points:
+#' A spline function \eqn{F_T(t)} for [trends] is specified by a set of  \eqn{n} interpolating points:
 #' + time
 #' values \deqn{t_1, t_2, \ldots, t_n,}
 #' + and corresponding

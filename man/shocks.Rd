@@ -2,9 +2,9 @@
 % Please edit documentation in R/library.R
 \name{shocks}
 \alias{shocks}
-\title{shocks}
+\title{Shock Functions --- \eqn{F_K(t)}:}
 \description{
-Shock functions --- \eqn{K(t)}:
+Shock functions --- \eqn{F_K(t)}:
 \itemize{
 \item \link{sharkfin} --- A function to model simple perturbations
 \item \link{sharkbite} --- A function to model shocks as part of a \strong{composed time series} function

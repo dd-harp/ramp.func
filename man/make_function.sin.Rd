@@ -13,8 +13,8 @@
 a function for seasonality
 }
 \description{
-Return a seasonal pattern \eqn{S(t)}, a function of the form
-\deqn{S(t) = c \left(1+\epsilon + \sin\left(\frac{2 \pi (t-\tau)}{365}\right)\right)^p}
+Return a seasonal pattern \eqn{F_S(t)}, a function of the form
+\deqn{F_S(t) = c \left(1+\epsilon + \sin\left(\frac{2 \pi (t-\tau)}{365}\right)\right)^p}
 where \eqn{c} is a normalizing constant, and
 \itemize{
 \item \eqn{\epsilon \geq 0} or \code{bottom}
@@ -23,7 +23,7 @@ where \eqn{c} is a normalizing constant, and
 }
 
 The algorithm sets the constant \eqn{c} or \code{norm}
-such that \deqn{\int_0^{365} S(t) dt=c} where the default is \code{norm=365.}
+such that \deqn{\int_0^{365} F_S(t) dt=c} where the default is \code{norm=365.}
 }
 \seealso{
 \link{makepar_F_sin}

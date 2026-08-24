@@ -2,9 +2,9 @@
 % Please edit documentation in R/library.R
 \name{seasonality}
 \alias{seasonality}
-\title{seasonality}
+\title{Seasonality Pattern Functions --- \eqn{F_S(t)}:}
 \description{
-Seasonality pattern functions --- \eqn{S(t)}:
+Seasonality pattern functions --- \eqn{F_S(t)}:
 \itemize{
 \item \link{sin} --- A generalized sinusoidal function was developed to model seasonal forcing
 }

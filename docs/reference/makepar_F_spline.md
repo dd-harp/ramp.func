@@ -1,7 +1,7 @@
-# Make a spline [F_obj](https://dd-harp.github.io/ramp.qa/reference/F_obj.md)
+# Make a spline [F_obj](https://dd-harp.github.io/ramp.func/reference/F_obj.md)
 
-Return a function obj A spline function \\T(t)\\ for
-[trends](https://dd-harp.github.io/ramp.qa/reference/trends.md) is
+Return a function obj A spline function \\F_T(t)\\ for
+[trends](https://dd-harp.github.io/ramp.func/reference/trends.md) is
 specified by a set of \\n\\ interpolating points:
 
 - time values \$\$t_1, t_2, \ldots, t_n,\$\$
@@ -27,10 +27,11 @@ makepar_F_spline(tt, yy, X = FALSE)
 - X:
 
   setup switch:
-  FALSE=[splinef](https://dd-harp.github.io/ramp.qa/reference/splinef.md)
+  FALSE=[splinef](https://dd-harp.github.io/ramp.func/reference/splinef.md)
   \|
-  TRUE=[splineX](https://dd-harp.github.io/ramp.qa/reference/splineX.md)
-  \| 2=[spline2](https://dd-harp.github.io/ramp.qa/reference/spline2.md)
+  TRUE=[splineX](https://dd-harp.github.io/ramp.func/reference/splineX.md)
+  \|
+  2=[spline2](https://dd-harp.github.io/ramp.func/reference/spline2.md)
 
 ## Value
 

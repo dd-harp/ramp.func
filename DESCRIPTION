@@ -1,4 +1,4 @@
-Package: ramp.trace
+Package: ramp.func
 Type: Package
 Title: RAMP Trace Function Library
 Version: 0.1.0
@@ -11,8 +11,8 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.3.3
-URL: https://dd-harp.github.io/ramp.trace/
-BugReports: https://github.com/dd-harp/ramp.trace/issues
+URL: https://dd-harp.github.io/ramp.func/
+BugReports: https://github.com/dd-harp/ramp.func/issues
 Roxygen: list(markdown = TRUE)
 Suggests:
   ramp.xds,

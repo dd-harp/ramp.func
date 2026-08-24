@@ -2,7 +2,7 @@
 
 First, we define `F_season` and change the mean value of `Lambda.` To
 set up a seasonality function, we pass a parameter set from
-[`ramp.trace::makepar_F_sin`](https://dd-harp.github.io/ramp.qa/reference/makepar_F_sin.md):
+[`ramp.trace::makepar_F_sin`](https://dd-harp.github.io/ramp.func/reference/makepar_F_sin.md):
 
 ``` r
 

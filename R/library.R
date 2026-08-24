@@ -1,17 +1,17 @@
-#' @title seasonality
+#' @title Seasonality Pattern Functions --- \eqn{F_S(t)}:
 #' @description
 #'
-#' Seasonality pattern functions --- \eqn{S(t)}:
+#' Seasonality pattern functions --- \eqn{F_S(t)}:
 #'
 #' + [sin] --- A generalized sinusoidal function was developed to model seasonal forcing
 #'
 #' @name seasonality
 NULL
 
-#' @title shocks
+#' @title Shock Functions --- \eqn{F_K(t)}:
 #' @description
 #'
-#' Shock functions --- \eqn{K(t)}:
+#' Shock functions --- \eqn{F_K(t)}:
 #'
 #' + [sharkfin] --- A function to model simple perturbations
 #'
@@ -20,11 +20,11 @@ NULL
 #' @name shocks
 NULL
 
-#' @title trends
+#' @title Trend Pattern Functions --- \eqn{F_T(t)}
 #'
 #' @description
 #'
-#' Trend pattern functions --- \eqn{T(t)}:
+#' Trend pattern functions --- \eqn{F_T(t)}:
 #'
 #' + [splinef] --- A function to model simple perturbations
 #'
@@ -40,9 +40,9 @@ NULL
 #'
 #' @description
 #'
-#' Relative biting rates by age, \eqn{\omega(a)}:
+#' Relative biting rates by age, \eqn{F_\omega(a)}:
 #'
-#' + [type2] --- A function of the form \deqn{\omega(a) = \frac{A(a+\tau)}{B+a+\tau}}
+#' + [type2] --- A function of the form \deqn{F_\omega(a) = \frac{A(a+\tau)}{B+a+\tau}}
 #'
 #' @name age
 NULL

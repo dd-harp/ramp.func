@@ -2,9 +2,9 @@
 % Please edit documentation in R/library.R
 \name{trends}
 \alias{trends}
-\title{trends}
+\title{Trend Pattern Functions --- \eqn{F_T(t)}}
 \description{
-Trend pattern functions --- \eqn{T(t)}:
+Trend pattern functions --- \eqn{F_T(t)}:
 \itemize{
 \item \link{splinef} --- A function to model simple perturbations
 \item \link{splineX} ---
