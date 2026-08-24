@@ -1,6 +1,6 @@
 # **`ramp.func`**
 
-## The RAMP Trace Function Library
+## The RAMP Function Library
 
 ## Install **`ramp.func`**
 
@@ -24,6 +24,14 @@ other complex process. The functions defined herein are used by other
   `ramp.forcing` to configure forcing in the trivial modules.
 
 - These functions are used by `ramp.falciparum` to configure exposure.
+
+## Kernels
+
+The term **kernel function** describes any function we use to generate a
+probability mass function to model a spatial process, usually a model of
+mosquito dispersal that is used **`ramp.xds`** and **`ramp.micro`**
+
+## Functional Forms
 
 # Package index
 

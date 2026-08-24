@@ -7,7 +7,7 @@ header-includes:
 
 # **`ramp.func`** 
 
-## The RAMP Trace Function Library
+## The RAMP Function Library
 
 ## Install **`ramp.func`** 
 
@@ -26,5 +26,9 @@ The term **trace function** herein describes a function that sets the value of s
 
 + These functions are used by `ramp.falciparum` to configure exposure. 
 
+## Kernels
 
+The term **kernel function** describes any function we use to generate a probability mass function to model a spatial process, usually a model of mosquito dispersal that is used **`ramp.xds`** and **`ramp.micro`** 
+
+## Functional Forms
 
