@@ -3,7 +3,7 @@ title: "Cohorts"
 subtitle: "Trace Functions for Exposure for Different Cohorts in a Population"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Cohort}
+  %\VignetteIndexEntry{Cohorts}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
