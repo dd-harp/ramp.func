@@ -10,34 +10,34 @@ with known functions. The value of
 variable \(x(t)\) is computed
 as a product of four configurable elements:
 \(\bar x\): a mean value
-\(S(t)\): a seasonal pattern
-\(T(t)\): a trend
-\(K(t)\): a shock
+\(F_S(t)\): a seasonal pattern
+\(F_T(t)\): a trend
+\(F_K(t)\): a shock
 
 
-$$x(t) = \bar x \times S(t) \times T(t) \times K(t)$$
+$$x(t) = \bar x \times F_S(t) \times F_T(t) \times F_K(t)$$
 The component functions are specified by
 passing parameters for make_function:
-season_par creates \(S(t)\) or F_season (eg, using makepar_F_sin)
-trend_par creates \(T(t)\) or F_trend (eg, using makepar_F_spline)
-shock_par creates \(K(t)\) or F_shock (eg, using makepar_F_sharkbite)
+season_par creates \(F_S(t)\) or F_season (eg, using makepar_F_sin)
+trend_par creates \(F_T(t)\) or F_trend (eg, using makepar_F_spline)
+shock_par creates \(F_K(t)\) or F_shock (eg, using makepar_F_sharkbite)
 
 "><meta property="og:description" content="Build a function that generates a time series
 with known functions. The value of
 variable \(x(t)\) is computed
 as a product of four configurable elements:
 \(\bar x\): a mean value
-\(S(t)\): a seasonal pattern
-\(T(t)\): a trend
-\(K(t)\): a shock
+\(F_S(t)\): a seasonal pattern
+\(F_T(t)\): a trend
+\(F_K(t)\): a shock
 
 
-$$x(t) = \bar x \times S(t) \times T(t) \times K(t)$$
+$$x(t) = \bar x \times F_S(t) \times F_T(t) \times F_K(t)$$
 The component functions are specified by
 passing parameters for make_function:
-season_par creates \(S(t)\) or F_season (eg, using makepar_F_sin)
-trend_par creates \(T(t)\) or F_trend (eg, using makepar_F_spline)
-shock_par creates \(K(t)\) or F_shock (eg, using makepar_F_sharkbite)
+season_par creates \(F_S(t)\) or F_season (eg, using makepar_F_sin)
+trend_par creates \(F_T(t)\) or F_trend (eg, using makepar_F_spline)
+shock_par creates \(F_K(t)\) or F_shock (eg, using makepar_F_sharkbite)
 
 "></head><body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
@@ -58,7 +58,7 @@ shock_par creates \(K(t)\) or F_shock (eg, using makepar_F_sharkbite)
       <ul class="navbar-nav me-auto"><li class="nav-item dropdown">
   <button class="nav-link dropdown-toggle" type="button" id="dropdown-articles" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Articles</button>
   <ul class="dropdown-menu" aria-labelledby="dropdown-articles"><li><a class="dropdown-item" href="../articles/TraceFunctions.html">Trace Functions</a></li>
-    <li><a class="dropdown-item" href="../articles/TimeSeries.html">Composed Time Serries</a></li>
+    <li><a class="dropdown-item" href="../articles/TimeSeries.html">Composed Time Series</a></li>
     <li><a class="dropdown-item" href="../articles/Cohorts.html">Cohorts</a></li>
   </ul></li>
 <li class="nav-item dropdown">
@@ -90,14 +90,14 @@ shock_par creates \(K(t)\) or F_shock (eg, using makepar_F_sharkbite)
 with known functions. The value of
 variable \(x(t)\) is computed
 as a product of four configurable elements:</p><ul><li><p>\(\bar x\): a mean value</p></li>
-<li><p>\(S(t)\): a seasonal pattern</p></li>
-<li><p>\(T(t)\): a trend</p></li>
-<li><p>\(K(t)\): a shock</p></li>
-</ul><p>$$x(t) = \bar x \times S(t) \times T(t) \times K(t)$$</p>
+<li><p>\(F_S(t)\): a seasonal pattern</p></li>
+<li><p>\(F_T(t)\): a trend</p></li>
+<li><p>\(F_K(t)\): a shock</p></li>
+</ul><p>$$x(t) = \bar x \times F_S(t) \times F_T(t) \times F_K(t)$$</p>
 <p>The component functions are specified by
-passing parameters for <a href="make_function.html">make_function</a>:</p><ul><li><p><code>season_par</code> creates \(S(t)\) or <code>F_season</code> (<em>eg,</em> using <a href="makepar_F_sin.html">makepar_F_sin</a>)</p></li>
-<li><p><code>trend_par</code> creates \(T(t)\) or <code>F_trend</code> (<em>eg,</em> using <a href="makepar_F_spline.html">makepar_F_spline</a>)</p></li>
-<li><p><code>shock_par</code> creates \(K(t)\) or <code>F_shock</code> (<em>eg,</em> using <a href="makepar_F_sharkbite.html">makepar_F_sharkbite</a>)</p></li>
+passing parameters for <a href="make_function.html">make_function</a>:</p><ul><li><p><code>season_par</code> creates \(F_S(t)\) or <code>F_season</code> (<em>eg,</em> using <a href="makepar_F_sin.html">makepar_F_sin</a>)</p></li>
+<li><p><code>trend_par</code> creates \(F_T(t)\) or <code>F_trend</code> (<em>eg,</em> using <a href="makepar_F_spline.html">makepar_F_spline</a>)</p></li>
+<li><p><code>shock_par</code> creates \(F_K(t)\) or <code>F_shock</code> (<em>eg,</em> using <a href="makepar_F_sharkbite.html">makepar_F_sharkbite</a>)</p></li>
 </ul></div>
 
     <div class="section level2">

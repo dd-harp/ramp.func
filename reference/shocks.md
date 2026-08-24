@@ -1,6 +1,6 @@
-# shocks
+# Shock Functions — \\F_K(t)\\:
 
-Shock functions — \\K(t)\\:
+Shock functions — \\F_K(t)\\:
 
 - [sharkfin](https://dd-harp.github.io/ramp.func/reference/sharkfin.md)
   — A function to model simple perturbations

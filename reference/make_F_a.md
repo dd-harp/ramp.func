@@ -8,14 +8,15 @@ The function substitutes age for time: given a birthday, \\d\\, age is
 
 - \\\bar X\\ — or `avg` the approximate mean value
 
-- \\\omega(a)\\ — a function describing the relative biting rate by age
+- \\F\_\omega(a)\\ — a function describing the relative biting rate by
+  age
 
-- \\S(t)\\ — a seasonal pattern function
+- \\F_S(t)\\ — a seasonal pattern function
 
-- \\T(t)\\ — a trend pattern function
+- \\F_T(t)\\ — a trend pattern function
 
-- \\K(t)\\ — a shock function \$\$F(a, d) = x \times \omega(a) \times
-  S(t-d) \times T(t-d) \times K(t-d)\$\$
+- \\F_K(t)\\ — a shock function \$\$F(a, d) = x \times \omega(a) \times
+  F_S(t-d) \times F_T(t-d) \times F_K(t-d)\$\$
 
 For convenience, \\d\\ is an optional argument with a default value
 \\d=0\\

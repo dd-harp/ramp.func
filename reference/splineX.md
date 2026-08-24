@@ -1,6 +1,6 @@
 # splineX
 
-A spline function \\F(t)\\ for
+A spline function \\F_T(t)\\ for
 [trends](https://dd-harp.github.io/ramp.func/reference/trends.md) is
 specified by a set of \\n\\ interpolating points:
 
@@ -8,7 +8,7 @@ specified by a set of \\n\\ interpolating points:
 
 - and corresponding \\y\\ values \$\$y_1, y_2, \ldots, y_n.\$\$
 
-The return value is \$\$T(t) = e^{F(t)}\$\$
+For `splineX`, the return value is \$\$e^{F_T(t)}\$\$
 
 ## See also
 

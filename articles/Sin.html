@@ -39,7 +39,7 @@
   <button class="nav-link dropdown-toggle" type="button" id="dropdown-articles" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Articles</button>
   <ul class="dropdown-menu" aria-labelledby="dropdown-articles">
 <li><a class="dropdown-item" href="../articles/TraceFunctions.html">Trace Functions</a></li>
-    <li><a class="dropdown-item" href="../articles/TimeSeries.html">Composed Time Serries</a></li>
+    <li><a class="dropdown-item" href="../articles/TimeSeries.html">Composed Time Series</a></li>
     <li><a class="dropdown-item" href="../articles/Cohorts.html">Cohorts</a></li>
   </ul>
 </li>
@@ -89,7 +89,7 @@ Trigonometric Seasonal Pattern</h3>
 <p>A constructor for seasonality functions drawn from a generalized
 family involving trigonometric functions is returned by
 <code>make_function.sin</code> with the associated
-<code>makepar_F_sin</code> that returns functions of the form: <span class="math display">\[S(t) =  c\left(1 + \epsilon + \sin\left(\frac{2
+<code>makepar_F_sin</code> that returns functions of the form: <span class="math display">\[F_S(t) =  c\left(1 + \epsilon + \sin\left(\frac{2
 \pi (t-\tau)}{365}\right)\right)^p\]</span></p>
 <ul>
 <li><p><span class="math inline">\(c\)</span> or <code>norm</code> is a
@@ -113,14 +113,14 @@ function over a year is <span class="math inline">\(1.\)</span></p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">tt</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">3</span><span class="op">*</span><span class="fl">365</span>, by<span class="op">=</span><span class="fl">5</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">tt</span>, <span class="fu">S1</span><span class="op">(</span><span class="va">tt</span><span class="op">)</span>, type <span class="op">=</span><span class="st">"l"</span>, xlab <span class="op">=</span> <span class="st">"Time (in Days)"</span>, ylab <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/expression.html" class="external-link">expression</a></span><span class="op">(</span><span class="fu">S</span><span class="op">(</span><span class="va">t</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<p><img src="Sin_files/figure-html/unnamed-chunk-4-1.png" class="r-plt" alt="" width="480"></p>
+<p><img src="Sin_files/figure-html/unnamed-chunk-4-1.png" class="r-plt" alt="" width="768"></p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">p2</span> <span class="op">=</span> <span class="fu"><a href="../reference/makepar_F_sin.html">makepar_F_sin</a></span><span class="op">(</span>phase<span class="op">=</span><span class="fl">120</span><span class="op">)</span></span>
 <span><span class="va">S2</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/make_function.html">make_function</a></span><span class="op">(</span><span class="va">p2</span><span class="op">)</span></span></code></pre></div>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">tt</span>, <span class="fu">S1</span><span class="op">(</span><span class="va">tt</span><span class="op">)</span>, type <span class="op">=</span><span class="st">"l"</span>, xlab <span class="op">=</span> <span class="st">"Time (in Days)"</span>, ylab <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/expression.html" class="external-link">expression</a></span><span class="op">(</span><span class="fu">S</span><span class="op">(</span><span class="va">t</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/lines.html" class="external-link">lines</a></span><span class="op">(</span><span class="va">tt</span>, <span class="fu">S2</span><span class="op">(</span><span class="va">tt</span><span class="op">)</span>, col <span class="op">=</span> <span class="st">"blue"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="Sin_files/figure-html/unnamed-chunk-6-1.png" class="r-plt" alt="" width="480"></p>
+<p><img src="Sin_files/figure-html/unnamed-chunk-6-1.png" class="r-plt" alt="" width="768"></p>
 <p>The function can return a vector of <span class="math inline">\(N\)</span> functions, each one configured as if
 <span class="math inline">\(N=1\)</span></p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
@@ -132,7 +132,7 @@ function over a year is <span class="math inline">\(1.\)</span></p>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/lines.html" class="external-link">lines</a></span><span class="op">(</span><span class="va">tt</span>, <span class="fu">S1</span><span class="op">(</span><span class="va">tt</span><span class="op">)</span>, col <span class="op">=</span> <span class="st">"yellow"</span>, lty<span class="op">=</span><span class="fl">2</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/lines.html" class="external-link">lines</a></span><span class="op">(</span><span class="va">tt</span>, <span class="va">s3</span><span class="op">[</span><span class="fl">2</span>,<span class="op">]</span>, col <span class="op">=</span> <span class="st">"blue"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/lines.html" class="external-link">lines</a></span><span class="op">(</span><span class="va">tt</span>, <span class="fu">S2</span><span class="op">(</span><span class="va">tt</span><span class="op">)</span>, col <span class="op">=</span> <span class="st">"orange"</span>, lty<span class="op">=</span><span class="fl">2</span><span class="op">)</span></span></code></pre></div>
-<p><img src="Sin_files/figure-html/unnamed-chunk-8-1.png" class="r-plt" alt="" width="480"></p>
+<p><img src="Sin_files/figure-html/unnamed-chunk-8-1.png" class="r-plt" alt="" width="768"></p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">p4</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/makepar_F_sin.html">makepar_F_sin</a></span><span class="op">(</span>bottom<span class="op">=</span><span class="fl">.5</span><span class="op">)</span></span>
 <span><span class="va">p5</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/makepar_F_sin.html">makepar_F_sin</a></span><span class="op">(</span>bottom<span class="op">=</span><span class="fl">2</span><span class="op">)</span></span>
@@ -157,7 +157,7 @@ with a range of features:</p>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/text.html" class="external-link">text</a></span><span class="op">(</span><span class="fl">1000</span>, <span class="fl">3</span>, <span class="fu"><a href="https://rdrr.io/r/base/expression.html" class="external-link">expression</a></span><span class="op">(</span><span class="va">p</span><span class="op">==</span><span class="fl">3</span><span class="op">)</span>, col<span class="op">=</span><span class="va">clrs</span><span class="op">[</span><span class="fl">5</span><span class="op">]</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/text.html" class="external-link">text</a></span><span class="op">(</span><span class="fl">1000</span>, <span class="fl">2.5</span>, <span class="fu"><a href="https://rdrr.io/r/base/expression.html" class="external-link">expression</a></span><span class="op">(</span><span class="va">epsilon</span><span class="op">==</span><span class="fl">0.5</span><span class="op">)</span>, col<span class="op">=</span><span class="va">clrs</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/text.html" class="external-link">text</a></span><span class="op">(</span><span class="fl">1000</span>, <span class="fl">2</span>, <span class="fu"><a href="https://rdrr.io/r/base/expression.html" class="external-link">expression</a></span><span class="op">(</span><span class="va">epsilon</span><span class="op">==</span><span class="fl">2</span><span class="op">)</span>, col<span class="op">=</span><span class="va">clrs</span><span class="op">[</span><span class="fl">3</span><span class="op">]</span><span class="op">)</span></span></code></pre></div>
-<p><img src="Sin_files/figure-html/unnamed-chunk-11-1.png" class="r-plt" alt="" width="480"></p>
+<p><img src="Sin_files/figure-html/unnamed-chunk-11-1.png" class="r-plt" alt="" width="768"></p>
   </main>
 </div>
 

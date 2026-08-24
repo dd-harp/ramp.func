@@ -1,6 +1,6 @@
 # F_obj
 
-In `ramp.trace`, **`F_obj`** describes an object used by
+In `ramp.func`, **`F_obj`** describes an object used by
 [make_F_t](https://dd-harp.github.io/ramp.func/reference/make_F_t.md)
 and
 [make_function](https://dd-harp.github.io/ramp.func/reference/make_function.md)

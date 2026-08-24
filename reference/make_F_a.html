@@ -11,11 +11,11 @@ The function substitutes age for
 time: given a birthday, \(d\), age is \(a=t-d\). The
 function is a product of:
 \(\bar X\) — or avg the approximate mean value
-\(\omega(a)\) — a function describing the relative biting rate by age
-\(S(t)\) — a seasonal pattern function
-\(T(t)\) — a trend pattern function
-\(K(t)\) — a shock function
-$$F(a, d) = x \times \omega(a) \times S(t-d) \times T(t-d) \times K(t-d)$$
+\(F_\omega(a)\) — a function describing the relative biting rate by age
+\(F_S(t)\) — a seasonal pattern function
+\(F_T(t)\) — a trend pattern function
+\(F_K(t)\) — a shock function
+$$F(a, d) = x \times \omega(a) \times F_S(t-d) \times F_T(t-d) \times F_K(t-d)$$
 
 
 For convenience, \(d\) is an optional argument with a default value \(d=0\)"><meta property="og:description" content="Construct a trace function to simulate
@@ -24,11 +24,11 @@ The function substitutes age for
 time: given a birthday, \(d\), age is \(a=t-d\). The
 function is a product of:
 \(\bar X\) — or avg the approximate mean value
-\(\omega(a)\) — a function describing the relative biting rate by age
-\(S(t)\) — a seasonal pattern function
-\(T(t)\) — a trend pattern function
-\(K(t)\) — a shock function
-$$F(a, d) = x \times \omega(a) \times S(t-d) \times T(t-d) \times K(t-d)$$
+\(F_\omega(a)\) — a function describing the relative biting rate by age
+\(F_S(t)\) — a seasonal pattern function
+\(F_T(t)\) — a trend pattern function
+\(F_K(t)\) — a shock function
+$$F(a, d) = x \times \omega(a) \times F_S(t-d) \times F_T(t-d) \times F_K(t-d)$$
 
 
 For convenience, \(d\) is an optional argument with a default value \(d=0\)"></head><body>
@@ -50,7 +50,7 @@ For convenience, \(d\) is an optional argument with a default value \(d=0\)"></h
       <ul class="navbar-nav me-auto"><li class="nav-item dropdown">
   <button class="nav-link dropdown-toggle" type="button" id="dropdown-articles" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Articles</button>
   <ul class="dropdown-menu" aria-labelledby="dropdown-articles"><li><a class="dropdown-item" href="../articles/TraceFunctions.html">Trace Functions</a></li>
-    <li><a class="dropdown-item" href="../articles/TimeSeries.html">Composed Time Serries</a></li>
+    <li><a class="dropdown-item" href="../articles/TimeSeries.html">Composed Time Series</a></li>
     <li><a class="dropdown-item" href="../articles/Cohorts.html">Cohorts</a></li>
   </ul></li>
 <li class="nav-item dropdown">
@@ -83,11 +83,11 @@ exposure by age using <a href="make_F_t.html">make_F_t</a>.</p>
 <p>The function substitutes age for
 time: given a birthday, \(d\), age is \(a=t-d\). The
 function is a product of:</p><ul><li><p>\(\bar X\) — or <code>avg</code> the approximate mean value</p></li>
-<li><p>\(\omega(a)\) — a function describing the relative biting rate by age</p></li>
-<li><p>\(S(t)\) — a seasonal pattern function</p></li>
-<li><p>\(T(t)\) — a trend pattern function</p></li>
-<li><p>\(K(t)\) — a shock function
-$$F(a, d) = x \times \omega(a) \times S(t-d) \times T(t-d) \times K(t-d)$$</p></li>
+<li><p>\(F_\omega(a)\) — a function describing the relative biting rate by age</p></li>
+<li><p>\(F_S(t)\) — a seasonal pattern function</p></li>
+<li><p>\(F_T(t)\) — a trend pattern function</p></li>
+<li><p>\(F_K(t)\) — a shock function
+$$F(a, d) = x \times \omega(a) \times F_S(t-d) \times F_T(t-d) \times F_K(t-d)$$</p></li>
 </ul><p>For convenience, \(d\) is an optional argument with a default value \(d=0\)</p>
     </div>
 

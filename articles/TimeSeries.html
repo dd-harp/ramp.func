@@ -39,7 +39,7 @@
   <button class="nav-link dropdown-toggle" type="button" id="dropdown-articles" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Articles</button>
   <ul class="dropdown-menu" aria-labelledby="dropdown-articles">
 <li><a class="dropdown-item" href="../articles/TraceFunctions.html">Trace Functions</a></li>
-    <li><a class="dropdown-item" href="../articles/TimeSeries.html">Composed Time Serries</a></li>
+    <li><a class="dropdown-item" href="../articles/TimeSeries.html">Composed Time Series</a></li>
     <li><a class="dropdown-item" href="../articles/Cohorts.html">Cohorts</a></li>
   </ul>
 </li>
@@ -82,32 +82,32 @@
     
     
 <p>In studies, we will often find it useful to construct functions that
-output the value of some variable over time. This package —
-<strong><code>ramp.func</code></strong> — has utilities to construct
-<strong><em>composed time series</em></strong> functions that are easy
-to manipulate. Each function is the product of four components:</p>
+output the value of some exogenous variable over time. This package —
+<strong><code>ramp.func</code></strong> — has utilities to construct and
+modify <strong><em>composed time series</em></strong> functions. Each
+function is the product of four components:</p>
 <p><span class="math display">\[
-x(t) = \bar x \times S(t) \times T(t) \times K(t)
+x(t) = \bar x \times F_S(t) \times F_T(t) \times F_K(t)
 \]</span></p>
 <p>where</p>
 <ul>
 <li><p><span class="math inline">\(\bar x\)</span> is a scaling
-parameter to set the mean value over an interval <span class="math inline">\((t_0, t_1)\)</span></p></li>
-<li><p><span class="math inline">\(S(t)&gt;0\)</span> is a
+parameter. It is close to the mean value of an unperturbed system. It is
+the mean over an interval <span class="math inline">\((t_0,
+t_1)\)</span> only if <span class="math inline">\(F_K(t)=1\)</span> and
+<span class="math display">\[\int_{t_0}^{t_1} F_S(t)\; F_T(t)\; dt =
+t_1-t_0\]</span></p></li>
+<li><p><span class="math inline">\(F_S(t)&gt;0\)</span> is a
 <strong>seasonal</strong> pattern function, normalized over the interval
-such that <span class="math display">\[\int_{t_0}^{t_1} S(t) \;dt = t_1
-- t_0\]</span></p></li>
-<li><p><span class="math inline">\(T(t)&gt;0\)</span> is a
+such that <span class="math display">\[\int_{t_0}^{t_1} F_S(t) \;dt =
+t_1 - t_0\]</span></p></li>
+<li><p><span class="math inline">\(F_T(t)&gt;0\)</span> is a
 <strong>trend</strong> pattern function, normalized over the interval
-such that <span class="math display">\[\int_{t_0}^{t_1} T(t) \; dt = t_1
-- t_0\]</span></p></li>
-<li><p><span class="math inline">\(K(t)&gt;0\)</span> is a
+such that <span class="math display">\[\int_{t_0}^{t_1} F_T(t) \; dt =
+t_1 - t_0\]</span></p></li>
+<li><p><span class="math inline">\(F_K(t)&gt;0\)</span> is a
 <strong>shock</strong> function</p></li>
-</ul>
-<p>The intent is to construct a function such that if <span class="math inline">\(K(t)=1\)</span>, <span class="math display">\[\int_{t_0}^{t_1} x(t) \; dt \approx \bar
-x.\]</span> Because of correlations between <span class="math inline">\(S(t)\)</span> and <span class="math inline">\(T(t)\)</span> there is no guarantee that the
-function will be equal to one.</p>
-  </main>
+</ul></main>
 </div>
 
 

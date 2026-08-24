@@ -1,7 +1,7 @@
 # type2
 
 A function to model relative biting rates by age of the form
-\$\$\omega(a) = \frac{A(a+\tau)}{B+a+\tau}\$\$
+\$\$F\_\omega(a) = \frac{A(a+\tau)}{B+a+\tau}\$\$
 
 ## See also
 

@@ -1,4 +1,4 @@
 # License
 
     YEAR: 2026
-    COPYRIGHT HOLDER: ramp.trace authors
+    COPYRIGHT HOLDER: ramp.func authors

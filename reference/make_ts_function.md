@@ -6,24 +6,24 @@ elements:
 
 - \\\bar x\\: a mean value
 
-- \\S(t)\\: a seasonal pattern
+- \\F_S(t)\\: a seasonal pattern
 
-- \\T(t)\\: a trend
+- \\F_T(t)\\: a trend
 
-- \\K(t)\\: a shock
+- \\F_K(t)\\: a shock
 
-\$\$x(t) = \bar x \times S(t) \times T(t) \times K(t)\$\$
+\$\$x(t) = \bar x \times F_S(t) \times F_T(t) \times F_K(t)\$\$
 
 The component functions are specified by passing parameters for
 [make_function](https://dd-harp.github.io/ramp.func/reference/make_function.md):
 
-- `season_par` creates \\S(t)\\ or `F_season` (*eg,* using
+- `season_par` creates \\F_S(t)\\ or `F_season` (*eg,* using
   [makepar_F_sin](https://dd-harp.github.io/ramp.func/reference/makepar_F_sin.md))
 
-- `trend_par` creates \\T(t)\\ or `F_trend` (*eg,* using
+- `trend_par` creates \\F_T(t)\\ or `F_trend` (*eg,* using
   [makepar_F_spline](https://dd-harp.github.io/ramp.func/reference/makepar_F_spline.md))
 
-- `shock_par` creates \\K(t)\\ or `F_shock` (*eg,* using
+- `shock_par` creates \\F_K(t)\\ or `F_shock` (*eg,* using
   [makepar_F_sharkbite](https://dd-harp.github.io/ramp.func/reference/makepar_F_sharkbite.md))
 
 ## Usage

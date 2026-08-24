@@ -1,6 +1,6 @@
 # spline2
 
-A spline function \\F(t)\\ for
+A spline function \\F_T(t)\\ for
 [trends](https://dd-harp.github.io/ramp.func/reference/trends.md) is
 specified by a set of \\n\\ interpolating points:
 
@@ -8,7 +8,7 @@ specified by a set of \\n\\ interpolating points:
 
 - and corresponding \\y\\ values \$\$y_1, y_2, \ldots, y_n.\$\$
 
-The function return value is \$\$T(t)=F(t)^2\$\$
+For `spline2` the function return value is \$\$F_T(t)^2\$\$
 
 ## See also
 

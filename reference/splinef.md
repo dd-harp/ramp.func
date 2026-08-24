@@ -1,7 +1,7 @@
 # splinef
 
-A [spline](https://rdrr.io/r/stats/splinefun.html) function \\T(t)\\ for
-[trends](https://dd-harp.github.io/ramp.func/reference/trends.md) is
+A [spline](https://rdrr.io/r/stats/splinefun.html) function \\F_T(t)\\
+for [trends](https://dd-harp.github.io/ramp.func/reference/trends.md) is
 specified by a set of \\n\\ interpolating points:
 
 - time values \$\$t_1, t_2, \ldots, t_n,\$\$

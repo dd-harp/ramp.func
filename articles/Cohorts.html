@@ -39,7 +39,7 @@
   <button class="nav-link dropdown-toggle" type="button" id="dropdown-articles" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Articles</button>
   <ul class="dropdown-menu" aria-labelledby="dropdown-articles">
 <li><a class="dropdown-item" href="../articles/TraceFunctions.html">Trace Functions</a></li>
-    <li><a class="dropdown-item" href="../articles/TimeSeries.html">Composed Time Serries</a></li>
+    <li><a class="dropdown-item" href="../articles/TimeSeries.html">Composed Time Series</a></li>
     <li><a class="dropdown-item" href="../articles/Cohorts.html">Cohorts</a></li>
   </ul>
 </li>
@@ -93,14 +93,15 @@ either the daily entomological inoculation rate (EIR) or the force of
 infection (FoI) — in cohorts as they age.</p>
 <p>Average exposure in the population is specified by a <a href="https://dd-harp.github.io/ramp.func/articles/TimeSeries.html"><strong>composed
 time series</strong> function</a>. <span class="math display">\[E(t) =
-\bar X \times S(t) \times T(t) \times K(t)\]</span></p>
+\bar E \times F_S(t) \times F_T(t) \times F_K(t)\]</span></p>
 <p>If we want to compare cohorts in the same population, then we must
 acknowledge that exposure differs by age. To model exposure, we
-construct a function to model relative biting rates by age: <span class="math display">\[\omega(a)\]</span> To model exposure for a cohort
-born on day <span class="math inline">\(d,\)</span> we note that time
-and age are related by <span class="math inline">\(a = t-d.\)</span>
-Exposure with respect to age for that cohort is thus: <span class="math display">\[E(a) = \bar X \times \omega (a) \times S(t-d)
-\times T(t-d) \times K(t-d).\]</span></p>
+construct a function to model relative biting rates by age: <span class="math display">\[F_\omega(a)\]</span> To model exposure for a
+cohort born on day <span class="math inline">\(d,\)</span> we note that
+time and age are related by <span class="math inline">\(a =
+t-d.\)</span> Exposure with respect to age for that cohort is thus:
+<span class="math display">\[E(a) = \bar X \times F_\omega (a) \times
+F_S(t-d) \times F_T(t-d) \times F_K(t-d).\]</span></p>
 <hr>
 <div class="section level2">
 <h2 id="example">Example<a class="anchor" aria-label="anchor" href="#example"></a>

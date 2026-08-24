@@ -9,7 +9,7 @@ library(viridisLite)
 A constructor for seasonality functions drawn from a generalized family
 involving trigonometric functions is returned by `make_function.sin`
 with the associated `makepar_F_sin` that returns functions of the form:
-\\S(t) = c\left(1 + \epsilon + \sin\left(\frac{2 \pi
+\\F_S(t) = c\left(1 + \epsilon + \sin\left(\frac{2 \pi
 (t-\tau)}{365}\right)\right)^p\\
 
 - \\c\\ or `norm` is a normalizing constant

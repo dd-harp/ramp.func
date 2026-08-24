@@ -1,7 +1,7 @@
 # Sharkfin
 
 The `sharkfin` family of functions was designed to model perturbations
-to a system.
+to a system, or shocks — \\F_K(t)\\.
 
 The function is built in steps:
 

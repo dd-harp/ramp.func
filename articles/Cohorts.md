@@ -15,15 +15,15 @@ the daily entomological inoculation rate (EIR) or the force of infection
 Average exposure in the population is specified by a [**composed time
 series**
 function](https://dd-harp.github.io/ramp.func/articles/TimeSeries.html).
-\\E(t) = \bar X \times S(t) \times T(t) \times K(t)\\
+\\E(t) = \bar E \times F_S(t) \times F_T(t) \times F_K(t)\\
 
 If we want to compare cohorts in the same population, then we must
 acknowledge that exposure differs by age. To model exposure, we
 construct a function to model relative biting rates by age:
-\\\omega(a)\\ To model exposure for a cohort born on day \\d,\\ we note
-that time and age are related by \\a = t-d.\\ Exposure with respect to
-age for that cohort is thus: \\E(a) = \bar X \times \omega (a) \times
-S(t-d) \times T(t-d) \times K(t-d).\\
+\\F\_\omega(a)\\ To model exposure for a cohort born on day \\d,\\ we
+note that time and age are related by \\a = t-d.\\ Exposure with respect
+to age for that cohort is thus: \\E(a) = \bar X \times F\_\omega (a)
+\times F_S(t-d) \times F_T(t-d) \times F_K(t-d).\\
 
 ------------------------------------------------------------------------
 
