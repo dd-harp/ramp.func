@@ -1,0 +1,26 @@
+# Splines
+
+``` r
+
+library(ramp.func)
+```
+
+``` r
+
+tv = c(-1:6)*365/4
+yv = c(1/2, 1, 2, 1, 1/3, 1, 3, 1) 
+sp0 <- makepar_F_spline(tv, yv)
+```
+
+``` r
+
+ff <- make_function(sp0)
+```
+
+``` r
+
+tt = seq(0,550)
+plot(tt, ff(tt), type = "l")
+```
+
+![](Splines_files/figure-html/unnamed-chunk-4-1.png)
