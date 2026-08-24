@@ -35,11 +35,11 @@ time: given a birthday, \eqn{d}, age is \eqn{a=t-d}. The
 function is a product of:
 \itemize{
 \item \eqn{\bar X} --- or \code{avg} the approximate mean value
-\item \eqn{\omega(a)} --- a function describing the relative biting rate by age
-\item \eqn{S(t)} --- a seasonal pattern function
-\item \eqn{T(t)} --- a trend pattern function
-\item \eqn{K(t)} --- a shock function
-\deqn{F(a, d) = x \times \omega(a) \times S(t-d) \times T(t-d) \times K(t-d)}
+\item \eqn{F_\omega(a)} --- a function describing the relative biting rate by age
+\item \eqn{F_S(t)} --- a seasonal pattern function
+\item \eqn{F_T(t)} --- a trend pattern function
+\item \eqn{F_K(t)} --- a shock function
+\deqn{F(a, d) = x \times \omega(a) \times F_S(t-d) \times F_T(t-d) \times F_K(t-d)}
 }
 
 For convenience, \eqn{d} is an optional argument with a default value \eqn{d=0}

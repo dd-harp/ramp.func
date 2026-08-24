@@ -4,7 +4,7 @@
 \alias{type2}
 \title{type2}
 \description{
-A function to model relative biting rates by age of the form \deqn{\omega(a) = \frac{A(a+\tau)}{B+a+\tau}}
+A function to model relative biting rates by age of the form \deqn{F_\omega(a) = \frac{A(a+\tau)}{B+a+\tau}}
 }
 \seealso{
 \link{makepar_F_type2}

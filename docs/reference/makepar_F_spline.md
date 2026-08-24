@@ -1,6 +1,6 @@
 # Make a spline [F_obj](https://dd-harp.github.io/ramp.func/reference/F_obj.md)
 
-Return a function obj A spline function \\T(t)\\ for
+Return a function obj A spline function \\F_T(t)\\ for
 [trends](https://dd-harp.github.io/ramp.func/reference/trends.md) is
 specified by a set of \\n\\ interpolating points:
 

@@ -36,18 +36,18 @@ variable \eqn{x(t)} is computed
 as a product of four configurable elements:
 \itemize{
 \item \eqn{\bar x}: a mean value
-\item \eqn{S(t)}: a seasonal pattern
-\item \eqn{T(t)}: a trend
-\item \eqn{K(t)}: a shock
+\item \eqn{F_S(t)}: a seasonal pattern
+\item \eqn{F_T(t)}: a trend
+\item \eqn{F_K(t)}: a shock
 }
 
-\deqn{x(t) = \bar x \times S(t) \times T(t) \times K(t)}
+\deqn{x(t) = \bar x \times F_S(t) \times F_T(t) \times F_K(t)}
 
 The component functions are specified by
 passing parameters for \link{make_function}:
 \itemize{
-\item \code{season_par} creates \eqn{S(t)} or \code{F_season} (\emph{eg,} using \link{makepar_F_sin})
-\item \code{trend_par} creates \eqn{T(t)} or \code{F_trend} (\emph{eg,} using \link{makepar_F_spline})
-\item \code{shock_par} creates \eqn{K(t)} or \code{F_shock} (\emph{eg,} using \link{makepar_F_sharkbite})
+\item \code{season_par} creates \eqn{F_S(t)} or \code{F_season} (\emph{eg,} using \link{makepar_F_sin})
+\item \code{trend_par} creates \eqn{F_T(t)} or \code{F_trend} (\emph{eg,} using \link{makepar_F_spline})
+\item \code{shock_par} creates \eqn{F_K(t)} or \code{F_shock} (\emph{eg,} using \link{makepar_F_sharkbite})
 }
 }

@@ -14,7 +14,7 @@ library(viridisLite)
 ```
 
 A constructor for seasonality functions drawn from a generalized family involving trigonometric functions is returned by `make_function.sin` with the associated `makepar_F_sin` that returns functions of the form: 
-$$S(t) =  c\left(1 + \epsilon + \sin\left(\frac{2 \pi (t-\tau)}{365}\right)\right)^p$$
+$$F_S(t) =  c\left(1 + \epsilon + \sin\left(\frac{2 \pi (t-\tau)}{365}\right)\right)^p$$
 
 + $c$ or `norm` is a normalizing constant 
 
@@ -36,7 +36,7 @@ The default normalizing constant is $365$ so that if $S$ is multiplied by some o
 integrate(S1, 0, 365)$val
 ```
 
-```{r, fig.height=3.5, fig.width=5}
+```{r, fig.height=3.5, fig.width=8}
 tt <- seq(0, 3*365, by=5)
 plot(tt, S1(tt), type ="l", xlab = "Time (in Days)", ylab = expression(S(t)))
 ```
@@ -48,7 +48,7 @@ S2 <- make_function(p2)
 ```
 
 
-```{r, fig.height=3.5, fig.width=5}
+```{r, fig.height=3.5, fig.width=8}
 plot(tt, S1(tt), type ="l", xlab = "Time (in Days)", ylab = expression(S(t)))
 lines(tt, S2(tt), col = "blue")
 ```
@@ -60,7 +60,7 @@ p3 = makepar_F_sin(phase = c(0,120), N=2)
 S3 <- make_function(p3)
 ```
 
-```{r, fig.height=3.5, fig.width=5}
+```{r, fig.height=3.5, fig.width=8}
 s3 <- S3(tt) 
 plot(tt, s3[1,], type ="l", xlab = "Time (in Days)", ylab = expression(S(t)))
 lines(tt, S1(tt), col = "yellow", lty=2)
@@ -84,7 +84,7 @@ S7 <- make_function(p7)
 
 The shape parameters make it easy to configure a seasonality function with a range of features: 
 
-```{r, fig.height=3.5, fig.width=5}
+```{r, fig.height=3.5, fig.width=8}
 clrs = turbo(7)
 plot(tt, S7(tt), type ="n", xlab = "Time (in Days)", ylab = expression(S(t)))
 lines(tt, S1(tt), col = clrs[1])

@@ -1,15 +1,15 @@
 #' @title type2
 #'
 #' @description
-#' A function to model relative biting rates by age of the form \deqn{\omega(a) = \frac{A(a+\tau)}{B+a+\tau}}
+#' A function to model relative biting rates by age of the form \deqn{F_\omega(a) = \frac{A(a+\tau)}{B+a+\tau}}
 #'
 #' @seealso [makepar_F_type2]
 #' @name type2
 NULL
 
 #' @title Make a type2 function for age
-#' @description Return an age pattern \eqn{\omega(a)}, a function of the form
-#' \deqn{\omega(a) = \frac{A(a+\tau)}{B+a+\tau}}
+#' @description Return an age pattern \eqn{F_\omega(a)}, a function of the form
+#' \deqn{F_\omega(a) = \frac{A(a+\tau)}{B+a+\tau}}
 #' where \eqn{\tau} is a shift so that \eqn{\omega(0) > 0}
 #' and \eqn{A} and \eqn{B} are shape parameters
 #'
@@ -27,8 +27,8 @@ make_function.type2 = function(F_obj){with(F_obj,{
 })}
 
 #' @title Make a type2 function for age
-#' @description Return an age pattern \eqn{\omega(a)}, a function of the form
-#' \deqn{\omega(a) = \frac{A(a+\tau)}{B+a+\tau}}
+#' @description Return an age pattern \eqn{F_\omega(a)}, a function of the form
+#' \deqn{F_\omega(a) = \frac{A(a+\tau)}{B+a+\tau}}
 #' where \eqn{\tau} is a shift so that \eqn{\omega(0) > 0}
 #' and \eqn{A} and \eqn{B} are shape parameters
 #'

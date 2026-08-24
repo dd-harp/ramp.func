@@ -1,7 +1,7 @@
 #' @title F_obj
 #'
 #' @description
-#' In `ramp.trace`, **`F_obj`** describes an object used by [make_F_t] and [make_function] to construct
+#' In `ramp.func`, **`F_obj`** describes an object used by [make_F_t] and [make_function] to construct
 #' functions:
 #'
 #' + An **`F_obj`** is returned by a function `makepar_F_method`
@@ -48,11 +48,11 @@ make_F_t = function(F_obj){
 #' time: given a birthday, \eqn{d}, age is \eqn{a=t-d}. The
 #' function is a product of:
 #' + \eqn{\bar X} --- or `avg` the approximate mean value
-#' + \eqn{\omega(a)} --- a function describing the relative biting rate by age
-#' + \eqn{S(t)} --- a seasonal pattern function
-#' + \eqn{T(t)} --- a trend pattern function
-#' + \eqn{K(t)} --- a shock function
-#' \deqn{F(a, d) = x \times \omega(a) \times S(t-d) \times T(t-d) \times K(t-d)}
+#' + \eqn{F_\omega(a)} --- a function describing the relative biting rate by age
+#' + \eqn{F_S(t)} --- a seasonal pattern function
+#' + \eqn{F_T(t)} --- a trend pattern function
+#' + \eqn{F_K(t)} --- a shock function
+#' \deqn{F(a, d) = x \times \omega(a) \times F_S(t-d) \times F_T(t-d) \times F_K(t-d)}
 #'
 #' For convenience, \eqn{d} is an optional argument with a default value \eqn{d=0}
 #'

@@ -18,7 +18,7 @@ parameters to configure the \code{splinef} or \code{splineX} case of \code{make_
 }
 \description{
 Return a function obj
-A spline function \eqn{T(t)} for \link{trends} is specified by a set of  \eqn{n} interpolating points:
+A spline function \eqn{F_T(t)} for \link{trends} is specified by a set of  \eqn{n} interpolating points:
 \itemize{
 \item time
 values \deqn{t_1, t_2, \ldots, t_n,}

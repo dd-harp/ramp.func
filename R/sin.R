@@ -1,7 +1,7 @@
 #' @title sin
 #'
 #' @description
-#' Return a pattern \eqn{S(t)} to model [seasonality] with the form
+#' Return a pattern \eqn{F_S(t)} to model [seasonality] with the form
 #' \deqn{S(t) = c \left(1+\epsilon + \sin\left(\frac{2 \pi (t-\tau)}{365}\right)\right)^p}
 #'
 #' @name sin
@@ -9,7 +9,7 @@ NULL
 
 
 #' @title Make a Sine-based Seasonality Function
-#' @description Return a seasonal pattern \eqn{S(t)}, a function of the form
+#' @description Return a seasonal pattern \eqn{F_S(t)}, a function of the form
 #' \deqn{S(t) = c \left(1+\epsilon + \sin\left(\frac{2 \pi (t-\tau)}{365}\right)\right)^p}
 #' where \eqn{c} is a normalizing constant, and
 #' + \eqn{\epsilon \geq 0} or `bottom`
@@ -17,7 +17,7 @@ NULL
 #' + \eqn{p} or `pw`
 #'
 #' The algorithm sets the constant \eqn{c} or `norm`
-#' such that \deqn{\int_0^{365} S(t) dt=c} where the default is `norm=365.`
+#' such that \deqn{\int_0^{365} F_S(t) dt=c} where the default is `norm=365.`
 #' @inheritParams make_function
 #' @importFrom stats integrate
 #' @seealso [makepar_F_sin]
@@ -38,15 +38,15 @@ make_F_t.sin = function(F_obj){
 
 
 #' @title Make a Sine-based Seasonality Function
-#' @description Return a seasonal pattern \eqn{S(t)}, a function of the form
-#' \deqn{S(t) = c \left(1+\epsilon + \sin\left(\frac{2 \pi (t-\tau)}{365}\right)\right)^p}
+#' @description Return a seasonal pattern \eqn{F_S(t)}, a function of the form
+#' \deqn{F_S(t) = c \left(1+\epsilon + \sin\left(\frac{2 \pi (t-\tau)}{365}\right)\right)^p}
 #' where \eqn{c} is a normalizing constant, and
 #' + \eqn{\epsilon \geq 0} or `bottom`
 #' + \eqn{\tau} or `phase`
 #' + \eqn{p} or `pw`
 #'
 #' The algorithm sets the constant \eqn{c} or `norm`
-#' such that \deqn{\int_0^{365} S(t) dt=c} where the default is `norm=365.`
+#' such that \deqn{\int_0^{365} F_S(t) dt=c} where the default is `norm=365.`
 #' @inheritParams make_function
 #' @importFrom stats integrate
 #' @seealso [makepar_F_sin]

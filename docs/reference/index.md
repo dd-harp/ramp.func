@@ -25,7 +25,7 @@
 ### Seasonality
 
 - [`seasonality`](https://dd-harp.github.io/ramp.func/reference/seasonality.md)
-  : seasonality
+  : Seasonality Pattern Functions — \\F_S(t)\\:
 - [`sin`](https://dd-harp.github.io/ramp.func/reference/sin.md) : sin
 - [`makepar_F_sin()`](https://dd-harp.github.io/ramp.func/reference/makepar_F_sin.md)
   : parameters for make_function
@@ -33,7 +33,7 @@
 ### Trends
 
 - [`trends`](https://dd-harp.github.io/ramp.func/reference/trends.md) :
-  trends
+  Trend Pattern Functions — \\F_T(t)\\
 - [`splinef`](https://dd-harp.github.io/ramp.func/reference/splinef.md)
   : splinef
 - [`splineX`](https://dd-harp.github.io/ramp.func/reference/splineX.md)
@@ -46,7 +46,7 @@
 ### Shocks
 
 - [`shocks`](https://dd-harp.github.io/ramp.func/reference/shocks.md) :
-  shocks
+  Shock Functions — \\F_K(t)\\:
 - [`sharkbite`](https://dd-harp.github.io/ramp.func/reference/sharkbite.md)
   : Sharkbite
 - [`sharkfin`](https://dd-harp.github.io/ramp.func/reference/sharkfin.md)

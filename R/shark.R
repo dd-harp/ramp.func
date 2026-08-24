@@ -1,7 +1,7 @@
 #' @title Sharkfin
 #' @description
 #'
-#' The `sharkfin` family of functions was designed to model perturbations to a system.
+#' The `sharkfin` family of functions was designed to model perturbations to a system, or shocks --- \eqn{F_K(t)}.
 #'
 #' The function is built in steps:
 #' 1. take the product of two sigmoidal functions

@@ -4,7 +4,7 @@
 \alias{spline2}
 \title{spline2}
 \description{
-A spline function \eqn{F(t)} for \link{trends} is specified by a set of  \eqn{n} interpolating points:
+A spline function \eqn{F_T(t)} for \link{trends} is specified by a set of  \eqn{n} interpolating points:
 \itemize{
 \item time
 values \deqn{t_1, t_2, \ldots, t_n,}
@@ -12,7 +12,7 @@ values \deqn{t_1, t_2, \ldots, t_n,}
 \eqn{y} values \deqn{y_1, y_2, \ldots, y_n.}
 }
 
-The function return value is \deqn{T(t)=F(t)^2}
+For \code{spline2} the function return value is \deqn{F_T(t)^2}
 }
 \seealso{
 \link[stats:splinefun]{stats::spline}, \link{makepar_F_spline}

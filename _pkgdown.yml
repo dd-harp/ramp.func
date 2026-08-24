@@ -8,7 +8,7 @@ navbar:
     menu:
     - text: Trace Functions
       href: articles/TraceFunctions.html
-    - text: Composed Time Serries
+    - text: Composed Time Series
       href: articles/TimeSeries.html
     - text: Cohorts
       href: articles/Cohorts.html
