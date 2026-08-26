@@ -1,0 +1,8 @@
+---
+title: "Trends"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Trends}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---

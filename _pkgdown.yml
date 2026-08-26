@@ -12,14 +12,22 @@ navbar:
       href: articles/TimeSeries.html
     - text: Cohorts
       href: articles/Cohorts.html
-  - text: Function Families
+  - text: Seasonality
     menu:
-      - text: Basic Functions
-        href: articles/Basic.html
+      - text: Seasonality
+        href: articles/Seasonality.html
       - text: Sin
         href: articles/Sin.html
+  - text: Trends
+    menu:
+      - text: Trends
+        href: articles/Trends.html
       - text: Splines
         href: articles/Splines.html
+  - text: Shocks
+    menu:
+      - text: Shocks
+        href: articles/Shocks.html
       - text: Shark Functions
         href: articles/Shark.html
   - text: Reference
