@@ -110,7 +110,7 @@ make_F_t.splineX = function(F_obj){
 #' @keywords internal
 #' @export
 make_function.spline2 = function(F_obj){
-  ff <- function(t){
+  ff <- function(t, V=list()){
     (stats::spline(F_obj$tt, F_obj$yy, xout = t)$y)^2
   }
   return(ff)
