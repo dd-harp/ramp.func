@@ -44,11 +44,23 @@
   </ul>
 </li>
 <li class="nav-item dropdown">
-  <button class="nav-link dropdown-toggle" type="button" id="dropdown-function-families" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Function Families</button>
-  <ul class="dropdown-menu" aria-labelledby="dropdown-function-families">
-<li><a class="dropdown-item" href="../articles/Basic.html">Basic Functions</a></li>
+  <button class="nav-link dropdown-toggle" type="button" id="dropdown-seasonality" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Seasonality</button>
+  <ul class="dropdown-menu" aria-labelledby="dropdown-seasonality">
+<li><a class="dropdown-item" href="../articles/Seasonality.html">Seasonality</a></li>
     <li><a class="dropdown-item" href="../articles/Sin.html">Sin</a></li>
+  </ul>
+</li>
+<li class="nav-item dropdown">
+  <button class="nav-link dropdown-toggle" type="button" id="dropdown-trends" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Trends</button>
+  <ul class="dropdown-menu" aria-labelledby="dropdown-trends">
+<li><a class="dropdown-item" href="../articles/Trends.html">Trends</a></li>
     <li><a class="dropdown-item" href="../articles/Splines.html">Splines</a></li>
+  </ul>
+</li>
+<li class="nav-item dropdown">
+  <button class="nav-link dropdown-toggle" type="button" id="dropdown-shocks" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Shocks</button>
+  <ul class="dropdown-menu" aria-labelledby="dropdown-shocks">
+<li><a class="dropdown-item" href="../articles/Shocks.html">Shocks</a></li>
     <li><a class="dropdown-item" href="../articles/Shark.html">Shark Functions</a></li>
   </ul>
 </li>
@@ -73,6 +85,8 @@
   <main id="main" class="col-md-9"><div class="page-header">
 
       <h1>Trace Functions</h1>
+            <h3 data-toc-skip class="subtitle">Forcing for Dynamical
+Terms</h3>
             
       
       <small class="dont-index">Source: <a href="https://github.com/dd-harp/ramp.func/blob/HEAD/vignettes/TraceFunctions.Rmd" class="external-link"><code>vignettes/TraceFunctions.Rmd</code></a></small>
@@ -81,12 +95,17 @@
 
     
     
-<p>Malaria and other mosquito-transmitted pathogens are <em>complex
-adaptive systems,</em> so we develop mathematical models for the
-epidemiology, transmission dynamics, and control. These models are
-naturally complex, but they are also modular. In developing or analyzing
-these models, it is often useful to isolate some part of the system, and
-<em>force</em> it using some function. We call these functions
+<p>Malaria (and other mosquito-transmitted pathogens) can be understood
+as <em>complex adaptive systems:</em> they are non-linear interactions
+among humans, parasites, mosquitoes, and managers that are forced by
+weather, landscapes and hydrology, and some biotic factors.</p>
+<p>Dynamical systems developed to understand malaria epidemiology,
+malaria transmission dynamics, and mosquito ecology are naturally
+modular. Given the complexity, it is sometimes difficult to tease apart
+effects of forcing by malaria control, weather, or biotic factors. In
+developing or analyzing these models, it is often useful to isolate some
+part of the system, and <em>force</em> the rest using a function that
+stands in place of another complex module. We call these functions
 <strong>trace functions.</strong></p>
 <div class="section level2">
 <h2 id="constructing-functions">Constructing Functions<a class="anchor" aria-label="anchor" href="#constructing-functions"></a>
@@ -98,22 +117,52 @@ these models, it is often useful to isolate some part of the system, and
 <span class="math inline">\(F(t,V)\)</span></p></li>
 </ul>
 <p>Both functions construct a function using an object called
-<code>F_obj</code></p>
+<code>F_obj</code>. These two function classes are, in turn, used by two
+other core functions:</p>
+<ul>
+<li><p><code>make_ts_function</code> constructs a <a href="https://dd-harp.github.io/ramp.func/articles/TimeSeries.html"><em>composed
+time series function</em></a>.</p></li>
+<li>
+<p><code>make_F_a</code> constructs a cohort forcing function, a
+function to study <a href="https://dd-harp.github.io/ramp.func/articles/Cohorts.html">cohort
+dynamics</a> in a cohort as it ages, as a function of:</p>
+<ul>
+<li><p>a composed time series function describing average exposure in a
+population;</p></li>
+<li><p>a function describing relative biting rates by age.</p></li>
+</ul>
+</li>
+</ul>
 </div>
 <div class="section level2">
-<h2 id="related-software">Related Software<a class="anchor" aria-label="anchor" href="#related-software"></a>
+<h2 id="supported-software">Supported Software<a class="anchor" aria-label="anchor" href="#supported-software"></a>
 </h2>
-<p>The name — <strong><code>ramp.func</code></strong> — arises because
-it was originally part of the <code>ramp</code> family of software
-packages. A set of functions to model forcing was originally devised for
+<p>This package supports the <code>ramp</code> suite, which has two
+parts:</p>
+<ul>
+<li><p><a href="https://faculty.washington.edu/smitdave/simba/" class="external-link"><strong>SimBA</strong></a>
+– a set of six other packages developed for simulation-based
+analytics</p></li>
+<li><p><strong><code>ramp.falciparum</code></strong> — takes a deep dive
+into malaria epidemiology</p></li>
+<li><p><strong><code>ramp.micro</code></strong> – explores
+micro-simulation for mosquito ecology and malaria transmission.</p></li>
+</ul>
+<p><strong><code>ramp.func</code></strong> — was originally developed
+within other <code>ramp</code> software packages. A set of time series
+functions to model forcing was originally devised for
 <strong><code>ramp.falciparum</code></strong>, which takes a deep dive
-into facliparum malaria epidemiology. Later, the same functionality was
-built into <strong><code>ramp.xds</code></strong>.
-<strong><code>ramp.func</code></strong> was built to avoid maintaining
-duplicate software libraries.</p>
+into falciparum malaria epidemiology. Later, the same functionality was
+built into <strong><code>ramp.xds</code></strong> and
+<strong><code>ramp.micro</code></strong>. To avoid maintaining duplicate
+software libraries, we developed
+<strong><code>ramp.func</code></strong>.</p>
+<p>In addition to the time-series function library,
+<strong><code>ramp.func</code></strong> also includes a function library
+to support development of spatial kernel functions.</p>
 <div class="section level3">
-<h3 id="ramp-xds">
-<strong><code>ramp.xds</code></strong><a class="anchor" aria-label="anchor" href="#ramp-xds"></a>
+<h3 id="simba">
+<strong>SimBA</strong><a class="anchor" aria-label="anchor" href="#simba"></a>
 </h3>
 <p>In <strong>SimBA,</strong> we can use the <strong>trace
 function</strong> library to build functions that set the value of one
@@ -121,8 +170,8 @@ or more <strong>dynamical terms,</strong> configured using one of the
 <strong>trivial modules</strong> in
 <strong><code>ramp.xds</code></strong>.</p>
 <ul>
-<li><p><span class="math inline">\(\Lambda\)</span> — the emergence rate
-of adult, female mosquitoes</p></li>
+<li><p><span class="math inline">\(\Lambda(t)\)</span> — the emergence
+rate of adult, female mosquitoes</p></li>
 <li><p><span class="math inline">\(\eta(t)\)</span> — egg laying by
 adult mosquitoes</p></li>
 <li><p><span class="math inline">\(E(t)\)</span> — the daily
@@ -130,21 +179,13 @@ entomological inoculation rate (EIR)</p></li>
 <li><p><span class="math inline">\(\kappa(t)\)</span> — the net
 infectiousness (NI)</p></li>
 </ul>
-</div>
-<div class="section level3">
-<h3 id="ramp-forcing">
-<strong><code>ramp.forcing</code></strong><a class="anchor" aria-label="anchor" href="#ramp-forcing"></a>
-</h3>
 <p>In <strong><code>ramp.forcing</code></strong>, these functions can be
 used to construct non-autonomous dynamical systems, where parameters can
 vary with respect to time, including models for exogenous variables,
 intervention coverage, parameter values, or functional responses to
 weather.</p>
-</div>
-<div class="section level3">
-<h3 id="ramp-work">
-<strong><code>ramp.work</code></strong><a class="anchor" aria-label="anchor" href="#ramp-work"></a>
-</h3>
+<p>In <strong><code>ramp.work</code></strong>, we use trace functions to
+fit models to time series data.</p>
 </div>
 <div class="section level3">
 <h3 id="ramp-falciparum">
@@ -154,6 +195,14 @@ weather.</p>
 where we take a deep dive into malaria epidemiology, we often find it
 useful to construct functions to model exposure in cohorts as a function
 of age (see <a href="Cohorts.html">Cohorts</a>).</p>
+</div>
+<div class="section level3">
+<h3 id="ramp-micro">
+<strong><code>ramp.micro</code></strong><a class="anchor" aria-label="anchor" href="#ramp-micro"></a>
+</h3>
+<p>Microsimulation models force models for adult mosquito ecology using
+the term <span class="math inline">\(\Lambda(t)\)</span> (like
+SimBA).</p>
 </div>
 </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>

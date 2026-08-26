@@ -44,11 +44,23 @@
   </ul>
 </li>
 <li class="nav-item dropdown">
-  <button class="nav-link dropdown-toggle" type="button" id="dropdown-function-families" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Function Families</button>
-  <ul class="dropdown-menu" aria-labelledby="dropdown-function-families">
-<li><a class="dropdown-item" href="../articles/Basic.html">Basic Functions</a></li>
+  <button class="nav-link dropdown-toggle" type="button" id="dropdown-seasonality" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Seasonality</button>
+  <ul class="dropdown-menu" aria-labelledby="dropdown-seasonality">
+<li><a class="dropdown-item" href="../articles/Seasonality.html">Seasonality</a></li>
     <li><a class="dropdown-item" href="../articles/Sin.html">Sin</a></li>
+  </ul>
+</li>
+<li class="nav-item dropdown">
+  <button class="nav-link dropdown-toggle" type="button" id="dropdown-trends" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Trends</button>
+  <ul class="dropdown-menu" aria-labelledby="dropdown-trends">
+<li><a class="dropdown-item" href="../articles/Trends.html">Trends</a></li>
     <li><a class="dropdown-item" href="../articles/Splines.html">Splines</a></li>
+  </ul>
+</li>
+<li class="nav-item dropdown">
+  <button class="nav-link dropdown-toggle" type="button" id="dropdown-shocks" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Shocks</button>
+  <ul class="dropdown-menu" aria-labelledby="dropdown-shocks">
+<li><a class="dropdown-item" href="../articles/Shocks.html">Shocks</a></li>
     <li><a class="dropdown-item" href="../articles/Shark.html">Shark Functions</a></li>
   </ul>
 </li>
@@ -100,7 +112,7 @@ construct a function to model relative biting rates by age: <span class="math di
 cohort born on day <span class="math inline">\(d,\)</span> we note that
 time and age are related by <span class="math inline">\(a =
 t-d.\)</span> Exposure with respect to age for that cohort is thus:
-<span class="math display">\[E(a) = \bar X \times F_\omega (a) \times
+<span class="math display">\[E(a, d) = \bar X \times F_\omega (a) \times
 F_S(t-d) \times F_T(t-d) \times F_K(t-d).\]</span></p>
 <hr>
 <div class="section level2">

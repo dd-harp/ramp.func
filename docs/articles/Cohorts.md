@@ -22,7 +22,7 @@ acknowledge that exposure differs by age. To model exposure, we
 construct a function to model relative biting rates by age:
 \\F\_\omega(a)\\ To model exposure for a cohort born on day \\d,\\ we
 note that time and age are related by \\a = t-d.\\ Exposure with respect
-to age for that cohort is thus: \\E(a) = \bar X \times F\_\omega (a)
+to age for that cohort is thus: \\E(a, d) = \bar X \times F\_\omega (a)
 \times F_S(t-d) \times F_T(t-d) \times F_K(t-d).\\
 
 ------------------------------------------------------------------------

@@ -1,0 +1,8 @@
+---
+title: "Shocks"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Shocks}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
