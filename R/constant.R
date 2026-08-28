@@ -9,7 +9,7 @@
 #' @export
 makepar_F_c = function(c=1){
   pars <- list()
-  class(pars) = c('', 'list')
+  class(pars) = c('c', 'list')
   pars$c = c
   return(pars)
 }

@@ -91,5 +91,17 @@ make_F_a = function(avg,
 #' @return a function
 #' @export
 make_function.list = function(F_obj){
-  return(function(t, V=list()){0*t+1})
+   make_function(makepar_F_c(1))
 }
+
+#' @title Make function default
+#' @description For lists that are not assigned a class,
+#' return the default: \eqn{F(t)=1}.
+#' @inheritParams make_function
+#' @keywords internal
+#' @return a function
+#' @export
+make_F_t.list = function(F_obj){
+  make_F_t(makepar_F_c(1))
+}
+
