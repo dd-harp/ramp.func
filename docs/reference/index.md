@@ -72,3 +72,14 @@
   : parameters for make_function
 - [`makepar_F_nproduct()`](https://dd-harp.github.io/ramp.func/reference/makepar_F_nproduct.md)
   : parameters for make_function
+
+## Probability Distribution Functions
+
+- [`dPOIStrunc()`](https://dd-harp.github.io/ramp.func/reference/dPOIStrunc.md)
+  : Zero Truncated Poisson
+- [`make_POIStrunc()`](https://dd-harp.github.io/ramp.func/reference/make_POIStrunc.md)
+  : Make a Zero Truncated Poisson
+- [`dNBtrunc()`](https://dd-harp.github.io/ramp.func/reference/dNBtrunc.md)
+  : Zero Truncated Negative Binomial
+- [`make_NBtrunc()`](https://dd-harp.github.io/ramp.func/reference/make_NBtrunc.md)
+  : Make a Zero Truncated Negative Binomial

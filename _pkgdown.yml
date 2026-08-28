@@ -12,6 +12,10 @@ navbar:
       href: articles/TimeSeries.html
     - text: Cohorts
       href: articles/Cohorts.html
+    - text: Probability Mass Functions
+      href: articles/Truncated.html
+    - text: Kernels
+      href: articles/Kernels.html
   - text: Seasonality
     menu:
       - text: Seasonality
@@ -83,3 +87,9 @@ reference:
   - makepar_F_sum
   - makepar_F_product
   - makepar_F_nproduct
+- title: Probability Distribution Functions
+  contents:
+  - dPOIStrunc
+  - make_POIStrunc
+  - dNBtrunc
+  - make_NBtrunc
