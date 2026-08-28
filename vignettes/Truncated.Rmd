@@ -1,0 +1,55 @@
+---
+title: "Probability Mass Functions"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Probability Mass Functions}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+In developing Tweedie functions for queuing models (see `ramp.falciparum`), we use zero truncated functions to model the multiplicity of exposure (MoE). 
+
+
+```{r}
+library(ramp.func)
+```
+
+## Zero Truncated Poisson
+
+```{r}
+x <- 1:20
+dx <- dPOIStrunc(1:20, 1)
+sum(dx)
+```
+
+```{r}
+sum(x*dx)
+```
+
+
+```{r, fig.width=6, fig.height=4}
+F_moe <- make_POIStrunc(1)
+plot(F_moe(1:20), type = "h", lwd=2, 
+     ylim = c(0, F_moe(1)), xlab = "x", 
+     ylab = expression(F[MoE]))
+```
+
+## Zero Truncated Negative Binomial 
+
+```{r}
+x <- 1:40
+dx <- dNBtrunc(x, 1, .5)
+sum(dx)
+```
+
+```{r}
+sum(x*dx)
+```
+
+```{r, fig.width=6, fig.height=4}
+F_moe <- make_NBtrunc(1, .5)
+plot(F_moe(1:20), type = "h", lwd=2, 
+     ylim = c(0, F_moe(1)), xlab = "x", 
+     ylab = expression(F[MoE]))
+```
+
