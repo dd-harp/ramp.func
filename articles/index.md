@@ -18,3 +18,5 @@
 - [Trace
   Functions](https://dd-harp.github.io/ramp.func/articles/TraceFunctions.md):
 - [Trends](https://dd-harp.github.io/ramp.func/articles/Trends.md):
+- [Probability Mass
+  Functions](https://dd-harp.github.io/ramp.func/articles/Truncated.md):
