@@ -41,6 +41,8 @@
 <li><a class="dropdown-item" href="../articles/TraceFunctions.html">Trace Functions</a></li>
     <li><a class="dropdown-item" href="../articles/TimeSeries.html">Composed Time Series</a></li>
     <li><a class="dropdown-item" href="../articles/Cohorts.html">Cohorts</a></li>
+    <li><a class="dropdown-item" href="../articles/Truncated.html">Probability Mass Functions</a></li>
+    <li><a class="dropdown-item" href="../articles/Kernels.html">Kernels</a></li>
   </ul>
 </li>
 <li class="active nav-item dropdown">
@@ -85,8 +87,8 @@
   <main id="main" class="col-md-9"><div class="page-header">
 
       <h1>Seasonality</h1>
-            <h3 data-toc-skip class="subtitle">A Generalized
-Trigonometric Seasonal Pattern</h3>
+            <h3 data-toc-skip class="subtitle">Seasonal Pattern
+Functions</h3>
             
       
       <small class="dont-index">Source: <a href="https://github.com/dd-harp/ramp.func/blob/HEAD/vignettes/Seasonality.Rmd" class="external-link"><code>vignettes/Seasonality.Rmd</code></a></small>
@@ -95,8 +97,62 @@ Trigonometric Seasonal Pattern</h3>
 
     
     
-
-  </main>
+<hr>
+<p><strong>The Seasonal Pattern Function Library</strong></p>
+<ul>
+<li>
+<a href="https://dd-harp.github.io/ramp.func/articles/Sin.html"><code>sin</code></a>
+— a generalized function family based on a trigonometric function.</li>
+</ul>
+<hr>
+<div class="section level2">
+<h2 id="seasonal-forcing">Seasonal Forcing<a class="anchor" aria-label="anchor" href="#seasonal-forcing"></a>
+</h2>
+<div class="section level3">
+<h3 id="canonical-seasonality">Canonical Seasonality<a class="anchor" aria-label="anchor" href="#canonical-seasonality"></a>
+</h3>
+<p>Seasonal functions usually mean <em>canonical seasonality:</em> <span class="math display">\[F_S(t+365) = F_S(t).\]</span> While this
+motiviates the concept, it is not a <em>necessary</em> component.</p>
+<p>In the following <em>non-canonical</em> seasonal function (black),
+the phase drifts by more than a month per year, so that over 10 years,
+there are only 9 cycles. The function is contrasted with a
+<em>canonical</em> seasonal function (dark red):</p>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dd-harp.github.io/ramp.func/">ramp.func</a></span><span class="op">)</span></span>
+<span><span class="va">F_phase</span> <span class="op">=</span> <span class="fu"><a href="../reference/make_F_t.html">make_F_t</a></span><span class="op">(</span><span class="fu"><a href="../reference/makepar_F_spline.html">makepar_F_spline</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span><span class="op">:</span><span class="fl">10</span><span class="op">)</span><span class="op">*</span><span class="fl">365</span>, yy <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span><span class="op">:</span><span class="fl">10</span><span class="op">)</span><span class="op">*</span><span class="fl">365</span><span class="op">/</span><span class="fl">10</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">F_dS</span> <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">t</span>, <span class="va">phase</span><span class="op">)</span><span class="op">{</span><span class="fl">1</span><span class="op">+</span> <span class="fu"><a href="../reference/sin.html">sin</a></span><span class="op">(</span><span class="fl">2</span><span class="op">*</span><span class="va">pi</span><span class="op">*</span><span class="op">(</span><span class="va">t</span><span class="op">-</span><span class="va">phase</span><span class="op">)</span><span class="op">/</span><span class="fl">365</span><span class="op">)</span><span class="op">}</span></span>
+<span><span class="va">tt</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">3650</span>, <span class="fl">10</span><span class="op">)</span></span>
+<span><span class="va">phase</span><span class="op">=</span><span class="fu">F_phase</span><span class="op">(</span><span class="va">tt</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">tt</span><span class="op">/</span><span class="fl">365</span>, <span class="fu">F_dS</span><span class="op">(</span><span class="va">tt</span>, <span class="va">phase</span><span class="op">-</span><span class="fl">90</span><span class="op">)</span>, type <span class="op">=</span> <span class="st">"l"</span>, xlab <span class="op">=</span> <span class="st">"Time (in Years)"</span>, ylab<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/expression.html" class="external-link">expression</a></span><span class="op">(</span><span class="cn">F</span><span class="op">[</span><span class="va">S</span><span class="op">]</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/lines.html" class="external-link">lines</a></span><span class="op">(</span><span class="va">tt</span><span class="op">/</span><span class="fl">365</span>, <span class="fu">F_dS</span><span class="op">(</span><span class="va">tt</span>, <span class="op">-</span><span class="fl">90</span><span class="op">)</span>, col <span class="op">=</span> <span class="st">"darkred"</span><span class="op">)</span></span>
+<span><span class="kw">for</span><span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">10</span><span class="op">)</span><span class="op">{</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/graphics/segments.html" class="external-link">segments</a></span><span class="op">(</span><span class="va">i</span>, <span class="fl">0</span>, <span class="va">i</span>, <span class="fl">2</span>, lty <span class="op">=</span><span class="fl">2</span><span class="op">)</span></span>
+<span><span class="op">}</span></span></code></pre></div>
+<p><img src="Seasonality_files/figure-html/unnamed-chunk-1-1.png" class="r-plt" alt="" width="672"></p>
+</div>
+<div class="section level3">
+<h3 id="seasonal-pattern-functions">Seasonal Pattern Functions<a class="anchor" aria-label="anchor" href="#seasonal-pattern-functions"></a>
+</h3>
+<p>Seasonal pattern functions, <span class="math inline">\(F_S(t),\)</span> are a component in a
+<strong>composed time series</strong> function.</p>
+<ol style="list-style-type: decimal">
+<li><p>The value of the function is always positive: <span class="math display">\[F_S(t) \geq 0.\]</span></p></li>
+<li>
+<p>The mean value of the function <span class="math inline">\(F_S(t)\)</span> is one:</p>
+<ul>
+<li><p>For canonical seasonal patterns, the mean value over a year is 1:
+<span class="math display">\[ \frac{1}{365} \int_0^{365} F_S(t) \; dt =
+1\]</span></p></li>
+<li><p>For non-canonical seasonality patterns, the mean value over a
+time interval <span class="math inline">\((t_0, t_1)\)</span> is <span class="math display">\[ \int_{t_0}^{t_1} F_S(t) \; dt = t_1 -
+t_0\]</span></p></li>
+</ul>
+</li>
+</ol>
+</div>
+</div>
+  </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
+    </nav></aside>
 </div>
 
 

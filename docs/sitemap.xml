@@ -13,12 +13,15 @@
 <url><loc>https://dd-harp.github.io/ramp.func/articles/TimeSeries.html</loc></url>
 <url><loc>https://dd-harp.github.io/ramp.func/articles/TraceFunctions.html</loc></url>
 <url><loc>https://dd-harp.github.io/ramp.func/articles/Trends.html</loc></url>
+<url><loc>https://dd-harp.github.io/ramp.func/articles/Truncated.html</loc></url>
 <url><loc>https://dd-harp.github.io/ramp.func/articles/index.html</loc></url>
 <url><loc>https://dd-harp.github.io/ramp.func/authors.html</loc></url>
 <url><loc>https://dd-harp.github.io/ramp.func/index.html</loc></url>
 <url><loc>https://dd-harp.github.io/ramp.func/reference/F_obj.html</loc></url>
 <url><loc>https://dd-harp.github.io/ramp.func/reference/age.html</loc></url>
 <url><loc>https://dd-harp.github.io/ramp.func/reference/check_length.html</loc></url>
+<url><loc>https://dd-harp.github.io/ramp.func/reference/dNBtrunc.html</loc></url>
+<url><loc>https://dd-harp.github.io/ramp.func/reference/dPOIStrunc.html</loc></url>
 <url><loc>https://dd-harp.github.io/ramp.func/reference/index.html</loc></url>
 <url><loc>https://dd-harp.github.io/ramp.func/reference/make_F_a.html</loc></url>
 <url><loc>https://dd-harp.github.io/ramp.func/reference/make_F_t.c.html</loc></url>
@@ -32,6 +35,8 @@
 <url><loc>https://dd-harp.github.io/ramp.func/reference/make_F_t.splinef.html</loc></url>
 <url><loc>https://dd-harp.github.io/ramp.func/reference/make_F_t.sum.html</loc></url>
 <url><loc>https://dd-harp.github.io/ramp.func/reference/make_F_t.type2.html</loc></url>
+<url><loc>https://dd-harp.github.io/ramp.func/reference/make_NBtrunc.html</loc></url>
+<url><loc>https://dd-harp.github.io/ramp.func/reference/make_POIStrunc.html</loc></url>
 <url><loc>https://dd-harp.github.io/ramp.func/reference/make_function.c.html</loc></url>
 <url><loc>https://dd-harp.github.io/ramp.func/reference/make_function.html</loc></url>
 <url><loc>https://dd-harp.github.io/ramp.func/reference/make_function.list.html</loc></url>
