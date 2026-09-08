@@ -5,57 +5,63 @@
       fontURL: "https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/output/chtml/fonts/woff-v2"
     }
   };
-</script><script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><link href="../deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet"><script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet"><link href="../deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet"><script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Make a Composed Time Series Function — make_ts_function"><meta name="description" content="Build a function that generates a time series
-with known functions. The function returns a function of the form
-\(F_t(t)\) or \(F_t(t, V(t))\), which is
-the a product of four configurable elements:
+</script><script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><link href="../deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet"><script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet"><link href="../deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet"><script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Make a Composed Time Series Function — make_ts_function"><meta name="description" content='Build a function that returns
+a product of four configurable elements:
 \(\bar x\): a mean value
 \(F_S(t)\): a seasonal pattern
 \(F_T(t)\): a trend
 \(F_K(t)\): a shock
 
 
-A normalizing constant is set such that the daily average over
-the interval \((t_0, t_1)\) is 1:
-$$\int_{t_0}^{t_1} F_t(t) dt = t_1-t_0.$$
+The return value is a function of the form:
+\(F_t(t)\) if form == "t"
+\(F_t(t, V(t))\) if form == "tV"
+
+
 The user can pass any vector times and the interval is
 set to
 \(t_0 = \mbox{min(times)}\), and
 \(t_1 = \mbox{max(times)}\).
 
 
+A normalizing constant is set such that the daily average over
+the interval \((t_0, t_1)\) is \(\bar x\):
+$$\int_{t_0}^{t_1} F_t(t) dt = \bar x \left(t_1-t_0\right).$$
 The component functions are specified by
-passing parameters for make_function:
+passing F_obj objects (see F_obj):
 season_par creates \(F_S(t)\) or F_season (eg, using makepar_F_sin)
 trend_par creates \(F_T(t)\) or F_trend (eg, using makepar_F_spline)
 shock_par creates \(F_K(t)\) or F_shock (eg, using makepar_F_sharkbite)
 
-"><meta property="og:description" content="Build a function that generates a time series
-with known functions. The function returns a function of the form
-\(F_t(t)\) or \(F_t(t, V(t))\), which is
-the a product of four configurable elements:
+'><meta property="og:description" content='Build a function that returns
+a product of four configurable elements:
 \(\bar x\): a mean value
 \(F_S(t)\): a seasonal pattern
 \(F_T(t)\): a trend
 \(F_K(t)\): a shock
 
 
-A normalizing constant is set such that the daily average over
-the interval \((t_0, t_1)\) is 1:
-$$\int_{t_0}^{t_1} F_t(t) dt = t_1-t_0.$$
+The return value is a function of the form:
+\(F_t(t)\) if form == "t"
+\(F_t(t, V(t))\) if form == "tV"
+
+
 The user can pass any vector times and the interval is
 set to
 \(t_0 = \mbox{min(times)}\), and
 \(t_1 = \mbox{max(times)}\).
 
 
+A normalizing constant is set such that the daily average over
+the interval \((t_0, t_1)\) is \(\bar x\):
+$$\int_{t_0}^{t_1} F_t(t) dt = \bar x \left(t_1-t_0\right).$$
 The component functions are specified by
-passing parameters for make_function:
+passing F_obj objects (see F_obj):
 season_par creates \(F_S(t)\) or F_season (eg, using makepar_F_sin)
 trend_par creates \(F_T(t)\) or F_trend (eg, using makepar_F_spline)
 shock_par creates \(F_K(t)\) or F_shock (eg, using makepar_F_sharkbite)
 
-"></head><body>
+'></head><body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
 
 
@@ -116,21 +122,21 @@ shock_par creates \(F_K(t)\) or F_shock (eg, using makepar_F_sharkbite)
     </div>
 
     <div class="ref-description section level2">
-    <p>Build a function that generates a time series
-with known functions. The function returns a function of the form
-\(F_t(t)\) or \(F_t(t, V(t))\), which is
-the a product of four configurable elements:</p><ul><li><p>\(\bar x\): a mean value</p></li>
+    <p>Build a function that returns
+a product of four configurable elements:</p><ul><li><p>\(\bar x\): a mean value</p></li>
 <li><p>\(F_S(t)\): a seasonal pattern</p></li>
 <li><p>\(F_T(t)\): a trend</p></li>
 <li><p>\(F_K(t)\): a shock</p></li>
-</ul><p>A normalizing constant is set such that the daily average over
-the interval \((t_0, t_1)\) is 1:
-$$\int_{t_0}^{t_1} F_t(t) dt = t_1-t_0.$$</p>
-<p>The user can pass any vector <code>times</code> and the interval is
+</ul><p>The return value is a function of the form:</p><ul><li><p>\(F_t(t)\) if <code>form == "t"</code></p></li>
+<li><p>\(F_t(t, V(t))\) if <code>form == "tV"</code></p></li>
+</ul><p>The user can pass any vector <code>times</code> and the interval is
 set to</p><ul><li><p>\(t_0 = \mbox{min(times)}\), and</p></li>
 <li><p>\(t_1 = \mbox{max(times)}\).</p></li>
-</ul><p>The component functions are specified by
-passing parameters for <a href="make_function.html">make_function</a>:</p><ul><li><p><code>season_par</code> creates \(F_S(t)\) or <code>F_season</code> (<em>eg,</em> using <a href="makepar_F_sin.html">makepar_F_sin</a>)</p></li>
+</ul><p>A normalizing constant is set such that the daily average over
+the interval \((t_0, t_1)\) is \(\bar x\):
+$$\int_{t_0}^{t_1} F_t(t) dt = \bar x \left(t_1-t_0\right).$$</p>
+<p>The component functions are specified by
+passing <code>F_obj</code> objects (see <a href="F_obj.html">F_obj</a>):</p><ul><li><p><code>season_par</code> creates \(F_S(t)\) or <code>F_season</code> (<em>eg,</em> using <a href="makepar_F_sin.html">makepar_F_sin</a>)</p></li>
 <li><p><code>trend_par</code> creates \(F_T(t)\) or <code>F_trend</code> (<em>eg,</em> using <a href="makepar_F_spline.html">makepar_F_spline</a>)</p></li>
 <li><p><code>shock_par</code> creates \(F_K(t)\) or <code>F_shock</code> (<em>eg,</em> using <a href="makepar_F_sharkbite.html">makepar_F_sharkbite</a>)</p></li>
 </ul></div>

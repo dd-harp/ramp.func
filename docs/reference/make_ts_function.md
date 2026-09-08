@@ -1,8 +1,6 @@
 # Make a Composed Time Series Function
 
-Build a function that generates a time series with known functions. The
-function returns a function of the form \\F_t(t)\\ or \\F_t(t, V(t))\\,
-which is the a product of four configurable elements:
+Build a function that returns a product of four configurable elements:
 
 - \\\bar x\\: a mean value
 
@@ -12,9 +10,11 @@ which is the a product of four configurable elements:
 
 - \\F_K(t)\\: a shock
 
-A normalizing constant is set such that the daily average over the
-interval \\(t_0, t_1)\\ is 1: \$\$\int\_{t_0}^{t_1} F_t(t) dt =
-t_1-t_0.\$\$
+The return value is a function of the form:
+
+- \\F_t(t)\\ if `form == "t"`
+
+- \\F_t(t, V(t))\\ if `form == "tV"`
 
 The user can pass any vector `times` and the interval is set to
 
@@ -22,8 +22,12 @@ The user can pass any vector `times` and the interval is set to
 
 - \\t_1 = \mbox{max(times)}\\.
 
-The component functions are specified by passing parameters for
-[make_function](https://dd-harp.github.io/ramp.func/reference/make_function.md):
+A normalizing constant is set such that the daily average over the
+interval \\(t_0, t_1)\\ is \\\bar x\\: \$\$\int\_{t_0}^{t_1} F_t(t) dt =
+\bar x \left(t_1-t_0\right).\$\$
+
+The component functions are specified by passing `F_obj` objects (see
+[F_obj](https://dd-harp.github.io/ramp.func/reference/F_obj.md)):
 
 - `season_par` creates \\F_S(t)\\ or `F_season` (*eg,* using
   [makepar_F_sin](https://dd-harp.github.io/ramp.func/reference/makepar_F_sin.md))
