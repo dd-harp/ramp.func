@@ -47,12 +47,12 @@ a function
 \description{
 Construct a trace function to simulate
 exposure by age, \eqn{a}, in a cohort born on day \eqn{d},
-(and since age is related to time, \eqn{t}, by the formula \eqn{a = t-d}), then we compute
+(and since age is related to time, \eqn{t}, by the formula \eqn{t = a+d}), then we compute
 
 \deqn{F(a, d) =
 \begin{cases}
 0 & \mbox{if } a <0 \\
-\bar E \times F_\omega(a) \times F_t(t-d) & \mbox{if } a >=0
+\bar E \times F_\omega(a) \times F_t(a+d) & \mbox{if } a >=0
 \end{cases}.
 }
 

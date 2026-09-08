@@ -7,11 +7,11 @@
   };
 </script><script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><link href="../deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet"><script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet"><link href="../deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet"><script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Make a Function, — make_F_a"><meta name="description" content="Construct a trace function to simulate
 exposure by age, \(a\), in a cohort born on day \(d\),
-(and since age is related to time, \(t\), by the formula \(a = t-d\)), then we compute
+(and since age is related to time, \(t\), by the formula \(t = a+d\)), then we compute
 $$F(a, d) =
 \begin{cases}
 0 &amp;amp; \mbox{if } a &amp;lt;0 \\
-\bar E \times F_\omega(a) \times F_t(t-d) &amp;amp; \mbox{if } a &amp;gt;=0
+\bar E \times F_\omega(a) \times F_t(a+d) &amp;amp; \mbox{if } a &amp;gt;=0
 \end{cases}.
 $$
 and
@@ -43,11 +43,11 @@ For convenience in constructing counterfactuals, normalization can be done
 with or without the shock function.
 By default, \(d=0\)"><meta property="og:description" content="Construct a trace function to simulate
 exposure by age, \(a\), in a cohort born on day \(d\),
-(and since age is related to time, \(t\), by the formula \(a = t-d\)), then we compute
+(and since age is related to time, \(t\), by the formula \(t = a+d\)), then we compute
 $$F(a, d) =
 \begin{cases}
 0 &amp;amp; \mbox{if } a &amp;lt;0 \\
-\bar E \times F_\omega(a) \times F_t(t-d) &amp;amp; \mbox{if } a &amp;gt;=0
+\bar E \times F_\omega(a) \times F_t(a+d) &amp;amp; \mbox{if } a &amp;gt;=0
 \end{cases}.
 $$
 and
@@ -140,11 +140,11 @@ By default, \(d=0\)"></head><body>
     <div class="ref-description section level2">
     <p>Construct a trace function to simulate
 exposure by age, \(a\), in a cohort born on day \(d\),
-(and since age is related to time, \(t\), by the formula \(a = t-d\)), then we compute</p>
+(and since age is related to time, \(t\), by the formula \(t = a+d\)), then we compute</p>
 <p>$$F(a, d) =
 \begin{cases}
 0 &amp; \mbox{if } a &lt;0 \\
-\bar E \times F_\omega(a) \times F_t(t-d) &amp; \mbox{if } a &gt;=0
+\bar E \times F_\omega(a) \times F_t(a+d) &amp; \mbox{if } a &gt;=0
 \end{cases}.
 $$</p>
 <p>and</p><ul><li><p>\(\bar E\) — or <code>avg</code> the approximate mean value</p></li>

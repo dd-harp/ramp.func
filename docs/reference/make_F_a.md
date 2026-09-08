@@ -2,10 +2,10 @@
 
 Construct a trace function to simulate exposure by age, \\a\\, in a
 cohort born on day \\d\\, (and since age is related to time, \\t\\, by
-the formula \\a = t-d\\), then we compute
+the formula \\t = a+d\\), then we compute
 
 \$\$F(a, d) = \begin{cases} 0 & \mbox{if } a \<0 \\ \bar E \times
-F\_\omega(a) \times F_t(t-d) & \mbox{if } a \>=0 \end{cases}. \$\$
+F\_\omega(a) \times F_t(a+d) & \mbox{if } a \>=0 \end{cases}. \$\$
 
 and
 
