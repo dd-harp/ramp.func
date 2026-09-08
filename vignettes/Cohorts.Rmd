@@ -8,7 +8,7 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-To construct a trace function to models exposure in different cohorts in the same population as they age:
+Use `make_F_a` to construct an exposure trace function to model malaria epidemiology for different cohorts in the same population as they age:
 
 ```
 ?make_F_a
@@ -23,8 +23,8 @@ $$E(t) = \bar E \times F_S(t) \times F_T(t) \times F_K(t)$$
 
 If we want to compare cohorts in the same population, then we must acknowledge that exposure differs by age.  To model exposure, we construct a function to model relative biting rates by age:
 $$F_\omega(a)$$ 
-To model exposure for a cohort born on day $d,$ we note that time and age are related by $a = t-d.$ Exposure with respect to age for that cohort is thus:
-$$E(a, d) = \bar X \times F_\omega (a) \times F_S(t-d) \times F_T(t-d) \times F_K(t-d).$$
+To model exposure for a cohort born on day $d,$ we note that time and age are related by $t = a+d.$ Exposure with respect to age for that cohort is thus:
+$$E(a, d) = \bar E \times F_\omega (a) \times F_S(a+d) \times F_T(a+d) \times F_K(a+d).$$
 
 The function `make_F_a` is written with options to control the interval over which the temporal pattern is normalized, and whether the shock function is used for normalization. 
 
@@ -122,6 +122,7 @@ lines(aa/365, Fa(aa, d=730), col = "green3", lty =3)
 lines(aa/365, Fa(aa), col = "darkblue")
 ```
 
+Another way to compare is to look at cumulative exposure: 
 
 ```{r fig.width=7, fig.height=4}
 par(mfrow = c(1,1))
