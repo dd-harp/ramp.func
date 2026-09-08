@@ -10,7 +10,7 @@ navbar:
       href: articles/TraceFunctions.html
     - text: Composed Time Series
       href: articles/TimeSeries.html
-    - text: Cohorts
+    - text: Cohort Dynamics
       href: articles/Cohorts.html
     - text: Probability Mass Functions
       href: articles/Truncated.html

@@ -75,8 +75,12 @@ Over time, exposure in the population looks like this:
 
 ```{r fig.width=7, fig.height=4} 
 #| echo: false
-F <- make_ts_function(5/365, season_par=Sp, trend_par=Tp, shock_par=Kp, times = tt)
-plot(tt/365, F(tt), type ="l", ylab = expression(F[t](t)==F[S](t)*F[T](t)*F[K](t)), xlab = "Time (in Years)")
+F <- make_ts_function(5/365, season_par=Sp, 
+                      trend_par=Tp, shock_par=Kp, times = tt)
+
+plot(tt/365, F(tt), type ="l", 
+     ylab=expression(F[t](t)==F[S](t)*F[T](t)*F[K](t)), 
+     xlab = "Time (in Years)")
 ```
 
 ## Age 
@@ -87,7 +91,8 @@ The default function $F_\omega$ for relative biting rate by age looks like this 
 Sa <- makepar_F_type2()
 F_a <- make_F_t(Sa)
 aa <- 1:(5*365)
-plot(aa/365, F_a(aa), type = "l", xlab = "a - Age (in Years)", ylab = expression(F[omega](a)))
+plot(aa/365, F_a(aa), type = "l", 
+     xlab = "a - Cohort Age (in Years)", ylab = expression(F[omega](a)))
 ```
 
 ## Exposure $\times$ Age 
@@ -97,14 +102,21 @@ Over the first three years of life, the patterns of exposure are quite different
 
 ```{r fig.width=7, fig.height=8}
 par(mfrow = c(2,1))
-Fa <- make_F_a(avg=5/365, age_par=Sa, season_par=Sp, trend_par=Tp, shock_par=Kp, times = tt)
+Fa <- make_F_a(avg=5/365, age_par=Sa, season_par=Sp, 
+               trend_par=Tp, shock_par=Kp, times = tt)
+
 aa <- 1:1095
-plot(tt/365, F(tt), main = "Aligned by Time", col = "grey", type ="l", ylab = "Exposure", xlab = "Age (in Years)")
+
+plot(tt/365, F(tt), main = "Aligned by Time", col = "grey", 
+     type ="l", ylab = "Exposure", xlab = "Time (in Years)")
+
 lines(aa/365+1, Fa(aa, d=365), col = "darkred", lty=2)
 lines(aa/365+2, Fa(aa, d=730), col = "green3", lty =3)
 lines(aa/365, Fa(aa), col = "darkblue") 
 
-plot(aa/365, Fa(aa), main = "Aligned by Age", col = "darkblue", type ="l", ylab = "Exposure", xlab = "Age (in Years)")
+plot(aa/365, Fa(aa), main = "Aligned by Age", col = "darkblue", 
+     type ="l", ylab = "Exposure", xlab = "Cohort Age (in Years)")
+
 lines(aa/365, Fa(aa, d=365), col = "darkred", lty=2)
 lines(aa/365, Fa(aa, d=730), col = "green3", lty =3)
 lines(aa/365, Fa(aa), col = "darkblue")
@@ -113,7 +125,9 @@ lines(aa/365, Fa(aa), col = "darkblue")
 
 ```{r fig.width=7, fig.height=4}
 par(mfrow = c(1,1))
-plot(aa/365, cumsum(Fa(aa)), main = "Aligned by Age", col = "darkblue", type ="l", ylab = "Cumulative Exposure", xlab = "Age (in Years)")
+plot(aa/365, cumsum(Fa(aa)), main = "Aligned by Age", col = "darkblue", 
+     type ="l", ylab = "Cumulative Exposure", xlab = "Cohort Age (in Years)")
+
 lines(aa/365, cumsum(Fa(aa, d=365)), col = "darkred", lty=2)
 lines(aa/365, cumsum(Fa(aa, d=730)), col = "green3", lty =3)
 ```
