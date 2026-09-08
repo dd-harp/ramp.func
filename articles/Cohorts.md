@@ -81,7 +81,8 @@ like this over the first 5 years of life:
 Sa <- makepar_F_type2()
 F_a <- make_F_t(Sa)
 aa <- 1:(5*365)
-plot(aa/365, F_a(aa), type = "l", xlab = "a - Age (in Years)", ylab = expression(F[omega](a)))
+plot(aa/365, F_a(aa), type = "l", 
+     xlab = "a - Cohort Age (in Years)", ylab = expression(F[omega](a)))
 ```
 
 ![](Cohorts_files/figure-html/unnamed-chunk-4-1.png)
@@ -98,14 +99,21 @@ peak at a higher rate than the younger cohorts.
 ``` r
 
 par(mfrow = c(2,1))
-Fa <- make_F_a(avg=5/365, age_par=Sa, season_par=Sp, trend_par=Tp, shock_par=Kp, times = tt)
+Fa <- make_F_a(avg=5/365, age_par=Sa, season_par=Sp, 
+               trend_par=Tp, shock_par=Kp, times = tt)
+
 aa <- 1:1095
-plot(tt/365, F(tt), main = "Aligned by Time", col = "grey", type ="l", ylab = "Exposure", xlab = "Age (in Years)")
+
+plot(tt/365, F(tt), main = "Aligned by Time", col = "grey", 
+     type ="l", ylab = "Exposure", xlab = "Time (in Years)")
+
 lines(aa/365+1, Fa(aa, d=365), col = "darkred", lty=2)
 lines(aa/365+2, Fa(aa, d=730), col = "green3", lty =3)
 lines(aa/365, Fa(aa), col = "darkblue") 
 
-plot(aa/365, Fa(aa), main = "Aligned by Age", col = "darkblue", type ="l", ylab = "Exposure", xlab = "Age (in Years)")
+plot(aa/365, Fa(aa), main = "Aligned by Age", col = "darkblue", 
+     type ="l", ylab = "Exposure", xlab = "Cohort Age (in Years)")
+
 lines(aa/365, Fa(aa, d=365), col = "darkred", lty=2)
 lines(aa/365, Fa(aa, d=730), col = "green3", lty =3)
 lines(aa/365, Fa(aa), col = "darkblue")
@@ -116,7 +124,9 @@ lines(aa/365, Fa(aa), col = "darkblue")
 ``` r
 
 par(mfrow = c(1,1))
-plot(aa/365, cumsum(Fa(aa)), main = "Aligned by Age", col = "darkblue", type ="l", ylab = "Cumulative Exposure", xlab = "Age (in Years)")
+plot(aa/365, cumsum(Fa(aa)), main = "Aligned by Age", col = "darkblue", 
+     type ="l", ylab = "Cumulative Exposure", xlab = "Cohort Age (in Years)")
+
 lines(aa/365, cumsum(Fa(aa, d=365)), col = "darkred", lty=2)
 lines(aa/365, cumsum(Fa(aa, d=730)), col = "green3", lty =3)
 ```
