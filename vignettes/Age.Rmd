@@ -1,0 +1,8 @@
+---
+title: "Age"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Age}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---

@@ -34,6 +34,10 @@ navbar:
         href: articles/Shocks.html
       - text: Shark Functions
         href: articles/Shark.html
+  - text: Age
+    menu:
+      - text: Age
+        href: articles/Age.html
   - text: Reference
     href: reference/index.html
 home:

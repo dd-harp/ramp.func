@@ -44,9 +44,9 @@ mosquito dispersal that is used **`ramp.xds`** and **`ramp.micro`**
 - [`make_function()`](https://dd-harp.github.io/ramp.func/reference/make_function.md)
   : Make a Function, \\F(t,V)\\
 - [`make_ts_function()`](https://dd-harp.github.io/ramp.func/reference/make_ts_function.md)
-  : Make a Time Series Function
+  : Make a Composed Time Series Function
 - [`make_F_a()`](https://dd-harp.github.io/ramp.func/reference/make_F_a.md)
-  : Make a Function, \\F(a,d)\\
+  : Make a Function,
 
 ## Function Families
 
@@ -123,9 +123,11 @@ mosquito dispersal that is used **`ramp.xds`** and **`ramp.micro`**
 
 ### All vignettes
 
+- [Age](https://dd-harp.github.io/ramp.func/articles/Age.md):
 - [Basic
   Functions](https://dd-harp.github.io/ramp.func/articles/Basic.md):
-- [Cohorts](https://dd-harp.github.io/ramp.func/articles/Cohorts.md):
+- [Cohort
+  Dynamics](https://dd-harp.github.io/ramp.func/articles/Cohorts.md):
 - [Spatial
   Kernels](https://dd-harp.github.io/ramp.func/articles/Kernels.md):
 - [Seasonality](https://dd-harp.github.io/ramp.func/articles/Seasonality.md):
