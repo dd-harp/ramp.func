@@ -2,6 +2,7 @@
 
 ### All vignettes
 
+- [Age](https://dd-harp.github.io/ramp.func/articles/Age.md):
 - [Basic
   Functions](https://dd-harp.github.io/ramp.func/articles/Basic.md):
 - [Cohorts](https://dd-harp.github.io/ramp.func/articles/Cohorts.md):

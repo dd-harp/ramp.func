@@ -25,7 +25,9 @@ note that time and age are related by \\a = t-d.\\ Exposure with respect
 to age for that cohort is thus: \\E(a, d) = \bar X \times F\_\omega (a)
 \times F_S(t-d) \times F_T(t-d) \times F_K(t-d).\\
 
-------------------------------------------------------------------------
+The function `make_F_a` is written with options to control the interval
+over which the temporal pattern is normalized, and whether the shock
+function is used for normalization.
 
 ## Example
 
@@ -51,14 +53,15 @@ Over time, exposure in the population looks like this:
 
 ![](Cohorts_files/figure-html/unnamed-chunk-4-1.png)
 
-Suppose that relative biting rate by age looks like this:
+The default function \\F\_\omega\\ for relative biting rate by age looks
+like this:
 
 ``` r
 
 Sa <- makepar_F_type2()
 F_a <- make_F_t(Sa)
 aa <- 1:3650
-plot(aa/365, F_a(aa), type = "l", xlab = "a - Age (in Years)", ylab = expression(omega(a)))
+plot(aa/365, F_a(aa), type = "l", xlab = "a - Age (in Years)", ylab = expression(F[omega](a)))
 ```
 
 ![](Cohorts_files/figure-html/unnamed-chunk-5-1.png)
@@ -71,7 +74,7 @@ life.
 ``` r
 
 par(mfrow = c(2,1))
-Fa <- make_F_a(avg = 3/365, age_par=Sa, season_par=Sp, trend_par=Tp, shock_par=Kp)
+Fa <- make_F_a(avg=3/365, age_par=Sa, season_par=Sp, trend_par=Tp, shock_par=Kp)
 aa <- 1:1095
 plot(aa/365, Fa(aa), col = "darkblue", type ="l", ylab = "Exposure", xlab = "Age (in Years)")
 lines(aa/365, Fa(aa, d=365), col = "darkred", lty=2)

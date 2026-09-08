@@ -9,9 +9,9 @@
 - [`make_function()`](https://dd-harp.github.io/ramp.func/reference/make_function.md)
   : Make a Function, \\F(t,V)\\
 - [`make_ts_function()`](https://dd-harp.github.io/ramp.func/reference/make_ts_function.md)
-  : Make a Time Series Function
+  : Make a Composed Time Series Function
 - [`make_F_a()`](https://dd-harp.github.io/ramp.func/reference/make_F_a.md)
-  : Make a Function, \\F(a,d)\\
+  : Make a Function,
 
 ## Function Families
 
