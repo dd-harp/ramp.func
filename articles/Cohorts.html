@@ -103,8 +103,9 @@ Exposure for Different Cohorts in a Population</h3>
 
     
     
-<p>To construct a trace function to models exposure in different cohorts
-in the same population as they age:</p>
+<p>Use <code>make_F_a</code> to construct an exposure trace function to
+model malaria epidemiology for different cohorts in the same population
+as they age:</p>
 <pre><code><span><span class="op">?</span><span class="va">make_F_a</span></span></code></pre>
 <hr>
 <p>To understand or compare models for malaria epidemiology, we will
@@ -118,10 +119,10 @@ time series</strong> function</a>. <span class="math display">\[E(t) =
 acknowledge that exposure differs by age. To model exposure, we
 construct a function to model relative biting rates by age: <span class="math display">\[F_\omega(a)\]</span> To model exposure for a
 cohort born on day <span class="math inline">\(d,\)</span> we note that
-time and age are related by <span class="math inline">\(a =
-t-d.\)</span> Exposure with respect to age for that cohort is thus:
-<span class="math display">\[E(a, d) = \bar X \times F_\omega (a) \times
-F_S(t-d) \times F_T(t-d) \times F_K(t-d).\]</span></p>
+time and age are related by <span class="math inline">\(t =
+a+d.\)</span> Exposure with respect to age for that cohort is thus:
+<span class="math display">\[E(a, d) = \bar E \times F_\omega (a) \times
+F_S(a+d) \times F_T(a+d) \times F_K(a+d).\]</span></p>
 <p>The function <code>make_F_a</code> is written with options to control
 the interval over which the temporal pattern is normalized, and whether
 the shock function is used for normalization.</p>
@@ -195,6 +196,7 @@ the third year peak at a higher rate than the younger cohorts.</p>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/lines.html" class="external-link">lines</a></span><span class="op">(</span><span class="va">aa</span><span class="op">/</span><span class="fl">365</span>, <span class="fu">Fa</span><span class="op">(</span><span class="va">aa</span>, d<span class="op">=</span><span class="fl">730</span><span class="op">)</span>, col <span class="op">=</span> <span class="st">"green3"</span>, lty <span class="op">=</span><span class="fl">3</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/lines.html" class="external-link">lines</a></span><span class="op">(</span><span class="va">aa</span><span class="op">/</span><span class="fl">365</span>, <span class="fu">Fa</span><span class="op">(</span><span class="va">aa</span><span class="op">)</span>, col <span class="op">=</span> <span class="st">"darkblue"</span><span class="op">)</span></span></code></pre></div>
 <p><img src="Cohorts_files/figure-html/unnamed-chunk-5-1.png" class="r-plt" alt="" width="672"></p>
+<p>Another way to compare is to look at cumulative exposure:</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/par.html" class="external-link">par</a></span><span class="op">(</span>mfrow <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">1</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">aa</span><span class="op">/</span><span class="fl">365</span>, <span class="fu"><a href="https://rdrr.io/r/base/cumsum.html" class="external-link">cumsum</a></span><span class="op">(</span><span class="fu">Fa</span><span class="op">(</span><span class="va">aa</span><span class="op">)</span><span class="op">)</span>, main <span class="op">=</span> <span class="st">"Aligned by Age"</span>, col <span class="op">=</span> <span class="st">"darkblue"</span>, </span>

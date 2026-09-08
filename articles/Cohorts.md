@@ -1,7 +1,7 @@
 # Cohort Dynamics
 
-To construct a trace function to models exposure in different cohorts in
-the same population as they age:
+Use `make_F_a` to construct an exposure trace function to model malaria
+epidemiology for different cohorts in the same population as they age:
 
     ?make_F_a
 
@@ -21,9 +21,9 @@ If we want to compare cohorts in the same population, then we must
 acknowledge that exposure differs by age. To model exposure, we
 construct a function to model relative biting rates by age:
 \\F\_\omega(a)\\ To model exposure for a cohort born on day \\d,\\ we
-note that time and age are related by \\a = t-d.\\ Exposure with respect
-to age for that cohort is thus: \\E(a, d) = \bar X \times F\_\omega (a)
-\times F_S(t-d) \times F_T(t-d) \times F_K(t-d).\\
+note that time and age are related by \\t = a+d.\\ Exposure with respect
+to age for that cohort is thus: \\E(a, d) = \bar E \times F\_\omega (a)
+\times F_S(a+d) \times F_T(a+d) \times F_K(a+d).\\
 
 The function `make_F_a` is written with options to control the interval
 over which the temporal pattern is normalized, and whether the shock
@@ -120,6 +120,8 @@ lines(aa/365, Fa(aa), col = "darkblue")
 ```
 
 ![](Cohorts_files/figure-html/unnamed-chunk-5-1.png)
+
+Another way to compare is to look at cumulative exposure:
 
 ``` r
 
