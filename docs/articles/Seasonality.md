@@ -2,7 +2,7 @@
 
 ------------------------------------------------------------------------
 
-**The Seasonal Pattern Function Library**
+**Seasonality — A Function Library**
 
 - [`sin`](https://dd-harp.github.io/ramp.func/articles/Sin.html) — a
   generalized function family based on a trigonometric function.
