@@ -97,3 +97,8 @@ reference:
   - make_POIStrunc
   - dNBtrunc
   - make_NBtrunc
+- title: Kernels
+  contents:
+  - make_kernel
+  - make_K_d
+  - make_K_dV

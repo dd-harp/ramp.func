@@ -21,7 +21,7 @@ NULL
 #' @description Build a general trace function of time \eqn{t}
 #' and variables (optional) \eqn{V}.
 #'
-#' @param F_obj a function object, [F_obj]
+#' @param F_obj a function object
 #' @return a function
 #' @export
 make_function = function(F_obj){

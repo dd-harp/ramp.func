@@ -7,7 +7,7 @@
 \method{make_F_t}{sum}(F_obj)
 }
 \arguments{
-\item{F_obj}{a function object, \link{F_obj}}
+\item{F_obj}{a function object}
 }
 \value{
 a function that is the sum of two other functions
