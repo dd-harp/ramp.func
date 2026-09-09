@@ -1,7 +1,9 @@
 
-#' @title Step function [F_obj]
+#' @title Make a step function object
+#'
 #' @description The function \eqn{F(d)} or
 #' \eqn{F(d,V)} returns \eqn{c_0} if \eqn{d\leq x}
+#'
 #' @param step_at the value of \eqn{d} where the step occurs
 #' @param c0 the return value for \eqn{d} greater than `step_at`
 #' @param c1 the return value for \eqn{d} greater than `step_at`
@@ -22,15 +24,16 @@ makepar_F_step = function(step_at=1, c0=1, c1=0, leq=TRUE, V=TRUE){
   return(pars)
 }
 
-#' @title parameters for make_function
+#' @title Make a Kernel \eqn{F(d,V)}
 #'
-#' @description Return an [F_obj] that
-#' constructs a step function
+#' @description Return a step
+#' function
 #'
 #' @param F_obj a function object
 #'
-#' @return a step function [F_obj]
-#' @seealso [make_function.sin]
+#' @return a step function
+#'
+#' @keywords internal
 #' @export
 make_K_dV.step = function(F_obj){with(F_obj,{
   if(leq){
@@ -49,15 +52,16 @@ make_K_dV.step = function(F_obj){with(F_obj,{
   return(F_K)
 })}
 
-#' @title parameters for make_function
+#' @title Make a Kernel \eqn{F(d)}
 #'
-#' @description Return an [F_obj] that
-#' constructs a step function
+#' @description Return a step
+#' function
 #'
 #' @param F_obj a function object
 #'
-#' @return a step function [F_obj]
-#' @seealso [make_function.sin]
+#' @keywords internal
+#' @return a step function
+#'
 #' @export
 make_K_d.step = function(F_obj){with(F_obj,{
   if(leq){

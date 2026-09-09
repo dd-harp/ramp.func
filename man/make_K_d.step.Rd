@@ -2,7 +2,7 @@
 % Please edit documentation in R/step.R
 \name{make_K_d.step}
 \alias{make_K_d.step}
-\title{parameters for make_function}
+\title{Make a Kernel \eqn{F(d)}}
 \usage{
 \method{make_K_d}{step}(F_obj)
 }
@@ -10,12 +10,10 @@
 \item{F_obj}{a function object}
 }
 \value{
-a step function \link{F_obj}
+a step function
 }
 \description{
-Return an \link{F_obj} that
-constructs a step function
+Return a step
+function
 }
-\seealso{
-\link{make_function.sin}
-}
+\keyword{internal}

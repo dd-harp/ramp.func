@@ -14,8 +14,7 @@ make_F_t(F_obj)
 
 - F_obj:
 
-  a function object,
-  [F_obj](https://dd-harp.github.io/ramp.func/reference/F_obj.md)
+  a function object
 
 ## Value
 

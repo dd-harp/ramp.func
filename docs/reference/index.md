@@ -83,3 +83,14 @@
   : Zero Truncated Negative Binomial
 - [`make_NBtrunc()`](https://dd-harp.github.io/ramp.func/reference/make_NBtrunc.md)
   : Make a Zero Truncated Negative Binomial
+
+## Kernels
+
+- [`make_kernel()`](https://dd-harp.github.io/ramp.func/reference/make_kernel.md)
+  : Make a Function, \\F(t,V)\\
+- [`make_K_d()`](https://dd-harp.github.io/ramp.func/reference/make_K_d.md)
+  : Make a Function, \\F(t)\\
+- [`make_K_dV()`](https://dd-harp.github.io/ramp.func/reference/make_K_dV.md)
+  : Make a Function, \\F(t)\\
+- [`makepar_F_step()`](https://dd-harp.github.io/ramp.func/reference/makepar_F_step.md)
+  : Make a step function object

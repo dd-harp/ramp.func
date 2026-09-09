@@ -2,7 +2,7 @@
 % Please edit documentation in R/step.R
 \name{makepar_F_step}
 \alias{makepar_F_step}
-\title{Step function \link{F_obj}}
+\title{Make a step function object}
 \usage{
 makepar_F_step(step_at = 1, c0 = 1, c1 = 0, leq = TRUE, V = TRUE)
 }
