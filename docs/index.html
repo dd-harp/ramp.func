@@ -69,8 +69,8 @@
   </ul>
 </li>
 <li class="nav-item dropdown">
-  <button class="nav-link dropdown-toggle" type="button" id="dropdown-age" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Age</button>
-  <ul class="dropdown-menu" aria-labelledby="dropdown-age">
+  <button class="nav-link dropdown-toggle" type="button" id="dropdown-other" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Other</button>
+  <ul class="dropdown-menu" aria-labelledby="dropdown-other">
 <li><a class="dropdown-item" href="articles/Age.html">Age</a></li>
   </ul>
 </li>
@@ -107,20 +107,31 @@
 <div class="section level2">
 <h2 id="trace-functions">Trace Functions<a class="anchor" aria-label="anchor" href="#trace-functions"></a>
 </h2>
-<p>The term <strong>trace function</strong> herein describes a function that sets the value of some quantity in a mathematical model. In models of malaria epidemiology, transmission dynamics, and control, it is often useful to isolate one of the dynamical components to study it in isolation, rather than study it as part of a dynamical system that is coupled to some other complex process. The functions defined herein are used by other <code>ramp</code> packages that are part of <strong>SimBA</strong>:</p>
+<p>In <strong><code>ramp.func</code></strong>, the term <a href="https://dd-harp.github.io/ramp.func/articles/TraceFunctions.html"><strong><em>trace function</em></strong></a> describes any function that sets the value of a parameter, variable, or term in a dynamical system. In models of malaria epidemiology, transmission dynamics, and control, it is often useful to isolate one of the dynamical components to study it in isolation, rather than study it as part of a dynamical system that is coupled to some other complex process. Typically, the trace function holds information from some other process: dynamical terms (<em>e.g.</em> the entomological inoculation rate), variables describing weather or vector control, or perturbations to a system.</p>
+<p>The functions defined herein are used by other <code>ramp</code> packages:</p>
 <ul>
 <li><p>These functions are used by <code>ramp.xds</code> and its satellite package <code>ramp.forcing</code> to configure forcing in the trivial modules.</p></li>
-<li><p>These functions are used by <code>ramp.falciparum</code> to configure exposure.</p></li>
+<li><p>These functions are used by <code>ramp.falciparum</code> for exposure exposure.</p></li>
 </ul>
 </div>
 <div class="section level2">
 <h2 id="kernels">Kernels<a class="anchor" aria-label="anchor" href="#kernels"></a>
 </h2>
-<p>The term <strong>kernel function</strong> describes any function we use to generate a probability mass function to model a spatial process, usually a model of mosquito dispersal that is used <strong><code>ramp.xds</code></strong> and <strong><code>ramp.micro</code></strong></p>
+<p>In <strong><code>ramp.xds</code></strong>, the term <strong><em>kernel</em></strong> describes any function we use to generate a probability mass function to model a spatial process:</p>
+<ul>
+<li><p>Mosquito dispersal among patches in <strong><code>ramp.xds</code></strong></p></li>
+<li><p>Mosquito disperssal among points in <strong><code>ramp.micro</code></strong></p></li>
+<li><p>Human time spent matrices</p></li>
+</ul>
 </div>
 <div class="section level2">
-<h2 id="functional-forms">Functional Forms<a class="anchor" aria-label="anchor" href="#functional-forms"></a>
+<h2 id="functional-responses">Functional Responses<a class="anchor" aria-label="anchor" href="#functional-responses"></a>
 </h2>
+<p>In developing a mathematical framework to model mosquito-transmitted pathogens, the <code>ramp</code> packages draw inspiration from ecology and other disciplines. One idea from ecology is a <em>functional response,</em> the shape of a function describing a consumption rate in response to resource availability. More generally, it is any function describing how a rate or probability varies in relation to some other variable. The functional response library here serves other roles as well:</p>
+<ul>
+<li><p>blood feeding rates or egg laying rates in relation to the availability of blood hosts or aquatic habitats.</p></li>
+<li><p>mosquito mortality rates in relation to temperature.</p></li>
+</ul>
 </div>
 </div>
   </main><aside class="col-md-3"><div class="links">

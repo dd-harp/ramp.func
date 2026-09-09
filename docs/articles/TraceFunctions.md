@@ -11,9 +11,13 @@ the complexity, it is sometimes difficult to tease apart effects of
 forcing by malaria control, weather, or biotic factors. In developing or
 analyzing these models, it is often useful to isolate some part of the
 system, and *force* the rest using a function that stands in place of
-another complex module. We call these functions **trace functions.**
+another complex module. The forcing can arise from statistical analysis
+of data (*e.g.* a time series analysis of temperature data) or it could
+take the place of a dynamical term in some closely related dynamical
+system (*e.g* the emergence rate of adult mosquitoes from aquatic
+habitats). We call these ***trace functions.***
 
-## Constructing Functions
+## Constructors
 
 The trace function library has two core constructors:
 
@@ -21,11 +25,11 @@ The trace function library has two core constructors:
 
 - `make_function(F_obj)` returns a function of the form \\F(t,V)\\
 
-Both functions construct a function using an object called `F_obj`.
+Both functions construct a function from a *function object* or `F_obj`.
 These two function classes are, in turn, used by two other core
 functions:
 
-- `make_ts_function` constructs a [*composed time series
+- `make_ts_function` constructs a [*composed, multiplicative time series
   function*](https://dd-harp.github.io/ramp.func/articles/TimeSeries.html).
 
 - `make_F_a` constructs a cohort forcing function, a function to study
@@ -40,26 +44,24 @@ functions:
 
 ## Supported Software
 
-This package supports the `ramp` suite, which has two parts:
+**`ramp.func`** supports other `ramp` software:
 
-- [**SimBA**](https://faculty.washington.edu/smitdave/simba/) – a set of
-  six other packages developed for simulation-based analytics
+- [**SimBA**](https://faculty.washington.edu/smitdave/simba/) –
+  **`ramp.xds`**, **`ramp.func`** and four other packages developed for
+  simulation-based analytics
 
-- **`ramp.falciparum`** — takes a deep dive into malaria epidemiology
+- **`ramp.falciparum`** — a deep dive into the mathematical epidemiology
+  of falciparum malaria
 
-- **`ramp.micro`** – explores micro-simulation for mosquito ecology and
-  malaria transmission.
+- **`ramp.micro`** – micro-simulation for mosquito ecology and malaria
+  transmission.
 
-**`ramp.func`** — was originally developed within other `ramp` software
-packages. A set of time series functions to model forcing was originally
-devised for **`ramp.falciparum`**, which takes a deep dive into
-falciparum malaria epidemiology. Later, the same functionality was built
-into **`ramp.xds`** and **`ramp.micro`**. To avoid maintaining duplicate
-software libraries, we developed **`ramp.func`**.
-
-In addition to the time-series function library, **`ramp.func`** also
-includes a function library to support development of spatial kernel
-functions.
+**`ramp.func`** — was originally a part of other `ramp` software
+packages. A set functions to model exposure for cohort dynamics was
+originally devised for **`ramp.falciparum`**, which takes a deep dive
+into falciparum malaria epidemiology. Later, the same functionality was
+built into **`ramp.xds`** and **`ramp.micro`**. **`ramp.func`** was
+developed to avoid maintaining duplicate software libraries.
 
 ### **SimBA**
 
@@ -71,11 +73,16 @@ configured using one of the **trivial modules** in **`ramp.xds`**.
 
 - \\\eta(t)\\ — egg laying by adult mosquitoes
 
-- \\E(t)\\ — the daily entomological inoculation rate (EIR)
+- \\fqZ(t)\\ — net daily biting by infective, adult mosquitoes in a
+  patch
 
 - \\\kappa(t)\\ — the net infectiousness (NI)
 
-In **`ramp.forcing`**, these functions can be used to construct
+- \\E(t)\\ — the daily entomological inoculation rate (EIR)
+
+- \\h(t)\\ — the daily force of infection (FoI)
+
+In **`ramp.forcing`**, these functions can also be used to construct
 non-autonomous dynamical systems, where parameters can vary with respect
 to time, including models for exogenous variables, intervention
 coverage, parameter values, or functional responses to weather.
@@ -87,8 +94,8 @@ data.
 
 Alternatively, in **`ramp.falciparum`**, where we take a deep dive into
 malaria epidemiology, we often find it useful to construct functions to
-model exposure in cohorts as a function of age (see
-[Cohorts](https://dd-harp.github.io/ramp.func/articles/Cohorts.md)).
+model exposure in cohorts as a function of age (see [Cohort
+Dynamics](https://dd-harp.github.io/ramp.func/articles/Cohorts.md)).
 
 ### **`ramp.micro`**
 

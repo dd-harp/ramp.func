@@ -56,7 +56,7 @@
 - [`makepar_F_sharkbite()`](https://dd-harp.github.io/ramp.func/reference/makepar_F_sharkbite.md)
   : Make Parameters for a sharkbite Function
 
-### age
+### Age
 
 - [`age`](https://dd-harp.github.io/ramp.func/reference/age.md) : age
 - [`type2`](https://dd-harp.github.io/ramp.func/reference/type2.md) :

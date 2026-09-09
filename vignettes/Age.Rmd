@@ -1,8 +1,11 @@
 ---
 title: "Age"
+subtitle: "Relative Biting Rates × Age" 
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Age}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
+
+In the study of mosquito-borne pathogens, most studies that have looked have found that biting rates are heterogeneous, and that children are bitten less often than adults. 
