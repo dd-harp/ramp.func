@@ -7,7 +7,7 @@
 \method{make_function}{splineX}(F_obj)
 }
 \arguments{
-\item{F_obj}{a function object, \link{F_obj}}
+\item{F_obj}{a function object}
 }
 \value{
 a function

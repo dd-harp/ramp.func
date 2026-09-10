@@ -7,7 +7,7 @@
 \method{make_F_t}{product}(F_obj)
 }
 \arguments{
-\item{F_obj}{a function object, \link{F_obj}}
+\item{F_obj}{a function object}
 }
 \value{
 a function that is the product of two other functions
