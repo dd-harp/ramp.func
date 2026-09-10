@@ -6,7 +6,8 @@ Construct a trace function of the form \\F(t)\\ from
 ## Usage
 
 ``` r
-make_F_t(F_obj)
+# S3 method for class 'dV'
+make_kernel(F_obj)
 ```
 
 ## Arguments

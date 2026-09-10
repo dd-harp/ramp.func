@@ -6,7 +6,7 @@ Construct a trace function of the form \\F(t)\\ from
 ## Usage
 
 ``` r
-make_F_t(F_obj)
+make_K_dV(F_obj)
 ```
 
 ## Arguments

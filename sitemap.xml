@@ -38,6 +38,10 @@
 <url><loc>https://dd-harp.github.io/ramp.func/reference/make_F_t.splinef.html</loc></url>
 <url><loc>https://dd-harp.github.io/ramp.func/reference/make_F_t.sum.html</loc></url>
 <url><loc>https://dd-harp.github.io/ramp.func/reference/make_F_t.type2.html</loc></url>
+<url><loc>https://dd-harp.github.io/ramp.func/reference/make_K_d.html</loc></url>
+<url><loc>https://dd-harp.github.io/ramp.func/reference/make_K_d.step.html</loc></url>
+<url><loc>https://dd-harp.github.io/ramp.func/reference/make_K_dV.html</loc></url>
+<url><loc>https://dd-harp.github.io/ramp.func/reference/make_K_dV.step.html</loc></url>
 <url><loc>https://dd-harp.github.io/ramp.func/reference/make_NBtrunc.html</loc></url>
 <url><loc>https://dd-harp.github.io/ramp.func/reference/make_POIStrunc.html</loc></url>
 <url><loc>https://dd-harp.github.io/ramp.func/reference/make_function.c.html</loc></url>
@@ -54,6 +58,9 @@
 <url><loc>https://dd-harp.github.io/ramp.func/reference/make_function.splinef.html</loc></url>
 <url><loc>https://dd-harp.github.io/ramp.func/reference/make_function.sum.html</loc></url>
 <url><loc>https://dd-harp.github.io/ramp.func/reference/make_function.type2.html</loc></url>
+<url><loc>https://dd-harp.github.io/ramp.func/reference/make_kernel.d.html</loc></url>
+<url><loc>https://dd-harp.github.io/ramp.func/reference/make_kernel.dV.html</loc></url>
+<url><loc>https://dd-harp.github.io/ramp.func/reference/make_kernel.html</loc></url>
 <url><loc>https://dd-harp.github.io/ramp.func/reference/make_ts_function.html</loc></url>
 <url><loc>https://dd-harp.github.io/ramp.func/reference/makepar_F_c.html</loc></url>
 <url><loc>https://dd-harp.github.io/ramp.func/reference/makepar_F_nproduct.html</loc></url>
@@ -63,6 +70,7 @@
 <url><loc>https://dd-harp.github.io/ramp.func/reference/makepar_F_sigmoid.html</loc></url>
 <url><loc>https://dd-harp.github.io/ramp.func/reference/makepar_F_sin.html</loc></url>
 <url><loc>https://dd-harp.github.io/ramp.func/reference/makepar_F_spline.html</loc></url>
+<url><loc>https://dd-harp.github.io/ramp.func/reference/makepar_F_step.html</loc></url>
 <url><loc>https://dd-harp.github.io/ramp.func/reference/makepar_F_sum.html</loc></url>
 <url><loc>https://dd-harp.github.io/ramp.func/reference/makepar_F_type2.html</loc></url>
 <url><loc>https://dd-harp.github.io/ramp.func/reference/seasonality.html</loc></url>
