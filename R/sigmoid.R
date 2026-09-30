@@ -18,7 +18,7 @@ make_F_t.sigmoid = function(F_obj){
     over_T = ifelse(T>0, integrate(F1, 0, T)$val, 1)
     F_obj$normit[i] <- F_obj$normit[i]/over_T
   }
-  F2 = with(F_obj,function(t){1e-15+exp(k*(t-D))/(1+exp(k*(t-D)))})
+  F2 = with(F_obj,function(t){mn+1e-15+(mx-mn)*exp(k*(t-D))/(1+exp(k*(t-D)))})
   F3 = function(t){if(length(t) == 1) return(F2(t)) else return(sapply(t, F2))}
   return(F3)
 }
@@ -41,7 +41,7 @@ make_function.sigmoid = function(F_obj){
     over_T = ifelse(T>0, integrate(F1, 0, T)$val, 1)
     F_obj$normit[i] <- F_obj$normit[i]/over_T
   }
-  F2 = with(F_obj,function(t, V=list()){1e-15+exp(k*(t-D))/(1+exp(k*(t-D)))})
+  F2 = with(F_obj,function(t, V=list()){mn+1e-15+(mx-mn)*exp(k*(t-D))/(1+exp(k*(t-D)))})
   F3 = function(t, V=list()){if(length(t) == 1) return(F2(t,V)) else return(sapply(t, F2,V=V))}
   return(F3)
 }
@@ -51,15 +51,19 @@ make_function.sigmoid = function(F_obj){
 #' a function [make_function.sigmoid]
 #' @param k the rate parameter
 #' @param D the half-saturation day
+#' @param mn the minimum value
+#' @param mx the minimum value
 #' @param Tl length of interval to normalize over
 #' @param N the length of the vector to return
 #' @return a sigmoidal function
 #' @export
-makepar_F_sigmoid = function(k=1/7, D=100, Tl=0, N=1){
+makepar_F_sigmoid = function(k=1/7, D=100, Tl=0, mn=0, mx=1, N=1){
   pars <- list()
   class(pars) <- c("sigmoid", "list")
   pars$k = check_length(k, N)
   pars$D = check_length(D, N)
+  pars$mn = check_length(mn, N)
+  pars$mx = check_length(mx, N)
   pars$Tl=Tl
   pars$N=N
   return(pars)

@@ -4,12 +4,16 @@
 \alias{makepar_F_nproduct}
 \title{parameters for make_function}
 \usage{
-makepar_F_nproduct(opts1, opts2)
+makepar_F_nproduct(opts1, opts2, P = 0, tol = 0.001)
 }
 \arguments{
 \item{opts1}{options for first function}
 
 \item{opts2}{options for second function}
+
+\item{P}{the period to Palize over}
+
+\item{tol}{relative tolerance (for integration)}
 }
 \value{
 a function

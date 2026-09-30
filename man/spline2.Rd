@@ -15,5 +15,5 @@ values \deqn{t_1, t_2, \ldots, t_n,}
 For \code{spline2} the function return value is \deqn{F_T(t)^2}
 }
 \seealso{
-\link[stats:splinefun]{stats::spline}, \link{makepar_F_spline}
+\link[stats:spline]{stats::spline}, \link{makepar_F_spline}
 }

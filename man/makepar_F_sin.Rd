@@ -4,7 +4,7 @@
 \alias{makepar_F_sin}
 \title{parameters for make_function}
 \usage{
-makepar_F_sin(phase = 0, bottom = 0, pw = 1, norm = 365, N = 1)
+makepar_F_sin(phase = 0, bottom = 0, pw = 1, period = 365, norm = 365, N = 1)
 }
 \arguments{
 \item{phase}{the phase for a seasonal function}
@@ -12,6 +12,8 @@ makepar_F_sin(phase = 0, bottom = 0, pw = 1, norm = 365, N = 1)
 \item{bottom}{shape parameter}
 
 \item{pw}{shape parameter}
+
+\item{period}{the period of the sin function}
 
 \item{norm}{the normalization period}
 

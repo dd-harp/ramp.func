@@ -15,5 +15,5 @@ values \deqn{t_1, t_2, \ldots, t_n,}
 For \code{splineX}, the return value is \deqn{e^{F_T(t)}}
 }
 \seealso{
-\link[stats:splinefun]{stats::spline}, \link{makepar_F_spline}
+\link[stats:spline]{stats::spline}, \link{makepar_F_spline}
 }

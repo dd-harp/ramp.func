@@ -6,7 +6,7 @@ Return an object to configure a function
 ## Usage
 
 ``` r
-makepar_F_sin(phase = 0, bottom = 0, pw = 1, norm = 365, N = 1)
+makepar_F_sin(phase = 0, bottom = 0, pw = 1, period = 365, norm = 365, N = 1)
 ```
 
 ## Arguments
@@ -22,6 +22,10 @@ makepar_F_sin(phase = 0, bottom = 0, pw = 1, norm = 365, N = 1)
 - pw:
 
   shape parameter
+
+- period:
+
+  the period of the sin function
 
 - norm:
 

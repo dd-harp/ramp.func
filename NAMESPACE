@@ -2,6 +2,7 @@
 
 S3method(make_F_t,c)
 S3method(make_F_t,list)
+S3method(make_F_t,nproduct)
 S3method(make_F_t,product)
 S3method(make_F_t,sharkbite)
 S3method(make_F_t,sharkfin)
@@ -52,6 +53,8 @@ export(makepar_F_spline)
 export(makepar_F_step)
 export(makepar_F_sum)
 export(makepar_F_type2)
-importFrom(stats,dnbinom)
-importFrom(stats,dpois)
-importFrom(stats,integrate)
+importFrom(stats,
+  dnbinom,
+  dpois,
+  integrate
+)

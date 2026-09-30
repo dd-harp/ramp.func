@@ -4,17 +4,26 @@
 \alias{makepar_F_product}
 \title{parameters for make_function}
 \usage{
-makepar_F_product(opts1, opts2)
+makepar_F_product(opts1, opts2, P = 0, tol = 0.001)
 }
 \arguments{
 \item{opts1}{options for first function}
 
 \item{opts2}{options for second function}
+
+\item{P}{the period to normalize over}
+
+\item{tol}{relative tolerance (for integration)}
 }
 \value{
 a function
 }
 \description{
 Return an object to configure
-a function \link{make_function.product}
+a function \link{make_function.product}.
+
+The parameter \code{P} facilitates Palization
+over some period of time.  If
+\eqn{P>0}, then a constant is set such that
+\eqn{\int_0^P F(t) dt = P}
 }
