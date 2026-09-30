@@ -67,6 +67,8 @@ reference:
   - seasonality
   - sin
   - makepar_F_sin
+  - triggy
+  - makepar_F_triggy
 - subtitle: Trends
   contents:
   - trends

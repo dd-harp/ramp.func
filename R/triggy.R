@@ -1,0 +1,96 @@
+#' @title sin
+#'
+#' @description
+#' Return a pattern \eqn{F_S(t)} to model [seasonality] with the form
+#' \deqn{S(t) = c \left(1+\epsilon + \sin\left(\frac{2 \pi (t-\tau(t))}{P}\right)\right)^q}
+#'
+#'
+#' @name triggy
+NULL
+
+
+#' @title Make a Sine-based Seasonality Function
+#' @description Return a seasonal pattern \eqn{F_S(t)}, a function of the form
+#' \deqn{S(t) = c \left(1+\epsilon + \sin\left(\frac{2 \pi (t-\tau)}{P}\right)\right)^q}
+#' where \eqn{c} is a normalizing constant, and
+#' + \eqn{\epsilon \geq 0} or `bottom`
+#' + \eqn{\tau} or `phase`
+#' + \eqn{q} or `pw`
+#' + \eqn{P} or `period`
+#'
+#' The algorithm sets the constant \eqn{c} or `norm`
+#' such that \deqn{c \int_0^{P} F_S(t) dt=P}.
+#'
+#' @inheritParams make_function
+#' @importFrom stats integrate
+#' @seealso [makepar_F_sin]
+#' @return a function for seasonality
+#' @keywords internal
+#' @export
+make_F_t.triggy = function(F_obj){
+  phase = make_F_t(F_obj$phase_par)
+  F_obj$normit = with(F_obj, rep(norm, N))
+  for(i in 1:F_obj$N){
+    F1 = with(F_obj,function(t){(1+abs(bottom[i])+sin(2*pi*(t-phase(t)+91)/period[i]))^pw[i]})
+    over_year <- integrate(F1, 0, F_obj$period[i])$val
+    F_obj$normit[i] <- F_obj$normit[i]/over_year
+  }
+  F2 = with(F_obj,function(t){(1+abs(bottom) + sin(2*pi*(t-phase(t)+91)/period))^pw*normit})
+  F3 = function(t){if(length(t) == 1) return(F2(t)) else return(sapply(t, F2))}
+  return(F3)
+}
+
+
+#' @title Make a Sine-based Seasonality Function
+#' @description Return a seasonal pattern \eqn{F_S(t)}, a function of the form
+#' \deqn{F_S(t) = c \left(1+\epsilon + \sin\left(\frac{2 \pi (t-\tau)}{P}\right)\right)^q}
+#' where \eqn{c} is a normalizing constant, and
+#' + \eqn{\epsilon \geq 0} or `bottom`
+#' + \eqn{\tau} or `phase`
+#' + \eqn{q} or `pw`
+#' + \eqn{P} or `period`
+#'
+#' The algorithm sets the constant \eqn{c} or `norm`
+#' such that \deqn{c\int_0^{P} F_S(t) dt=P}.
+#' @inheritParams make_function
+#' @importFrom stats integrate
+#' @seealso [makepar_F_sin]
+#' @return a function for seasonality
+#' @keywords internal
+#' @export
+make_function.triggy = function(F_obj){
+  phase = make_F_t(F_obj$phase_par)
+  F_obj$normit = with(F_obj, rep(norm, N))
+  for(i in 1:F_obj$N){
+    F1 = with(F_obj,function(t, V=list()){(1+abs(bottom[i])+sin(2*pi*(t-phase(t)+91)/period))^pw[i]})
+    over_year <- integrate(F1, 0, F_obj$norm)$val
+    F_obj$normit[i] <- F_obj$normit[i]/over_year
+  }
+  F2 = with(F_obj,function(t, V=list()){(1+abs(bottom) + sin(2*pi*(t-phase(t)+91)/period))^pw*normit})
+  F3 = function(t, V=list()){if(length(t) == 1) return(F2(t,V)) else return(sapply(t, F2, V=V))}
+  return(F3)
+}
+
+#' @title parameters for make_function
+#' @description Return an object to configure
+#' a function [make_function.sin]
+#' @param phase_par a function object for the phase parameter
+#' @param bottom shape parameter
+#' @param pw shape parameter
+#' @param period the period of the sin function
+#' @param norm the normalization period
+#' @param N the length of the vector to return
+#' @return a function for seasonality
+#' @seealso [make_function.sin]
+#' @export
+makepar_F_triggy = function(phase_par=makepar_F_c(0), bottom=0, pw=1, period=365, norm=365, N=1){
+  pars <- list()
+  class(pars) <- c("sin", "list")
+  pars$phase_par = phase_par
+  pars$bottom = abs(check_length(bottom, N))
+  pars$pw = abs(check_length(pw, N))
+  pars$period = abs(check_length(period, 1))
+  pars$norm = norm
+  pars$N = N
+  return(pars)
+}
