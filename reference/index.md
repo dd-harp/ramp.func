@@ -29,6 +29,10 @@
 - [`sin`](https://dd-harp.github.io/ramp.func/reference/sin.md) : sin
 - [`makepar_F_sin()`](https://dd-harp.github.io/ramp.func/reference/makepar_F_sin.md)
   : parameters for make_function
+- [`triggy`](https://dd-harp.github.io/ramp.func/reference/triggy.md) :
+  sin
+- [`makepar_F_triggy()`](https://dd-harp.github.io/ramp.func/reference/makepar_F_triggy.md)
+  : parameters for make_function
 
 ### Trends
 

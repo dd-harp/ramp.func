@@ -38,6 +38,7 @@
 <url><loc>https://dd-harp.github.io/ramp.func/reference/make_F_t.splineX.html</loc></url>
 <url><loc>https://dd-harp.github.io/ramp.func/reference/make_F_t.splinef.html</loc></url>
 <url><loc>https://dd-harp.github.io/ramp.func/reference/make_F_t.sum.html</loc></url>
+<url><loc>https://dd-harp.github.io/ramp.func/reference/make_F_t.triggy.html</loc></url>
 <url><loc>https://dd-harp.github.io/ramp.func/reference/make_F_t.type2.html</loc></url>
 <url><loc>https://dd-harp.github.io/ramp.func/reference/make_K_d.html</loc></url>
 <url><loc>https://dd-harp.github.io/ramp.func/reference/make_K_d.step.html</loc></url>
@@ -58,6 +59,7 @@
 <url><loc>https://dd-harp.github.io/ramp.func/reference/make_function.splineX.html</loc></url>
 <url><loc>https://dd-harp.github.io/ramp.func/reference/make_function.splinef.html</loc></url>
 <url><loc>https://dd-harp.github.io/ramp.func/reference/make_function.sum.html</loc></url>
+<url><loc>https://dd-harp.github.io/ramp.func/reference/make_function.triggy.html</loc></url>
 <url><loc>https://dd-harp.github.io/ramp.func/reference/make_function.type2.html</loc></url>
 <url><loc>https://dd-harp.github.io/ramp.func/reference/make_kernel.d.html</loc></url>
 <url><loc>https://dd-harp.github.io/ramp.func/reference/make_kernel.dV.html</loc></url>
@@ -73,6 +75,7 @@
 <url><loc>https://dd-harp.github.io/ramp.func/reference/makepar_F_spline.html</loc></url>
 <url><loc>https://dd-harp.github.io/ramp.func/reference/makepar_F_step.html</loc></url>
 <url><loc>https://dd-harp.github.io/ramp.func/reference/makepar_F_sum.html</loc></url>
+<url><loc>https://dd-harp.github.io/ramp.func/reference/makepar_F_triggy.html</loc></url>
 <url><loc>https://dd-harp.github.io/ramp.func/reference/makepar_F_type2.html</loc></url>
 <url><loc>https://dd-harp.github.io/ramp.func/reference/seasonality.html</loc></url>
 <url><loc>https://dd-harp.github.io/ramp.func/reference/sharkbite.html</loc></url>
@@ -83,6 +86,7 @@
 <url><loc>https://dd-harp.github.io/ramp.func/reference/splineX.html</loc></url>
 <url><loc>https://dd-harp.github.io/ramp.func/reference/splinef.html</loc></url>
 <url><loc>https://dd-harp.github.io/ramp.func/reference/trends.html</loc></url>
+<url><loc>https://dd-harp.github.io/ramp.func/reference/triggy.html</loc></url>
 <url><loc>https://dd-harp.github.io/ramp.func/reference/type2.html</loc></url>
 </urlset>
 
