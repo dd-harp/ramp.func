@@ -4,7 +4,7 @@
 \alias{makepar_F_sigmoid}
 \title{Make Parameters for a Sigmoidal Function}
 \usage{
-makepar_F_sigmoid(k = 1/7, D = 100, Tl = 0, N = 1)
+makepar_F_sigmoid(k = 1/7, D = 100, Tl = 0, mn = 0, mx = 1, N = 1)
 }
 \arguments{
 \item{k}{the rate parameter}
@@ -12,6 +12,10 @@ makepar_F_sigmoid(k = 1/7, D = 100, Tl = 0, N = 1)
 \item{D}{the half-saturation day}
 
 \item{Tl}{length of interval to normalize over}
+
+\item{mn}{the minimum value}
+
+\item{mx}{the minimum value}
 
 \item{N}{the length of the vector to return}
 }

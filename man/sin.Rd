@@ -5,5 +5,5 @@
 \title{sin}
 \description{
 Return a pattern \eqn{F_S(t)} to model \link{seasonality} with the form
-\deqn{S(t) = c \left(1+\epsilon + \sin\left(\frac{2 \pi (t-\tau)}{365}\right)\right)^p}
+\deqn{S(t) = c \left(1+\epsilon + \sin\left(\frac{2 \pi (t-\tau)}{P}\right)\right)^q}
 }

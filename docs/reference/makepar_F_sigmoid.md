@@ -6,7 +6,7 @@ Return an object to configure a function
 ## Usage
 
 ``` r
-makepar_F_sigmoid(k = 1/7, D = 100, Tl = 0, N = 1)
+makepar_F_sigmoid(k = 1/7, D = 100, Tl = 0, mn = 0, mx = 1, N = 1)
 ```
 
 ## Arguments
@@ -22,6 +22,14 @@ makepar_F_sigmoid(k = 1/7, D = 100, Tl = 0, N = 1)
 - Tl:
 
   length of interval to normalize over
+
+- mn:
+
+  the minimum value
+
+- mx:
+
+  the minimum value
 
 - N:
 

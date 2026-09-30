@@ -14,7 +14,7 @@ library(viridisLite)
 ```
 
 A constructor for seasonality functions drawn from a generalized family involving trigonometric functions is returned by `make_function.sin` with the associated `makepar_F_sin` that returns functions of the form: 
-$$F_S(t) =  c\left(1 + \epsilon + \sin\left(\frac{2 \pi (t-\tau)}{365}\right)\right)^p$$
+$$F_S(t) =  c\left(1 + \epsilon + \sin\left(\frac{2 \pi (t-\tau)}P\right)\right)^q$$
 
 + $c$ or `norm` is a normalizing constant 
 
@@ -22,15 +22,16 @@ $$F_S(t) =  c\left(1 + \epsilon + \sin\left(\frac{2 \pi (t-\tau)}{365}\right)\ri
 
 + $\epsilon \geq 0$ or `bottom` is a shape parameter: increasing the values of $\epsilon$ reduces the variance 
 
-+ $p \geq 0$ or `pw` is a shape parameter.
++ $q \geq 0$ or `pw` is a shape parameter
+
++ $P \geq 0$ or `period` sets the period of the function
 
 ```{r}
 p1 = makepar_F_sin()
 S1 <- make_function(p1)
-
 ```
 
-The default normalizing constant is $365$ so that if $S$ is multiplied by some other constant, $m,$ the average daily value of the function over a year is $1.$
+The default normalizing constant is equal to the period (by default, $365$) so that if $S$ is multiplied by some other constant, $m,$ the average daily value of the function over a year is $1.$
 
 ```{r}
 integrate(S1, 0, 365)$val
@@ -97,3 +98,29 @@ text(1000, 3, expression(p==3), col=clrs[5])
 text(1000, 2.5, expression(epsilon==0.5), col=clrs[2])
 text(1000, 2, expression(epsilon==2), col=clrs[3])
 ```
+
+# Multiple Periods
+
+```{r}
+p1 <- makepar_F_sin()
+p2 <- makepar_F_sin(period=1, bottom=1)
+p12 <- makepar_F_product(p1, p2) 
+S2 <- make_function(p12)
+```
+
+This plots the function over a stretch of values: 
+
+```{r, fig.height=3, fig.width=10}
+tt <- seq(120, 210, length.out=365*50)
+plot(tt, S2(tt), type = "l", xlab = "Time (in Days)")
+```
+```{r}
+integrate(S2, 0, 365, rel.tol=1e-3)$value
+```
+
+```{r}
+p12a<- makepar_F_product(p1, p2, P=365, tol = 1e-3) 
+S2a <- make_function(p12a)
+integrate(S2a, 0, 365, rel.tol=1e-3)$value 
+```
+
