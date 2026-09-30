@@ -6,7 +6,7 @@ Return an object to configure a function
 ## Usage
 
 ``` r
-makepar_F_nproduct(opts1, opts2)
+makepar_F_nproduct(opts1, opts2, P = 0, tol = 0.001)
 ```
 
 ## Arguments
@@ -18,6 +18,14 @@ makepar_F_nproduct(opts1, opts2)
 - opts2:
 
   options for second function
+
+- P:
+
+  the period to Palize over
+
+- tol:
+
+  relative tolerance (for integration)
 
 ## Value
 

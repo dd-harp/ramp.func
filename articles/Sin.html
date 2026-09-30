@@ -26,7 +26,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">ramp.func</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -110,7 +110,7 @@ Trigonometric Seasonal Pattern</h3>
 family involving trigonometric functions is returned by
 <code>make_function.sin</code> with the associated
 <code>makepar_F_sin</code> that returns functions of the form: <span class="math display">\[F_S(t) =  c\left(1 + \epsilon + \sin\left(\frac{2
-\pi (t-\tau)}{365}\right)\right)^p\]</span></p>
+\pi (t-\tau)}P\right)\right)^q\]</span></p>
 <ul>
 <li><p><span class="math inline">\(c\)</span> or <code>norm</code> is a
 normalizing constant</p></li>
@@ -118,13 +118,16 @@ normalizing constant</p></li>
 sets the timing of the peak</p></li>
 <li><p><span class="math inline">\(\epsilon \geq 0\)</span> or
 <code>bottom</code> is a shape parameter: increasing the values of <span class="math inline">\(\epsilon\)</span> reduces the variance</p></li>
-<li><p><span class="math inline">\(p \geq 0\)</span> or <code>pw</code>
-is a shape parameter.</p></li>
+<li><p><span class="math inline">\(q \geq 0\)</span> or <code>pw</code>
+is a shape parameter</p></li>
+<li><p><span class="math inline">\(P \geq 0\)</span> or
+<code>period</code> sets the period of the function</p></li>
 </ul>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">p1</span> <span class="op">=</span> <span class="fu"><a href="../reference/makepar_F_sin.html">makepar_F_sin</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="va">S1</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/make_function.html">make_function</a></span><span class="op">(</span><span class="va">p1</span><span class="op">)</span></span></code></pre></div>
-<p>The default normalizing constant is <span class="math inline">\(365\)</span> so that if <span class="math inline">\(S\)</span> is multiplied by some other constant,
+<p>The default normalizing constant is equal to the period (by default,
+<span class="math inline">\(365\)</span>) so that if <span class="math inline">\(S\)</span> is multiplied by some other constant,
 <span class="math inline">\(m,\)</span> the average daily value of the
 function over a year is <span class="math inline">\(1.\)</span></p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
@@ -178,7 +181,30 @@ with a range of features:</p>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/text.html" class="external-link">text</a></span><span class="op">(</span><span class="fl">1000</span>, <span class="fl">2.5</span>, <span class="fu"><a href="https://rdrr.io/r/base/expression.html" class="external-link">expression</a></span><span class="op">(</span><span class="va">epsilon</span><span class="op">==</span><span class="fl">0.5</span><span class="op">)</span>, col<span class="op">=</span><span class="va">clrs</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/text.html" class="external-link">text</a></span><span class="op">(</span><span class="fl">1000</span>, <span class="fl">2</span>, <span class="fu"><a href="https://rdrr.io/r/base/expression.html" class="external-link">expression</a></span><span class="op">(</span><span class="va">epsilon</span><span class="op">==</span><span class="fl">2</span><span class="op">)</span>, col<span class="op">=</span><span class="va">clrs</span><span class="op">[</span><span class="fl">3</span><span class="op">]</span><span class="op">)</span></span></code></pre></div>
 <p><img src="Sin_files/figure-html/unnamed-chunk-11-1.png" class="r-plt" alt="" width="768"></p>
-  </main>
+<div class="section level2">
+<h2 id="multiple-periods">Multiple Periods<a class="anchor" aria-label="anchor" href="#multiple-periods"></a>
+</h2>
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">p1</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/makepar_F_sin.html">makepar_F_sin</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="va">p2</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/makepar_F_sin.html">makepar_F_sin</a></span><span class="op">(</span>period<span class="op">=</span><span class="fl">1</span>, bottom<span class="op">=</span><span class="fl">1</span><span class="op">)</span></span>
+<span><span class="va">p12</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/makepar_F_product.html">makepar_F_product</a></span><span class="op">(</span><span class="va">p1</span>, <span class="va">p2</span><span class="op">)</span> </span>
+<span><span class="va">S2</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/make_function.html">make_function</a></span><span class="op">(</span><span class="va">p12</span><span class="op">)</span></span></code></pre></div>
+<p>This plots the function over a stretch of values:</p>
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">tt</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq</a></span><span class="op">(</span><span class="fl">120</span>, <span class="fl">210</span>, length.out<span class="op">=</span><span class="fl">365</span><span class="op">*</span><span class="fl">50</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">tt</span>, <span class="fu">S2</span><span class="op">(</span><span class="va">tt</span><span class="op">)</span>, type <span class="op">=</span> <span class="st">"l"</span>, xlab <span class="op">=</span> <span class="st">"Time (in Days)"</span><span class="op">)</span></span></code></pre></div>
+<p><img src="Sin_files/figure-html/unnamed-chunk-13-1.png" class="r-plt" alt="" width="960"></p>
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/integrate.html" class="external-link">integrate</a></span><span class="op">(</span><span class="va">S2</span>, <span class="fl">0</span>, <span class="fl">365</span>, rel.tol<span class="op">=</span><span class="fl">1e-3</span><span class="op">)</span><span class="op">$</span><span class="va">value</span></span></code></pre></div>
+<pre><code><span><span class="co">## [1] 133225</span></span></code></pre>
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">p12a</span><span class="op">&lt;-</span> <span class="fu"><a href="../reference/makepar_F_product.html">makepar_F_product</a></span><span class="op">(</span><span class="va">p1</span>, <span class="va">p2</span>, P<span class="op">=</span><span class="fl">365</span>, tol <span class="op">=</span> <span class="fl">1e-3</span><span class="op">)</span> </span>
+<span><span class="va">S2a</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/make_function.html">make_function</a></span><span class="op">(</span><span class="va">p12a</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/stats/integrate.html" class="external-link">integrate</a></span><span class="op">(</span><span class="va">S2a</span>, <span class="fl">0</span>, <span class="fl">365</span>, rel.tol<span class="op">=</span><span class="fl">1e-3</span><span class="op">)</span><span class="op">$</span><span class="va">value</span> </span></code></pre></div>
+<pre><code><span><span class="co">## [1] 365</span></span></code></pre>
+</div>
+  </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
+    </nav></aside>
 </div>
 
 

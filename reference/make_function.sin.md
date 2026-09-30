@@ -2,17 +2,19 @@
 
 Return a seasonal pattern \\F_S(t)\\, a function of the form \$\$F_S(t)
 = c \left(1+\epsilon + \sin\left(\frac{2 \pi
-(t-\tau)}{365}\right)\right)^p\$\$ where \\c\\ is a normalizing
-constant, and
+(t-\tau)}{P}\right)\right)^q\$\$ where \\c\\ is a normalizing constant,
+and
 
 - \\\epsilon \geq 0\\ or `bottom`
 
 - \\\tau\\ or `phase`
 
-- \\p\\ or `pw`
+- \\q\\ or `pw`
+
+- \\P\\ or `period`
 
 The algorithm sets the constant \\c\\ or `norm` such that
-\$\$\int_0^{365} F_S(t) dt=c\$\$ where the default is `norm=365.`
+\$\$c\int_0^{P} F_S(t) dt=P\$\$.
 
 ## Usage
 
