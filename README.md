@@ -7,7 +7,7 @@ header-includes:
 
 # **`ramp.func`** 
 
-## The RAMP Function Library
+## The RAMP Function Factory
 
 ## Install **`ramp.func`** 
 

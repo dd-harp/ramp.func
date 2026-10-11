@@ -61,6 +61,7 @@ reference:
 - subtitle: Basic
   contents:
   - makepar_F_c
+  - makepar_F_exp
   - makepar_F_sigmoid
 - subtitle: Seasonality
   contents:
