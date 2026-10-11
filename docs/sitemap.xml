@@ -26,6 +26,7 @@
 <url><loc>https://dd-harp.github.io/ramp.func/reference/index.html</loc></url>
 <url><loc>https://dd-harp.github.io/ramp.func/reference/make_F_a.html</loc></url>
 <url><loc>https://dd-harp.github.io/ramp.func/reference/make_F_t.c.html</loc></url>
+<url><loc>https://dd-harp.github.io/ramp.func/reference/make_F_t.exp.html</loc></url>
 <url><loc>https://dd-harp.github.io/ramp.func/reference/make_F_t.html</loc></url>
 <url><loc>https://dd-harp.github.io/ramp.func/reference/make_F_t.list.html</loc></url>
 <url><loc>https://dd-harp.github.io/ramp.func/reference/make_F_t.nproduct.html</loc></url>
@@ -47,6 +48,7 @@
 <url><loc>https://dd-harp.github.io/ramp.func/reference/make_NBtrunc.html</loc></url>
 <url><loc>https://dd-harp.github.io/ramp.func/reference/make_POIStrunc.html</loc></url>
 <url><loc>https://dd-harp.github.io/ramp.func/reference/make_function.c.html</loc></url>
+<url><loc>https://dd-harp.github.io/ramp.func/reference/make_function.exp.html</loc></url>
 <url><loc>https://dd-harp.github.io/ramp.func/reference/make_function.html</loc></url>
 <url><loc>https://dd-harp.github.io/ramp.func/reference/make_function.list.html</loc></url>
 <url><loc>https://dd-harp.github.io/ramp.func/reference/make_function.nproduct.html</loc></url>
@@ -66,6 +68,7 @@
 <url><loc>https://dd-harp.github.io/ramp.func/reference/make_kernel.html</loc></url>
 <url><loc>https://dd-harp.github.io/ramp.func/reference/make_ts_function.html</loc></url>
 <url><loc>https://dd-harp.github.io/ramp.func/reference/makepar_F_c.html</loc></url>
+<url><loc>https://dd-harp.github.io/ramp.func/reference/makepar_F_exp.html</loc></url>
 <url><loc>https://dd-harp.github.io/ramp.func/reference/makepar_F_nproduct.html</loc></url>
 <url><loc>https://dd-harp.github.io/ramp.func/reference/makepar_F_product.html</loc></url>
 <url><loc>https://dd-harp.github.io/ramp.func/reference/makepar_F_sharkbite.html</loc></url>
