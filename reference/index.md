@@ -19,6 +19,8 @@
 
 - [`makepar_F_c()`](https://dd-harp.github.io/ramp.func/reference/makepar_F_c.md)
   : Make F_obj for \\F(t)=c\\
+- [`makepar_F_exp()`](https://dd-harp.github.io/ramp.func/reference/makepar_F_exp.md)
+  : Make parameters for an exponential function
 - [`makepar_F_sigmoid()`](https://dd-harp.github.io/ramp.func/reference/makepar_F_sigmoid.md)
   : Make Parameters for a Sigmoidal Function
 

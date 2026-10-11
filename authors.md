@@ -10,11 +10,11 @@
 Source:
 [`DESCRIPTION`](https://github.com/dd-harp/ramp.func/blob/main/DESCRIPTION)
 
-Smith D (2026). *ramp.func: RAMP Function Library*. R package version
+Smith D (2026). *ramp.func: RAMP Function Factory*. R package version
 1.0, <https://dd-harp.github.io/ramp.func/>.
 
     @Manual{,
-      title = {ramp.func: RAMP Function Library},
+      title = {ramp.func: RAMP Function Factory},
       author = {David L. Smith},
       year = {2026},
       note = {R package version 1.0},
